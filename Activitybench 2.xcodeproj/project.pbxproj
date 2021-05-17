@@ -3,23 +3,32 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE6A4CE42651FF8C0082966F /* Activitybench_2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A4CE32651FF8C0082966F /* Activitybench_2App.swift */; };
+		CE6A4CE42651FF8C0082966F /* Activitybench2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A4CE32651FF8C0082966F /* Activitybench2App.swift */; };
 		CE6A4CE62651FF8C0082966F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A4CE52651FF8C0082966F /* ContentView.swift */; };
 		CE6A4CE82651FF8D0082966F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE6A4CE72651FF8D0082966F /* Assets.xcassets */; };
 		CE6A4CEB2651FF8D0082966F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE6A4CEA2651FF8D0082966F /* Preview Assets.xcassets */; };
+		CE6A4CF42652001F0082966F /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A4CF32652001F0082966F /* TopView.swift */; };
+		CE6A4CF72652017C0082966F /* DeviceHardware in Frameworks */ = {isa = PBXBuildFile; productRef = CE6A4CF62652017C0082966F /* DeviceHardware */; };
+		CE6A4CFA265202080082966F /* DeviceInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A4CF9265202080082966F /* DeviceInformation.swift */; };
+		CE6A4CFC265203B80082966F /* UtilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A4CFB265203B80082966F /* UtilesView.swift */; };
+		CE6A4CFE26520B0F0082966F /* RunView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A4CFD26520B0F0082966F /* RunView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CE6A4CE02651FF8C0082966F /* Activitybench 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Activitybench 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE6A4CE32651FF8C0082966F /* Activitybench_2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activitybench_2App.swift; sourceTree = "<group>"; };
+		CE6A4CE32651FF8C0082966F /* Activitybench2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activitybench2App.swift; sourceTree = "<group>"; };
 		CE6A4CE52651FF8C0082966F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CE6A4CE72651FF8D0082966F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE6A4CEA2651FF8D0082966F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CE6A4CEC2651FF8D0082966F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE6A4CF32652001F0082966F /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
+		CE6A4CF9265202080082966F /* DeviceInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInformation.swift; sourceTree = "<group>"; };
+		CE6A4CFB265203B80082966F /* UtilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilesView.swift; sourceTree = "<group>"; };
+		CE6A4CFD26520B0F0082966F /* RunView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE6A4CF72652017C0082966F /* DeviceHardware in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,8 +62,9 @@
 		CE6A4CE22651FF8C0082966F /* Activitybench 2 */ = {
 			isa = PBXGroup;
 			children = (
-				CE6A4CE32651FF8C0082966F /* Activitybench_2App.swift */,
-				CE6A4CE52651FF8C0082966F /* ContentView.swift */,
+				CE6A4CF8265201880082966F /* Model */,
+				CE6A4CF22651FFE80082966F /* View */,
+				CE6A4CE32651FF8C0082966F /* Activitybench2App.swift */,
 				CE6A4CE72651FF8D0082966F /* Assets.xcassets */,
 				CE6A4CEC2651FF8D0082966F /* Info.plist */,
 				CE6A4CE92651FF8D0082966F /* Preview Content */,
@@ -67,6 +78,25 @@
 				CE6A4CEA2651FF8D0082966F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CE6A4CF22651FFE80082966F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE6A4CE52651FF8C0082966F /* ContentView.swift */,
+				CE6A4CF32652001F0082966F /* TopView.swift */,
+				CE6A4CFB265203B80082966F /* UtilesView.swift */,
+				CE6A4CFD26520B0F0082966F /* RunView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CE6A4CF8265201880082966F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE6A4CF9265202080082966F /* DeviceInformation.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +115,9 @@
 			dependencies = (
 			);
 			name = "Activitybench 2";
+			packageProductDependencies = (
+				CE6A4CF62652017C0082966F /* DeviceHardware */,
+			);
 			productName = "Activitybench 2";
 			productReference = CE6A4CE02651FF8C0082966F /* Activitybench 2.app */;
 			productType = "com.apple.product-type.application";
@@ -112,6 +145,9 @@
 				Base,
 			);
 			mainGroup = CE6A4CD72651FF8C0082966F;
+			packageReferences = (
+				CE6A4CF52652017C0082966F /* XCRemoteSwiftPackageReference "DeviceHardware" */,
+			);
 			productRefGroup = CE6A4CE12651FF8C0082966F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,7 +175,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE6A4CE62651FF8C0082966F /* ContentView.swift in Sources */,
-				CE6A4CE42651FF8C0082966F /* Activitybench_2App.swift in Sources */,
+				CE6A4CFA265202080082966F /* DeviceInformation.swift in Sources */,
+				CE6A4CFE26520B0F0082966F /* RunView.swift in Sources */,
+				CE6A4CFC265203B80082966F /* UtilesView.swift in Sources */,
+				CE6A4CF42652001F0082966F /* TopView.swift in Sources */,
+				CE6A4CE42651FF8C0082966F /* Activitybench2App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +368,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CE6A4CF52652017C0082966F /* XCRemoteSwiftPackageReference "DeviceHardware" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Shakshi3104/DeviceHardware.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CE6A4CF62652017C0082966F /* DeviceHardware */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE6A4CF52652017C0082966F /* XCRemoteSwiftPackageReference "DeviceHardware" */;
+			productName = DeviceHardware;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CE6A4CD82651FF8C0082966F /* Project object */;
 }
