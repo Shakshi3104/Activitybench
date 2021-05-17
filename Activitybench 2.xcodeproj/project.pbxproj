@@ -16,6 +16,13 @@
 		CE6A4CFA265202080082966F /* DeviceInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A4CF9265202080082966F /* DeviceInformation.swift */; };
 		CE6A4CFC265203B80082966F /* UtilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A4CFB265203B80082966F /* UtilesView.swift */; };
 		CE6A4CFE26520B0F0082966F /* RunView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A4CFD26520B0F0082966F /* RunView.swift */; };
+		CE6A4D0226522F910082966F /* MLMultiArray+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A4D0126522F910082966F /* MLMultiArray+Extension.swift */; };
+		CE6A4D04265230040082966F /* MLModel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A4D03265230040082966F /* MLModel+Extension.swift */; };
+		CE6A4D06265240AB0082966F /* BenchmarkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A4D05265240AB0082966F /* BenchmarkManager.swift */; };
+		CE6A4D0A265245A40082966F /* BenchmarkDataset.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A4D09265245A40082966F /* BenchmarkDataset.swift */; };
+		CE6A4D0C2652495C0082966F /* ActivityClassifierUtiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A4D0B2652495C0082966F /* ActivityClassifierUtiles.swift */; };
+		CE6A4D0F26524ECF0082966F /* AccelerometerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A4D0E26524ECF0082966F /* AccelerometerManager.swift */; };
+		CE6A4D11265259070082966F /* BenchmarkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A4D10265259070082966F /* BenchmarkResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +37,13 @@
 		CE6A4CFB265203B80082966F /* UtilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilesView.swift; sourceTree = "<group>"; };
 		CE6A4CFD26520B0F0082966F /* RunView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunView.swift; sourceTree = "<group>"; };
 		CE6A4CFF2652268B0082966F /* Activitybench 2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Activitybench 2.entitlements"; sourceTree = "<group>"; };
+		CE6A4D0126522F910082966F /* MLMultiArray+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MLMultiArray+Extension.swift"; sourceTree = "<group>"; };
+		CE6A4D03265230040082966F /* MLModel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MLModel+Extension.swift"; sourceTree = "<group>"; };
+		CE6A4D05265240AB0082966F /* BenchmarkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenchmarkManager.swift; sourceTree = "<group>"; };
+		CE6A4D09265245A40082966F /* BenchmarkDataset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenchmarkDataset.swift; sourceTree = "<group>"; };
+		CE6A4D0B2652495C0082966F /* ActivityClassifierUtiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityClassifierUtiles.swift; sourceTree = "<group>"; };
+		CE6A4D0E26524ECF0082966F /* AccelerometerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccelerometerManager.swift; sourceTree = "<group>"; };
+		CE6A4D10265259070082966F /* BenchmarkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenchmarkResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,9 +110,24 @@
 		CE6A4CF8265201880082966F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CE6A4D0D26524E820082966F /* Extensions */,
 				CE6A4CF9265202080082966F /* DeviceInformation.swift */,
+				CE6A4D05265240AB0082966F /* BenchmarkManager.swift */,
+				CE6A4D10265259070082966F /* BenchmarkResult.swift */,
+				CE6A4D09265245A40082966F /* BenchmarkDataset.swift */,
+				CE6A4D0B2652495C0082966F /* ActivityClassifierUtiles.swift */,
+				CE6A4D0E26524ECF0082966F /* AccelerometerManager.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		CE6A4D0D26524E820082966F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CE6A4D0126522F910082966F /* MLMultiArray+Extension.swift */,
+				CE6A4D03265230040082966F /* MLModel+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,8 +209,15 @@
 				CE6A4CFA265202080082966F /* DeviceInformation.swift in Sources */,
 				CE6A4CFE26520B0F0082966F /* RunView.swift in Sources */,
 				CE6A4CFC265203B80082966F /* UtilesView.swift in Sources */,
+				CE6A4D04265230040082966F /* MLModel+Extension.swift in Sources */,
+				CE6A4D06265240AB0082966F /* BenchmarkManager.swift in Sources */,
+				CE6A4D0A265245A40082966F /* BenchmarkDataset.swift in Sources */,
+				CE6A4D0F26524ECF0082966F /* AccelerometerManager.swift in Sources */,
 				CE6A4CF42652001F0082966F /* TopView.swift in Sources */,
+				CE6A4D0226522F910082966F /* MLMultiArray+Extension.swift in Sources */,
 				CE6A4CE42651FF8C0082966F /* Activitybench2App.swift in Sources */,
+				CE6A4D11265259070082966F /* BenchmarkResult.swift in Sources */,
+				CE6A4D0C2652495C0082966F /* ActivityClassifierUtiles.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

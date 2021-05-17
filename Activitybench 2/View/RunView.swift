@@ -21,7 +21,7 @@ struct RunView: View {
                 .frame(width: 70, height: 70, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .foregroundColor(.secondary)
             
-            Text("Ruuning Benchmarks...")
+            Text("Running Benchmarks...")
             
             HStack {
                 Spacer()
