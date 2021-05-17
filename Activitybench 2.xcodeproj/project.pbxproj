@@ -29,6 +29,7 @@
 		CE6A4CF9265202080082966F /* DeviceInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInformation.swift; sourceTree = "<group>"; };
 		CE6A4CFB265203B80082966F /* UtilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilesView.swift; sourceTree = "<group>"; };
 		CE6A4CFD26520B0F0082966F /* RunView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunView.swift; sourceTree = "<group>"; };
+		CE6A4CFF2652268B0082966F /* Activitybench 2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Activitybench 2.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +63,7 @@
 		CE6A4CE22651FF8C0082966F /* Activitybench 2 */ = {
 			isa = PBXGroup;
 			children = (
+				CE6A4CFF2652268B0082966F /* Activitybench 2.entitlements */,
 				CE6A4CF8265201880082966F /* Model */,
 				CE6A4CF22651FFE80082966F /* View */,
 				CE6A4CE32651FF8C0082966F /* Activitybench2App.swift */,
@@ -307,6 +309,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Activitybench 2/Activitybench 2.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Activitybench 2/Preview Content\"";
 				DEVELOPMENT_TEAM = WHBF4Z49B6;
@@ -319,6 +322,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.shakshi.Activitybench-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -329,6 +334,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Activitybench 2/Activitybench 2.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Activitybench 2/Preview Content\"";
 				DEVELOPMENT_TEAM = WHBF4Z49B6;
@@ -341,6 +347,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.shakshi.Activitybench-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
