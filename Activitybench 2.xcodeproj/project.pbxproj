@@ -33,6 +33,8 @@
 		CEA24D972653546E00C9368E /* EfficientNetB0.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CEA24D8D2653546E00C9368E /* EfficientNetB0.mlmodel */; };
 		CEA24D982653546E00C9368E /* VGG16Int8.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CEA24D8E2653546E00C9368E /* VGG16Int8.mlmodel */; };
 		CEA24D992653546E00C9368E /* ResNet18.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CEA24D8F2653546E00C9368E /* ResNet18.mlmodel */; };
+		CEA24D9E2653874F00C9368E /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA24D9D2653874F00C9368E /* ResultView.swift */; };
+		CEA24DA02653942E00C9368E /* ModelInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA24D9F2653942E00C9368E /* ModelInformation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,8 @@
 		CEA24D8D2653546E00C9368E /* EfficientNetB0.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = EfficientNetB0.mlmodel; sourceTree = "<group>"; };
 		CEA24D8E2653546E00C9368E /* VGG16Int8.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = VGG16Int8.mlmodel; sourceTree = "<group>"; };
 		CEA24D8F2653546E00C9368E /* ResNet18.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ResNet18.mlmodel; sourceTree = "<group>"; };
+		CEA24D9D2653874F00C9368E /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		CEA24D9F2653942E00C9368E /* ModelInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelInformation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +127,7 @@
 				CE6A4CF32652001F0082966F /* TopView.swift */,
 				CE6A4CFB265203B80082966F /* UtilesView.swift */,
 				CE6A4CFD26520B0F0082966F /* RunView.swift */,
+				CEA24D9D2653874F00C9368E /* ResultView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -138,6 +143,7 @@
 				CE6A4D09265245A40082966F /* BenchmarkDataset.swift */,
 				CE6A4D0B2652495C0082966F /* ActivityClassifierUtiles.swift */,
 				CE6A4D0E26524ECF0082966F /* AccelerometerManager.swift */,
+				CEA24D9F2653942E00C9368E /* ModelInformation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -264,11 +270,13 @@
 				CE6A4CFA265202080082966F /* DeviceInformation.swift in Sources */,
 				CEA24D942653546E00C9368E /* PyramidNet18.mlmodel in Sources */,
 				CE6A4CFE26520B0F0082966F /* RunView.swift in Sources */,
+				CEA24D9E2653874F00C9368E /* ResultView.swift in Sources */,
 				CEA24D962653546E00C9368E /* VGG16.mlmodel in Sources */,
 				CE6A4CFC265203B80082966F /* UtilesView.swift in Sources */,
 				CE6A4D04265230040082966F /* MLModel+Extension.swift in Sources */,
 				CEA24D972653546E00C9368E /* EfficientNetB0.mlmodel in Sources */,
 				CE6A4D06265240AB0082966F /* BenchmarkManager.swift in Sources */,
+				CEA24DA02653942E00C9368E /* ModelInformation.swift in Sources */,
 				CE6A4D0A265245A40082966F /* BenchmarkDataset.swift in Sources */,
 				CEA24D952653546E00C9368E /* EfficientNetB0Int8.mlmodel in Sources */,
 				CE6A4D0F26524ECF0082966F /* AccelerometerManager.swift in Sources */,

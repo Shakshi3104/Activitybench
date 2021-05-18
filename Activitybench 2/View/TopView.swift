@@ -10,32 +10,48 @@ import SwiftUI
 struct TopView: View {
     let deviceInfo = DeviceInfo.shared
     @State var isPresented = false
+    @State var isFinished = false
+    
+    @State private var quantizationSelection = 0
+    @State private var computeUnitsSelection = 0
+    @State private var modelArchitectureSelection = 0
+    
+    private let modelArchitecture = ModelArchitecture.allCases.map { $0.rawValue }
+    private let quantization = Quantization.allCases.map { $0.rawValue }
+    private let computeUnits = ComputeUnits.allCases.map { $0.rawValue }
     
     var body: some View {
         NavigationView {
             List {
-                Section(header: Text("Device Info")) {
-                    ListRow(key: "Device", value: deviceInfo.device)
-                    ListRow(key: "OS", value: deviceInfo.os)
-                    ListRow(key: "Processor", value: deviceInfo.processor)
-                    ListRow(key: "CPU", value: deviceInfo.cpu)
-                    ListRow(key: "GPU", value: deviceInfo.gpu)
-                    ListRow(key: "Neural Engine", value: deviceInfo.neuralEngine)
-                    ListRow(key: "RAM", value: deviceInfo.ramString)
-                }
+                DeviceInfoListSection()
                 
                 Section(header: Text("Select Benchmark")) {
-                    ListRow(key: "Model", value: "VGG16")
-                    ListRow(key: "Quantization", value: "Float 32")
-                    ListRow(key: "Compute Unit", value: "All")
-                    Button(action: {
-                        isPresented = true
-                    }, label: {
-                        Text("Run Inference Benchmark")
-                    })
-                    .sheet(isPresented: $isPresented, content: {
-                        RunView(isPresented: $isPresented)
-                    })
+                    OptionSelectionView(key: "Model", selection: $modelArchitectureSelection, items: modelArchitecture)
+                    OptionSelectionView(key: "Quantization", selection: $quantizationSelection, items: quantization)
+                    OptionSelectionView(key: "Compute Units", selection: $computeUnitsSelection, items: computeUnits)
+                    
+                    ZStack {
+                        NavigationLink(
+                            destination:
+                                ResultView(modelInfo: ModelInfo(modelArchitecture: ModelArchitecture(rawValue: modelArchitecture[modelArchitectureSelection])!,
+                                                                         quantization: Quantization(rawValue: quantization[quantizationSelection])!,
+                                                                         computeUnits: ComputeUnits(rawValue: computeUnits[computeUnitsSelection])!,
+                                                                         modelSize: "??")),
+                            isActive: $isFinished,
+                            label: {
+                                EmptyView()
+                            })
+                        
+                        Button(action: {
+                            isPresented = true
+                            isFinished = false
+                        }, label: {
+                            Text("Run Inference Benchmark")
+                        })
+                        .sheet(isPresented: $isPresented, content: {
+                            RunView(isPresented: $isPresented, isFinished: $isFinished)
+                        })
+                    }
                 }
             }.listStyle(InsetGroupedListStyle())
             .navigationTitle("Activitybench")

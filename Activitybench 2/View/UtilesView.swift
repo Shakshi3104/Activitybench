@@ -20,3 +20,42 @@ struct ListRow: View {
         }
     }
 }
+
+struct OptionSelectionView: View {
+    var key: String
+    @Binding var selection: Int
+    var items: [String]
+    
+    var body: some View {
+        HStack {
+            Text(key)
+            Spacer()
+            Menu {
+                Picker(selection: $selection, label: Text(key), content: {
+                    ForEach(0..<items.count) { index in
+                        Text(items[index])
+                    }
+                })
+            } label: {
+                Text(items[selection])
+            }
+        }
+    }
+    
+}
+
+struct DeviceInfoListSection: View {
+    let deviceInfo = DeviceInfo.shared
+    
+    var body: some View {
+        Section(header: Text("Device Info")) {
+            ListRow(key: "Device", value: deviceInfo.device)
+            ListRow(key: "OS", value: deviceInfo.os)
+            ListRow(key: "Processor", value: deviceInfo.processor)
+            ListRow(key: "CPU", value: deviceInfo.cpu)
+            ListRow(key: "GPU", value: deviceInfo.gpu)
+            ListRow(key: "Neural Engine", value: deviceInfo.neuralEngine)
+            ListRow(key: "RAM", value: deviceInfo.ramString)
+        }
+    }
+}

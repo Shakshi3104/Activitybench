@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RunView: View {
     @Binding var isPresented: Bool
+    @Binding var isFinished: Bool
     
     @State private var currentProgress = 0.0
     private let total = 100.0
@@ -37,6 +38,7 @@ struct RunView: View {
                         }
                         else {
                             isPresented = false
+                            isFinished = true
                         }
                     })
                 Spacer()
@@ -53,6 +55,6 @@ struct RunView: View {
 
 struct RunView_Previews: PreviewProvider {
     static var previews: some View {
-        RunView(isPresented: .constant(true))
+        RunView(isPresented: .constant(true), isFinished: .constant(false))
     }
 }
