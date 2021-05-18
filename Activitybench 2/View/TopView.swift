@@ -9,13 +9,19 @@ import SwiftUI
 
 struct TopView: View {
     let deviceInfo = DeviceInfo.shared
+    
     @State var isPresented = false
     @State var isFinished = false
     
+    /// - Tag: Option selections
     @State private var quantizationSelection = 0
     @State private var computeUnitsSelection = 0
     @State private var modelArchitectureSelection = 0
     
+    /// - Tag: Model options
+    // - Model architecture
+    // - Weight quantization
+    // - Compute units
     private let modelArchitecture = ModelArchitecture.allCases.map { $0.rawValue }
     private let quantization = Quantization.allCases.map { $0.rawValue }
     private let computeUnits = ComputeUnits.allCases.map { $0.rawValue }
