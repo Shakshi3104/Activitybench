@@ -90,7 +90,7 @@ class AccelerometerManager {
     }
     
     /// Stop measuring sensor data
-    func stopUpdate() {
+    func stopUpdate() -> (predictionTime: Double, batteryConsumption: Float) {
         self.timer.invalidate()
         
         if motionManager.isAccelerometerActive {
@@ -99,7 +99,12 @@ class AccelerometerManager {
         
         predictionData = [Double]()
         
+        let predictionTime = predictionTimes.count != 0 ? predictionTimes.reduce(0, +) / Double(predictionTimes.count) : 0
+        let batteryConsumption = batteryLevels.count != 0 ? (batteryLevels.first ?? 0) - (batteryLevels.last ?? 0) : 0
+        
         predictionTimes = [Double]()
         batteryLevels = [Float]()
+        
+        return (predictionTime, batteryConsumption)
     }
 }
