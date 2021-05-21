@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 import CoreML
+import UIKit
 
 class BenchmarkManager: ObservableObject {
     private let dataset = BenchmarkDataset()
@@ -24,6 +25,8 @@ class BenchmarkManager: ObservableObject {
     
     
     func run(_ modelConfig: ModelConfiguration) {
+        // 画面の明るさを最も暗くする
+        UIScreen.main.brightness = 0.0
         // Compute Unitsの選択
         let config = MLModelConfiguration()
         switch modelConfig.computeUnits {
@@ -56,13 +59,19 @@ class BenchmarkManager: ObservableObject {
         
         // 推論時間・バッテリー消費量を保存する
         self.results.inferenceTime = result.predictionTime
-        self.results.batteryConsumption = result.batteryConsumption
+        self.results.batteryConsumption = result.batteryConsumption * 100
+        
+        // 画面の明るさを最も明るくする
+        UIScreen.main.brightness = 1.0
         
         print("Finished running benchmarks!!")
     }
     
     func cancel() {
         let _ = accelerometerManager.stopUpdate()
+        // 画面の明るさを最も明るくする
+        UIScreen.main.brightness = 0.5
+        
         print("Canceled runnning benchmarks")
     }
     
