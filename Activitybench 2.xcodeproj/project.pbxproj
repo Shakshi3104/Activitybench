@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE1C120B2657552600D07EE1 /* activitybench_xtest.csv in Resources */ = {isa = PBXBuildFile; fileRef = CE1C12092657552600D07EE1 /* activitybench_xtest.csv */; };
+		CE1C120C2657552600D07EE1 /* activitybench_ytest.csv in Resources */ = {isa = PBXBuildFile; fileRef = CE1C120A2657552600D07EE1 /* activitybench_ytest.csv */; };
 		CE6A4CE42651FF8C0082966F /* Activitybench2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A4CE32651FF8C0082966F /* Activitybench2App.swift */; };
 		CE6A4CE62651FF8C0082966F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A4CE52651FF8C0082966F /* ContentView.swift */; };
 		CE6A4CE82651FF8D0082966F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE6A4CE72651FF8D0082966F /* Assets.xcassets */; };
@@ -38,6 +40,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE1C12092657552600D07EE1 /* activitybench_xtest.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = activitybench_xtest.csv; sourceTree = "<group>"; };
+		CE1C120A2657552600D07EE1 /* activitybench_ytest.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = activitybench_ytest.csv; sourceTree = "<group>"; };
 		CE6A4CE02651FF8C0082966F /* Activitybench 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Activitybench 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6A4CE32651FF8C0082966F /* Activitybench2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activitybench2App.swift; sourceTree = "<group>"; };
 		CE6A4CE52651FF8C0082966F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -82,6 +86,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE1C1208265754E900D07EE1 /* Dataset */ = {
+			isa = PBXGroup;
+			children = (
+				CE1C12092657552600D07EE1 /* activitybench_xtest.csv */,
+				CE1C120A2657552600D07EE1 /* activitybench_ytest.csv */,
+			);
+			path = Dataset;
+			sourceTree = "<group>";
+		};
 		CE6A4CD72651FF8C0082966F = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +148,7 @@
 		CE6A4CF8265201880082966F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CE1C1208265754E900D07EE1 /* Dataset */,
 				CEA24D852653546E00C9368E /* Classifier */,
 				CE6A4D0D26524E820082966F /* Extensions */,
 				CE6A4CF9265202080082966F /* DeviceInformation.swift */,
@@ -254,6 +268,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE6A4CEB2651FF8D0082966F /* Preview Assets.xcassets in Resources */,
+				CE1C120B2657552600D07EE1 /* activitybench_xtest.csv in Resources */,
+				CE1C120C2657552600D07EE1 /* activitybench_ytest.csv in Resources */,
 				CE6A4CE82651FF8D0082966F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

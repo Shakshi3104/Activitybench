@@ -20,12 +20,14 @@ class BenchmarkManager: ObservableObject {
     
     /// - Tag: Model size
     @Published var modelSize = ""
+    /// - Tag: Model information
+    @Published var modelInfo: ModelInfo!
     
-    func run(_ modelArchitecture: ModelArchitecture, quantization: Quantization, computeUnits: ComputeUnits) {
-        
+    
+    func run(_ modelConfig: ModelConfiguration) {
         // Compute Unitsの選択
         let config = MLModelConfiguration()
-        switch computeUnits {
+        switch modelConfig.computeUnits {
         case .cpuOnly:
             config.computeUnits = .cpuOnly
         case .cpuAndGPU:
@@ -35,9 +37,11 @@ class BenchmarkManager: ObservableObject {
         }
         
         // モデルを作る
-        let model: UnifiedMLModel = createMLModel(modelArchitecture, quantization: quantization, configuration: config)
-        
-        self.modelSize = model.size
+        let model: UnifiedMLModel = createMLModel(modelConfig.architecture,
+                                                  quantization: modelConfig.quantization,
+                                                  configuration: config)
+        // モデル情報を保持する
+        self.modelInfo = ModelInfo(configuration: modelConfig, modelSize: model.size)
         
         // 推定精度の計算
         let accuracy = calcAccuracy(model: model)

@@ -9,8 +9,9 @@ import SwiftUI
 
 struct ResultView: View {
     let deviceInfo = DeviceInfo.shared
-    var modelInfo: ModelInfo
     
+    @EnvironmentObject var benchmarkManager: BenchmarkManager
+        
     var body: some View {
         List {
             Section(header: Text("Activitybench").font(.headline)) {
@@ -18,11 +19,11 @@ struct ResultView: View {
                     Spacer()
                     VStack {
                         Spacer()
-                        ScoreView(name: "Accuracy", score: "85.4%")
+                        ScoreView(name: "Accuracy", score: "\(String(format: "%.2f", benchmarkManager.results.accuracy))%")
                         Spacer()
-                        ScoreView(name: "Inference time", score: "0.005s")
+                        ScoreView(name: "Inference time", score: "\(String(format: "%.5f", benchmarkManager.results.inferenceTime))s")
                         Spacer()
-                        ScoreView(name: "Battery consumption", score: "5%")
+                        ScoreView(name: "Battery consumption", score: "\(benchmarkManager.results.batteryConsumption)%")
                         Spacer()
                     }
                     Spacer()
@@ -30,10 +31,10 @@ struct ResultView: View {
             }
             
             Section(header: Text("Model Info")) {
-                ListRow(key: "Model", value: modelInfo.modelArchitecture.rawValue)
-                ListRow(key: "Weights", value: modelInfo.quantization.rawValue)
-                ListRow(key: "Size", value: modelInfo.modelSize)
-                ListRow(key: "Compute Units", value: modelInfo.computeUnits.rawValue)
+                ListRow(key: "Model", value: benchmarkManager.modelInfo.configuration.architecture.rawValue)
+                ListRow(key: "Weights", value: benchmarkManager.modelInfo.configuration.quantization.rawValue)
+                ListRow(key: "Size", value: benchmarkManager.modelInfo.modelSize)
+                ListRow(key: "Compute Units", value: benchmarkManager.modelInfo.configuration.computeUnits.rawValue)
             }
             
             DeviceInfoListSection()
@@ -55,8 +56,9 @@ struct ScoreView: View {
     }
 }
 
-struct ResultView_Previews: PreviewProvider {
-    static var previews: some View {
-        ResultView(modelInfo: ModelInfo(modelArchitecture: .vgg16, quantization: .float32, computeUnits: .all, modelSize: "18.1MB"))
-    }
-}
+//struct ResultView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ResultView()
+//            .environmentObject(BenchmarkManager())
+//    }
+//}

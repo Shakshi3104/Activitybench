@@ -12,7 +12,9 @@ struct RunView: View {
     @Binding var isFinished: Bool
     
     @State private var currentProgress = 0.0
-    private let total = 100.0
+    private let total = 60.0
+    
+    @EnvironmentObject var benchmarkManager: BenchmarkManager
     
     var body: some View {
         VStack {
@@ -26,12 +28,12 @@ struct RunView: View {
             
             HStack {
                 Spacer()
-                let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
+                let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
                 
                 ProgressView("", value: currentProgress, total: total)
                     .onReceive(timer, perform: { _ in
                         if currentProgress < total {
-                            currentProgress += 2.0
+                            currentProgress += 1.0
                             if currentProgress > total {
                                 currentProgress = total
                             }
@@ -39,6 +41,8 @@ struct RunView: View {
                         else {
                             isPresented = false
                             isFinished = true
+                            
+                            benchmarkManager.finish()
                         }
                     })
                 Spacer()
@@ -46,6 +50,8 @@ struct RunView: View {
             
             Button(action: {
                 isPresented = false
+                
+                benchmarkManager.cancel()
             }, label: {
                 Text("Cancel")
             })
@@ -55,6 +61,8 @@ struct RunView: View {
 
 struct RunView_Previews: PreviewProvider {
     static var previews: some View {
-        RunView(isPresented: .constant(true), isFinished: .constant(false))
+        RunView(isPresented: .constant(true),
+                isFinished: .constant(false))
+            .environmentObject(BenchmarkManager())
     }
 }

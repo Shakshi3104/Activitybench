@@ -26,6 +26,9 @@ struct TopView: View {
     private let quantization = Quantization.allCases.map { $0.rawValue }
     private let computeUnits = ComputeUnits.allCases.map { $0.rawValue }
     
+    /// - Tag: Benchmark manager
+    @EnvironmentObject var benchmarkManager: BenchmarkManager
+    
     var body: some View {
         NavigationView {
             List {
@@ -39,10 +42,7 @@ struct TopView: View {
                     ZStack {
                         NavigationLink(
                             destination:
-                                ResultView(modelInfo: ModelInfo(modelArchitecture: ModelArchitecture(rawValue: modelArchitecture[modelArchitectureSelection])!,
-                                                                         quantization: Quantization(rawValue: quantization[quantizationSelection])!,
-                                                                         computeUnits: ComputeUnits(rawValue: computeUnits[computeUnitsSelection])!,
-                                                                         modelSize: "??")),
+                                ResultView(),
                             isActive: $isFinished,
                             label: {
                                 EmptyView()
@@ -51,10 +51,17 @@ struct TopView: View {
                         Button(action: {
                             isPresented = true
                             isFinished = false
+                            
+                            let modelConfig = ModelConfiguration(architecture: ModelArchitecture(rawValue: modelArchitecture[modelArchitectureSelection])!,
+                                                                 quantization: Quantization(rawValue: quantization[quantizationSelection])!, computeUnits:
+                                                                    ComputeUnits(rawValue: computeUnits[computeUnitsSelection])!)
+                            // ベンチマークを実行する
+                            benchmarkManager.run(modelConfig)
                         }, label: {
                             Text("Run Inference Benchmark")
                         })
                         .sheet(isPresented: $isPresented, content: {
+
                             RunView(isPresented: $isPresented, isFinished: $isFinished)
                         })
                     }
@@ -67,6 +74,6 @@ struct TopView: View {
 
 struct TopView_Previews: PreviewProvider {
     static var previews: some View {
-        TopView()
+        TopView().environmentObject(BenchmarkManager())
     }
 }

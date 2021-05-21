@@ -67,7 +67,7 @@ class AccelerometerManager {
             let batteryLevel = UIDevice.current.batteryLevel
             batteryLevels.append(batteryLevel)
             
-            print("\(output.classLabel) (\(output.Identity[output.classLabel] ?? 0)")
+            print("\(output.classLabel) (\(output.Identity[output.classLabel] ?? 0))")
             
             // init predictionData
             predictionData = [Double]()
