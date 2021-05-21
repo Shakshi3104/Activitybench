@@ -57,10 +57,13 @@ class BenchmarkManager: ObservableObject {
         // 推論時間・バッテリー消費量を保存する
         self.results.inferenceTime = result.predictionTime
         self.results.batteryConsumption = result.batteryConsumption
+        
+        print("Finished running benchmarks!!")
     }
     
     func cancel() {
         let _ = accelerometerManager.stopUpdate()
+        print("Canceled runnning benchmarks")
     }
     
     private func calcAccuracy(model: UnifiedMLModel) -> Double {

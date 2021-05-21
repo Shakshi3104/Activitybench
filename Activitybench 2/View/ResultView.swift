@@ -23,7 +23,7 @@ struct ResultView: View {
                         Spacer()
                         ScoreView(name: "Inference time", score: "\(String(format: "%.5f", benchmarkManager.results.inferenceTime))s")
                         Spacer()
-                        ScoreView(name: "Battery consumption", score: "\(benchmarkManager.results.batteryConsumption)%")
+                        ScoreView(name: "Battery consumption", score: "\(Int(benchmarkManager.results.batteryConsumption))%")
                         Spacer()
                     }
                     Spacer()
