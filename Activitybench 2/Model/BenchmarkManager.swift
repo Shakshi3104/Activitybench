@@ -13,15 +13,14 @@ class BenchmarkManager: ObservableObject {
     private let dataset = BenchmarkDataset()
     private let accelerometerManager = AccelerometerManager()
     
-    @Published var currentProgress = 0.0
-    
     /// - Tag: Benchmark result
     @Published var results = BenchmarkResult()
     
-    /// - Tag: Model size
-    @Published var modelSize = ""
     /// - Tag: Model information
     @Published var modelInfo: ModelInfo!
+    
+    /// - Tag: Model
+    private var model: UnifiedMLModel!
     
     
     func run(_ modelConfig: ModelConfiguration) {
@@ -37,16 +36,11 @@ class BenchmarkManager: ObservableObject {
         }
         
         // モデルを作る
-        let model: UnifiedMLModel = createMLModel(modelConfig.architecture,
-                                                  quantization: modelConfig.quantization,
-                                                  configuration: config)
+        self.model = createMLModel(modelConfig.architecture,
+                                   quantization: modelConfig.quantization,
+                                   configuration: config)
         // モデル情報を保持する
         self.modelInfo = ModelInfo(configuration: modelConfig, modelSize: model.size)
-        
-        // 推定精度の計算
-        let accuracy = calcAccuracy(model: model)
-        currentProgress += 1.0
-        self.results.accuracy = accuracy
         
         // 推論時間とバッテリー消費量の計測開始
         accelerometerManager.startUpdate(100.0, model: model)
@@ -55,6 +49,10 @@ class BenchmarkManager: ObservableObject {
     func finish() {
         // 加速度センサの値の取得を止める
         let result = accelerometerManager.stopUpdate()
+        
+        // 推定精度の計算
+        let accuracy = calcAccuracy(model: model)
+        self.results.accuracy = accuracy
         
         // 推論時間・バッテリー消費量を保存する
         self.results.inferenceTime = result.predictionTime
@@ -66,9 +64,14 @@ class BenchmarkManager: ObservableObject {
     }
     
     private func calcAccuracy(model: UnifiedMLModel) -> Double {
+        let startTime = Date()
+        // Prediction batch
         guard let outputs = try? model.predictions(inputs: dataset.data) else {
             fatalError()
         }
+        let finishTime = Date()
+        let batchPredictionTime = finishTime.timeIntervalSince(startTime)
+        print("Batch prediction time: \(batchPredictionTime)")
         
         // String -> ActivityLabel -> Int
         let classCodes: [Int] = outputs.map { ActivityLabel(name: $0.classLabel)!.code }
