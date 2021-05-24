@@ -9,6 +9,7 @@ import Foundation
 import Combine
 import CoreML
 import UIKit
+import FirebaseFirestore
 
 class BenchmarkManager: ObservableObject {
     private let dataset = BenchmarkDataset()
@@ -65,6 +66,10 @@ class BenchmarkManager: ObservableObject {
         UIScreen.main.brightness = 1.0
         
         print("Finished running benchmarks!!")
+        
+        // Firebaseにデータを送る
+        let data = getPushingData()
+        pushFirestore(data: data)
     }
     
     func cancel() {
@@ -171,6 +176,51 @@ class BenchmarkManager: ObservableObject {
                     fatalError("Couldn't create EfficientNetB0Int8")
                 }
             }
+        }
+    }
+    
+    private func getPushingData() -> [String: Any] {
+        var data = [String: Any]()
+        
+        // Model performance
+        data["accuracy"] = self.results.accuracy
+        data["Prediction time"] = self.results.inferenceTime
+        data["Battery consumption"] = self.results.batteryConsumption
+        
+        // Model information
+        data["Model"] = self.modelInfo.configuration.architecture.rawValue
+        data["Weights"] = self.modelInfo.configuration.quantization.rawValue
+        data["Size"] = self.modelInfo.modelSize
+        data["Compute units"] = self.modelInfo.configuration.computeUnits.rawValue
+        
+        // Device information
+        let deviceInfo = DeviceInfo.shared
+        data["Device"] = deviceInfo.device
+        data["OS"] = deviceInfo.os
+        data["Processor"] = deviceInfo.processor
+        data["CPU"] = deviceInfo.cpu
+        data["GPU"] = deviceInfo.gpu
+        data["Neural Engine"] = deviceInfo.neuralEngine
+        data["RAM"] = deviceInfo.ramString
+        
+        data["RAM [B]"] = deviceInfo.ram
+        data["Processor count"] = deviceInfo.cpuCount
+        data["Model Identifier"] = deviceInfo.modelIdentifier
+        
+        return data
+    }
+    
+    private func pushFirestore(data: [String: Any]) {
+        var data_ = data
+        data_["date"] = Date()
+        
+        let db = Firestore.firestore()
+        db.collection("activitybench").addDocument(data: data_) { error in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            print("Push Firestore")
         }
     }
 }
