@@ -54,7 +54,6 @@
 		CE6A4CF9265202080082966F /* DeviceInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInformation.swift; sourceTree = "<group>"; };
 		CE6A4CFB265203B80082966F /* UtilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilesView.swift; sourceTree = "<group>"; };
 		CE6A4CFD26520B0F0082966F /* RunView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunView.swift; sourceTree = "<group>"; };
-		CE6A4CFF2652268B0082966F /* Activitybench 2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Activitybench 2.entitlements"; sourceTree = "<group>"; };
 		CE6A4D0126522F910082966F /* MLMultiArray+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MLMultiArray+Extension.swift"; sourceTree = "<group>"; };
 		CE6A4D03265230040082966F /* MLModel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MLModel+Extension.swift"; sourceTree = "<group>"; };
 		CE6A4D05265240AB0082966F /* BenchmarkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenchmarkManager.swift; sourceTree = "<group>"; };
@@ -74,6 +73,8 @@
 		CEA24D8F2653546E00C9368E /* ResNet18.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ResNet18.mlmodel; sourceTree = "<group>"; };
 		CEA24D9D2653874F00C9368E /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		CEA24D9F2653942E00C9368E /* ModelInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelInformation.swift; sourceTree = "<group>"; };
+		CEC4C1F9265DD2110080F1E3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		CEC4C1FB265DD8A20080F1E3 /* Activitybench 2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Activitybench 2.entitlements"; sourceTree = "<group>"; };
 		CEF51B83265B91A6000D856D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +103,8 @@
 		CE6A4CD72651FF8C0082966F = {
 			isa = PBXGroup;
 			children = (
+				CEC4C1FA265DD3960080F1E3 /* materials */,
+				CEC4C1F9265DD2110080F1E3 /* README.md */,
 				CE6A4CE22651FF8C0082966F /* Activitybench 2 */,
 				CE6A4CE12651FF8C0082966F /* Products */,
 			);
@@ -119,7 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				CEF51B83265B91A6000D856D /* GoogleService-Info.plist */,
-				CE6A4CFF2652268B0082966F /* Activitybench 2.entitlements */,
+				CEC4C1FB265DD8A20080F1E3 /* Activitybench 2.entitlements */,
 				CE6A4CF8265201880082966F /* Model */,
 				CE6A4CF22651FFE80082966F /* View */,
 				CE6A4CE32651FF8C0082966F /* Activitybench2App.swift */,
@@ -207,6 +210,13 @@
 				CEA24D8E2653546E00C9368E /* VGG16Int8.mlmodel */,
 			);
 			name = Int8;
+			sourceTree = "<group>";
+		};
+		CEC4C1FA265DD3960080F1E3 /* materials */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = materials;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -455,7 +465,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.shakshi.Activitybench-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -481,7 +491,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.shakshi.Activitybench-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
