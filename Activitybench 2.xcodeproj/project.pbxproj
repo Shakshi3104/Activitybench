@@ -75,6 +75,8 @@
 		CEA24D9F2653942E00C9368E /* ModelInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelInformation.swift; sourceTree = "<group>"; };
 		CEC4C1F9265DD2110080F1E3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CEC4C1FB265DD8A20080F1E3 /* Activitybench 2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Activitybench 2.entitlements"; sourceTree = "<group>"; };
+		CEC4C1FC265DD9760080F1E3 /* activitybench_ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = activitybench_ipad.png; sourceTree = "<group>"; };
+		CEC4C1FD265DEE980080F1E3 /* activitybench_iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = activitybench_iphone.png; sourceTree = "<group>"; };
 		CEF51B83265B91A6000D856D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -215,6 +217,8 @@
 		CEC4C1FA265DD3960080F1E3 /* materials */ = {
 			isa = PBXGroup;
 			children = (
+				CEC4C1FD265DEE980080F1E3 /* activitybench_iphone.png */,
+				CEC4C1FC265DD9760080F1E3 /* activitybench_ipad.png */,
 			);
 			path = materials;
 			sourceTree = "<group>";
