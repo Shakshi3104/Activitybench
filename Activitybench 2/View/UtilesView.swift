@@ -28,17 +28,11 @@ struct OptionSelectionView: View {
     
     var body: some View {
         HStack {
-            Text(key)
-            Spacer()
-            Menu {
                 Picker(selection: $selection, label: Text(key), content: {
                     ForEach(0..<items.count) { index in
                         Text(items[index])
                     }
                 })
-            } label: {
-                Text(items[selection])
-            }
         }
     }
     

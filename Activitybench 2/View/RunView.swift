@@ -12,7 +12,7 @@ struct RunView: View {
     @Binding var isFinished: Bool
     
     @State private var currentProgress = 0.0
-    private let total = 60.0 * 60.0
+    private let total = 60.0 //* 60.0
     
     @EnvironmentObject var benchmarkManager: BenchmarkManager
     
