@@ -41,8 +41,8 @@ class BenchmarkManager: ObservableObject {
     
     func cancel() {
         let _ = accelerometerManager.stopUpdate()
-        // 画面の明るさを最も明るくする
-        UIScreen.main.brightness = 0.5
+        // 画面の明るさを80%にする
+        UIScreen.main.brightness = 0.8
         
         print("Canceled runnning benchmarks")
     }
@@ -78,6 +78,8 @@ private extension BenchmarkManager {
         
         // 画面の明るさを最も明るくする
         UIScreen.main.brightness = 1.0
+        sleep(1)
+        UIScreen.main.brightness = 0.5
         
         // Firebaseにデータを送る
         let data = getPushingData()
