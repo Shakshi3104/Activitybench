@@ -25,6 +25,9 @@ class BenchmarkManager: ObservableObject {
     /// - Tag: Model
     private var model: UnifiedMLModel!
     
+    /// - Tag: Battery monitoring
+    @Published var batteryStateManager = BatteryStateManager()
+    
     
     func run(_ modelConfig: ModelConfiguration) {
         self.runLatency(modelConfig)
@@ -98,6 +101,9 @@ private extension BenchmarkManager {
         // モデルの設定
         self.setModel(modelConfig)
         
+        // バッテリーの監視を開始
+        self.batteryStateManager.startBatteryMonitoring()
+        
         // 推論時間とバッテリー消費量の計測開始
         accelerometerManager.startUpdate(100.0, model: model)
     }
@@ -106,6 +112,9 @@ private extension BenchmarkManager {
     func finishBattery() {
         // 加速度センサの値の取得を止める
         let result = accelerometerManager.stopUpdate()
+        
+        // バッテリーの監視を止める
+        self.batteryStateManager.stopBatteryMonitoring()
         
         // 推論時間・バッテリー消費量を保存する
         self.results.inferenceTime = result.predictionTime
