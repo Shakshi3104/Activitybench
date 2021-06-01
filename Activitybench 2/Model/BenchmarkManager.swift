@@ -27,20 +27,38 @@ class BenchmarkManager: ObservableObject {
     
     /// - Tag: Battery monitoring
     @Published var batteryStateManager = BatteryStateManager()
+    private var startTime: Date!
     
     
-    func run(_ modelConfig: ModelConfiguration) {
-        self.runLatency(modelConfig)
+    func run(_ modelConfig: ModelConfiguration, benchmarkType: BenchmarkType, isBrightnessMax: Bool? = nil) {
+        switch benchmarkType {
+        case .latency:
+            self.runLatency(modelConfig)
+        case .battery:
+            if let isBrightnessMaxUnwrapped = isBrightnessMax {
+                self.runBattery(modelConfig, isBrightnessMax: isBrightnessMaxUnwrapped)
+            } else {
+                // nilのときは画面を暗くして実行する
+                self.runBattery(modelConfig, isBrightnessMax: false)
+            }
+        }
     }
     
-    func finish() {
-        self.finishLatency()
+    func finish(benckmarkType: BenchmarkType) {
+        switch benckmarkType {
+        case .latency:
+            self.finishLatency()
+        case .battery:
+            self.finishBattery()
+        }
         
         print("Finished running benchmarks!!")
     }
     
     func cancel() {
         let _ = accelerometerManager.stopUpdate()
+        batteryStateManager.stopBatteryMonitoring()
+        
         // 画面の明るさを80%にする
         UIScreen.main.brightness = 0.8
         
@@ -83,12 +101,13 @@ private extension BenchmarkManager {
         
         // Firebaseにデータを送る
         let data = getPushingData()
-        pushFirestore(data: data)
+        pushFirestore(data: data, collectionName: "latency")
     }
 }
 
 // MARK:- BenchmarkManager battery
 private extension BenchmarkManager {
+    
     /// Benchmarking battery
     func runBattery(_ modelConfig: ModelConfiguration, isBrightnessMax: Bool) {
         if isBrightnessMax {
@@ -106,6 +125,7 @@ private extension BenchmarkManager {
         // バッテリーの監視を開始
         self.batteryStateManager.startBatteryMonitoring()
         
+        self.startTime = Date()
         // 推論時間とバッテリー消費量の計測開始
         accelerometerManager.startUpdate(100.0, model: model)
     }
@@ -114,6 +134,9 @@ private extension BenchmarkManager {
     func finishBattery() {
         // 加速度センサの値の取得を止める
         let result = accelerometerManager.stopUpdate()
+        let elapsed = Date().timeIntervalSince(self.startTime)
+        let formatter = DateComponentsFormatter()
+        print("elapsed time: \(formatter.string(from: elapsed) ?? "?")")
         
         // バッテリーの監視を止める
         self.batteryStateManager.stopBatteryMonitoring()
@@ -121,6 +144,7 @@ private extension BenchmarkManager {
         // 推論時間・バッテリー消費量を保存する
         self.results.inferenceTime = result.predictionTime
         self.results.batteryConsumption = result.batteryConsumption * 100
+        self.results.batteryConsumptionTime = elapsed
         
         // 画面の明るさを0.0->1.0->0.5にする
         UIScreen.main.brightness = 0.0
@@ -131,7 +155,7 @@ private extension BenchmarkManager {
         
         // Firebaseにデータを送る
         let data = getPushingData()
-        pushFirestore(data: data)
+//        pushFirestore(data: data, collectionName: "battery")
     }
 }
 
@@ -267,6 +291,8 @@ private extension BenchmarkManager {
         data["accuracy"] = self.results.accuracy
         data["Prediction time"] = self.results.inferenceTime
         data["Battery consumption"] = self.results.batteryConsumption
+        data["Battery consumption time"] = self.results.batteryConsumptionTime
+        data["Brightness max"] = self.results.isBrightnessMax
         
         // Model information
         data["Model"] = self.modelInfo.configuration.architecture.rawValue
@@ -292,17 +318,17 @@ private extension BenchmarkManager {
     }
     
     /// Push data to Firestore
-    func pushFirestore(data: [String: Any]) {
+    func pushFirestore(data: [String: Any], collectionName: String = "activitybench") {
         var data_ = data
         data_["date"] = Date()
         
         let db = Firestore.firestore()
-        db.collection("activitybench").addDocument(data: data_) { error in
+        db.collection(collectionName).addDocument(data: data_) { error in
             if let error = error {
                 print(error.localizedDescription)
                 return
             }
-            print("Push Firestore")
+            print("Push Firestore to \(collectionName)")
         }
     }
 }

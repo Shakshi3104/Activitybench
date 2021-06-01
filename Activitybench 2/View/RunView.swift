@@ -40,7 +40,7 @@ struct RunLatencyView: View {
                             }
                         }
                         else {
-                            benchmarkManager.finish()
+                            benchmarkManager.finish(benckmarkType: .latency)
                             
                             isPresented = false
                             isFinished = true
@@ -67,7 +67,7 @@ struct RunBatteryView: View {
     
     @State private var currentProgress = 0.0
     // バッテリーが100%から90%になるまで (10%減少するまで)
-    private let total = 1.0 - 0.9
+    private let total = 1.0 - 0.99
     
     @EnvironmentObject var benchmarkManager: BenchmarkManager
     
@@ -89,9 +89,14 @@ struct RunBatteryView: View {
                     .onReceive(timer, perform: { _ in
                         if currentProgress < total {
                             currentProgress = Double(1.0 - benchmarkManager.batteryStateManager.batteryLevel)
+//                            currentProgress += 0.01
+                            
+                            if currentProgress > total {
+                                currentProgress = total
+                            }
                         }
                         else {
-                            benchmarkManager.finish()
+                            benchmarkManager.finish(benckmarkType: .battery)
                             
                             isPresented = false
                             isFinished = true
