@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ResultView: View {
-    let deviceInfo = DeviceInfo.shared
+    private let deviceInfo = DeviceInfo.shared
     
     @EnvironmentObject var benchmarkManager: BenchmarkManager
         

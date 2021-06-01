@@ -39,6 +39,7 @@
 		CEA24DA02653942E00C9368E /* ModelInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA24D9F2653942E00C9368E /* ModelInformation.swift */; };
 		CEF51B84265B91A6000D856D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEF51B83265B91A6000D856D /* GoogleService-Info.plist */; };
 		CEF51B87265B923A000D856D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CEF51B86265B923A000D856D /* FirebaseFirestore */; };
+		CEFD731B2665BF1400EB10C5 /* BenchmarkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD731A2665BF1400EB10C5 /* BenchmarkUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		CEC4C1FC265DD9760080F1E3 /* activitybench_ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = activitybench_ipad.png; sourceTree = "<group>"; };
 		CEC4C1FD265DEE980080F1E3 /* activitybench_iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = activitybench_iphone.png; sourceTree = "<group>"; };
 		CEF51B83265B91A6000D856D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CEFD731A2665BF1400EB10C5 /* BenchmarkUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenchmarkUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 				CE6A4D0B2652495C0082966F /* ActivityClassifierUtiles.swift */,
 				CE6A4D0E26524ECF0082966F /* AccelerometerManager.swift */,
 				CEA24D9F2653942E00C9368E /* ModelInformation.swift */,
+				CEFD731A2665BF1400EB10C5 /* BenchmarkUtils.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				CEA24D922653546E00C9368E /* ResNet18Int8.mlmodel in Sources */,
 				CEA24D902653546E00C9368E /* PyramidNet18Int8.mlmodel in Sources */,
 				CE6A4D0226522F910082966F /* MLMultiArray+Extension.swift in Sources */,
+				CEFD731B2665BF1400EB10C5 /* BenchmarkUtils.swift in Sources */,
 				CEA24D912653546E00C9368E /* MobileNet.mlmodel in Sources */,
 				CE6A4CE42651FF8C0082966F /* Activitybench2App.swift in Sources */,
 				CE6A4D11265259070082966F /* BenchmarkResult.swift in Sources */,

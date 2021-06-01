@@ -11,6 +11,7 @@ import CoreML
 import UIKit
 import FirebaseFirestore
 
+// MARK:- BenchmarkManager
 class BenchmarkManager: ObservableObject {
     private let dataset = BenchmarkDataset()
     private let accelerometerManager = AccelerometerManager()
@@ -26,8 +27,107 @@ class BenchmarkManager: ObservableObject {
     
     
     func run(_ modelConfig: ModelConfiguration) {
+        self.runLatency(modelConfig)
+    }
+    
+    func finish() {
+        self.finishLatency()
+        
+        print("Finished running benchmarks!!")
+    }
+    
+    func cancel() {
+        let _ = accelerometerManager.stopUpdate()
+        // 画面の明るさを最も明るくする
+        UIScreen.main.brightness = 0.5
+        
+        print("Canceled runnning benchmarks")
+    }
+}
+
+// MARK:- BenchmarkManager latency
+private extension BenchmarkManager {
+    /// Benchmarking latency
+    func runLatency(_ modelConfig: ModelConfiguration) {
         // 画面の明るさを最も暗くする
         UIScreen.main.brightness = 0.0
+        
+        // モデルの設定
+        self.setModel(modelConfig)
+        
+        // 推論時間とバッテリー消費量の計測開始
+        accelerometerManager.startUpdate(100.0, model: model)
+    }
+    
+    /// Finish lanetcy benchmarking
+    func finishLatency() {
+        // 加速度センサの値の取得を止める
+        let result = accelerometerManager.stopUpdate()
+        
+        // 推定精度の計算
+        let accuracy = calcAccuracy(model: model)
+        self.results.accuracy = accuracy
+        
+        // 推論時間・バッテリー消費量を保存する
+        self.results.inferenceTime = result.predictionTime
+        self.results.batteryConsumption = result.batteryConsumption * 100
+        print("Window prediction time: \(result.predictionTime)")
+        
+        // 画面の明るさを最も明るくする
+        UIScreen.main.brightness = 1.0
+        
+        // Firebaseにデータを送る
+        let data = getPushingData()
+        pushFirestore(data: data)
+    }
+}
+
+// MARK:- BenchmarkManager battery
+private extension BenchmarkManager {
+    /// Benchmarking battery
+    func runBattery(_ modelConfig: ModelConfiguration, isBrightnessMax: Bool) {
+        if isBrightnessMax {
+            UIScreen.main.brightness = 1.0
+        } else {
+            UIScreen.main.brightness = 0.0
+        }
+        
+        // バックライトの情報を記録
+        self.results.isBrightnessMax = isBrightnessMax
+        
+        // モデルの設定
+        self.setModel(modelConfig)
+        
+        // 推論時間とバッテリー消費量の計測開始
+        accelerometerManager.startUpdate(100.0, model: model)
+    }
+    
+    /// Finish battery benchmarking
+    func finishBattery() {
+        // 加速度センサの値の取得を止める
+        let result = accelerometerManager.stopUpdate()
+        
+        // 推論時間・バッテリー消費量を保存する
+        self.results.inferenceTime = result.predictionTime
+        self.results.batteryConsumption = result.batteryConsumption * 100
+        
+        // 画面の明るさを0.0->1.0->0.5にする
+        UIScreen.main.brightness = 0.0
+        sleep(1)
+        UIScreen.main.brightness = 1.0
+        sleep(1)
+        UIScreen.main.brightness = 0.5
+        
+        // Firebaseにデータを送る
+        let data = getPushingData()
+        pushFirestore(data: data)
+    }
+}
+
+// MARK:- BenchmarkManager utils
+private extension BenchmarkManager {
+    /// Set model for benchmark
+    func setModel(_ modelConfig: ModelConfiguration) {
         // Compute Unitsの選択
         let config = MLModelConfiguration()
         switch modelConfig.computeUnits {
@@ -45,43 +145,10 @@ class BenchmarkManager: ObservableObject {
                                    configuration: config)
         // モデル情報を保持する
         self.modelInfo = ModelInfo(configuration: modelConfig, modelSize: model.size)
-        
-        // 推論時間とバッテリー消費量の計測開始
-        accelerometerManager.startUpdate(100.0, model: model)
     }
     
-    func finish() {
-        // 加速度センサの値の取得を止める
-        let result = accelerometerManager.stopUpdate()
-        
-        // 推定精度の計算
-        let accuracy = calcAccuracy(model: model)
-        self.results.accuracy = accuracy
-        
-        // 推論時間・バッテリー消費量を保存する
-        self.results.inferenceTime = result.predictionTime
-        self.results.batteryConsumption = result.batteryConsumption * 100
-        print("Window prediction time: \(result.predictionTime)")
-        
-        // 画面の明るさを最も明るくする
-        UIScreen.main.brightness = 1.0
-        
-        print("Finished running benchmarks!!")
-        
-        // Firebaseにデータを送る
-        let data = getPushingData()
-        pushFirestore(data: data)
-    }
-    
-    func cancel() {
-        let _ = accelerometerManager.stopUpdate()
-        // 画面の明るさを最も明るくする
-        UIScreen.main.brightness = 0.5
-        
-        print("Canceled runnning benchmarks")
-    }
-    
-    private func calcAccuracy(model: UnifiedMLModel) -> Double {
+    /// Calcurate test accuracy of the model
+    func calcAccuracy(model: UnifiedMLModel) -> Double {
         let startTime = Date()
         // Prediction batch
         guard let outputs = try? model.predictions(inputs: dataset.data) else {
@@ -100,7 +167,8 @@ class BenchmarkManager: ObservableObject {
         return accuracy
     }
     
-    private func createMLModel(_ modelArchitecture: ModelArchitecture, quantization: Quantization, configuration: MLModelConfiguration) -> UnifiedMLModel {
+    /// Create MLModel
+    func createMLModel(_ modelArchitecture: ModelArchitecture, quantization: Quantization, configuration: MLModelConfiguration) -> UnifiedMLModel {
         switch modelArchitecture {
         case .vgg16:
             switch quantization {
@@ -180,7 +248,8 @@ class BenchmarkManager: ObservableObject {
         }
     }
     
-    private func getPushingData() -> [String: Any] {
+    /// Generate data for pushing to Firestore
+    func getPushingData() -> [String: Any] {
         var data = [String: Any]()
         
         // Model performance
@@ -211,7 +280,8 @@ class BenchmarkManager: ObservableObject {
         return data
     }
     
-    private func pushFirestore(data: [String: Any]) {
+    /// Push data to Firestore
+    func pushFirestore(data: [String: Any]) {
         var data_ = data
         data_["date"] = Date()
         
