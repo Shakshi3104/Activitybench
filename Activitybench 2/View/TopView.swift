@@ -62,7 +62,7 @@ struct TopView: View {
                         })
                         .sheet(isPresented: $isPresented, content: {
 
-                            RunView(isPresented: $isPresented, isFinished: $isFinished)
+                            RunLatencyView(isPresented: $isPresented, isFinished: $isFinished)
                         })
                     }
                 }

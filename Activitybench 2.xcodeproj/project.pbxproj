@@ -17,7 +17,7 @@
 		CE6A4CF72652017C0082966F /* DeviceHardware in Frameworks */ = {isa = PBXBuildFile; productRef = CE6A4CF62652017C0082966F /* DeviceHardware */; };
 		CE6A4CFA265202080082966F /* DeviceInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A4CF9265202080082966F /* DeviceInformation.swift */; };
 		CE6A4CFC265203B80082966F /* UtilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A4CFB265203B80082966F /* UtilesView.swift */; };
-		CE6A4CFE26520B0F0082966F /* RunView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A4CFD26520B0F0082966F /* RunView.swift */; };
+		CE6A4CFE26520B0F0082966F /* RunLatencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A4CFD26520B0F0082966F /* RunLatencyView.swift */; };
 		CE6A4D0226522F910082966F /* MLMultiArray+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A4D0126522F910082966F /* MLMultiArray+Extension.swift */; };
 		CE6A4D04265230040082966F /* MLModel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A4D03265230040082966F /* MLModel+Extension.swift */; };
 		CE6A4D06265240AB0082966F /* BenchmarkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A4D05265240AB0082966F /* BenchmarkManager.swift */; };
@@ -55,7 +55,7 @@
 		CE6A4CF32652001F0082966F /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
 		CE6A4CF9265202080082966F /* DeviceInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInformation.swift; sourceTree = "<group>"; };
 		CE6A4CFB265203B80082966F /* UtilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilesView.swift; sourceTree = "<group>"; };
-		CE6A4CFD26520B0F0082966F /* RunView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunView.swift; sourceTree = "<group>"; };
+		CE6A4CFD26520B0F0082966F /* RunLatencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunLatencyView.swift; sourceTree = "<group>"; };
 		CE6A4D0126522F910082966F /* MLMultiArray+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MLMultiArray+Extension.swift"; sourceTree = "<group>"; };
 		CE6A4D03265230040082966F /* MLModel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MLModel+Extension.swift"; sourceTree = "<group>"; };
 		CE6A4D05265240AB0082966F /* BenchmarkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenchmarkManager.swift; sourceTree = "<group>"; };
@@ -153,7 +153,7 @@
 				CE6A4CE52651FF8C0082966F /* ContentView.swift */,
 				CE6A4CF32652001F0082966F /* TopView.swift */,
 				CE6A4CFB265203B80082966F /* UtilesView.swift */,
-				CE6A4CFD26520B0F0082966F /* RunView.swift */,
+				CE6A4CFD26520B0F0082966F /* RunLatencyView.swift */,
 				CEA24D9D2653874F00C9368E /* ResultView.swift */,
 			);
 			path = View;
@@ -314,7 +314,7 @@
 				CE6A4CFA265202080082966F /* DeviceInformation.swift in Sources */,
 				CEA24D942653546E00C9368E /* PyramidNet18.mlmodel in Sources */,
 				CEFD731D2665D24B00EB10C5 /* BatteryStateManager.swift in Sources */,
-				CE6A4CFE26520B0F0082966F /* RunView.swift in Sources */,
+				CE6A4CFE26520B0F0082966F /* RunLatencyView.swift in Sources */,
 				CEA24D9E2653874F00C9368E /* ResultView.swift in Sources */,
 				CEA24D962653546E00C9368E /* VGG16.mlmodel in Sources */,
 				CE6A4CFC265203B80082966F /* UtilesView.swift in Sources */,
