@@ -37,6 +37,11 @@
 		CEA24D992653546E00C9368E /* ResNet18.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CEA24D8F2653546E00C9368E /* ResNet18.mlmodel */; };
 		CEA24D9E2653874F00C9368E /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA24D9D2653874F00C9368E /* ResultView.swift */; };
 		CEA24DA02653942E00C9368E /* ModelInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA24D9F2653942E00C9368E /* ModelInformation.swift */; };
+		CEF0F54B26675DCA002BB2B7 /* MnasNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CEF0F54726675DC8002BB2B7 /* MnasNet.mlmodel */; };
+		CEF0F54C26675DCA002BB2B7 /* NASNetMobile.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CEF0F54826675DC9002BB2B7 /* NASNetMobile.mlmodel */; };
+		CEF0F54D26675DCA002BB2B7 /* DenseNet121.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CEF0F54926675DC9002BB2B7 /* DenseNet121.mlmodel */; };
+		CEF0F54E26675DCA002BB2B7 /* MobileNetV3Small.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CEF0F54A26675DCA002BB2B7 /* MobileNetV3Small.mlmodel */; };
+		CEF0F550266761E2002BB2B7 /* MobileNetV2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CEF0F54F266761E2002BB2B7 /* MobileNetV2.mlmodel */; };
 		CEF51B84265B91A6000D856D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEF51B83265B91A6000D856D /* GoogleService-Info.plist */; };
 		CEF51B87265B923A000D856D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CEF51B86265B923A000D856D /* FirebaseFirestore */; };
 		CEFD731B2665BF1400EB10C5 /* BenchmarkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD731A2665BF1400EB10C5 /* BenchmarkUtils.swift */; };
@@ -63,6 +68,8 @@
 		CE6A4D0B2652495C0082966F /* ActivityClassifierUtiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityClassifierUtiles.swift; sourceTree = "<group>"; };
 		CE6A4D0E26524ECF0082966F /* AccelerometerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccelerometerManager.swift; sourceTree = "<group>"; };
 		CE6A4D10265259070082966F /* BenchmarkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenchmarkResult.swift; sourceTree = "<group>"; };
+		CE7D2ACA266779D5006DFD87 /* activitybench_iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = activitybench_iphone.png; sourceTree = "<group>"; };
+		CE7D2ACB26677C05006DFD87 /* activitybench_ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = activitybench_ipad.png; sourceTree = "<group>"; };
 		CEA24D862653546E00C9368E /* PyramidNet18Int8.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = PyramidNet18Int8.mlmodel; sourceTree = "<group>"; };
 		CEA24D872653546E00C9368E /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
 		CEA24D882653546E00C9368E /* ResNet18Int8.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ResNet18Int8.mlmodel; sourceTree = "<group>"; };
@@ -77,8 +84,11 @@
 		CEA24D9F2653942E00C9368E /* ModelInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelInformation.swift; sourceTree = "<group>"; };
 		CEC4C1F9265DD2110080F1E3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CEC4C1FB265DD8A20080F1E3 /* Activitybench 2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Activitybench 2.entitlements"; sourceTree = "<group>"; };
-		CEC4C1FC265DD9760080F1E3 /* activitybench_ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = activitybench_ipad.png; sourceTree = "<group>"; };
-		CEC4C1FD265DEE980080F1E3 /* activitybench_iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = activitybench_iphone.png; sourceTree = "<group>"; };
+		CEF0F54726675DC8002BB2B7 /* MnasNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MnasNet.mlmodel; sourceTree = "<group>"; };
+		CEF0F54826675DC9002BB2B7 /* NASNetMobile.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = NASNetMobile.mlmodel; sourceTree = "<group>"; };
+		CEF0F54926675DC9002BB2B7 /* DenseNet121.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DenseNet121.mlmodel; sourceTree = "<group>"; };
+		CEF0F54A26675DCA002BB2B7 /* MobileNetV3Small.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNetV3Small.mlmodel; sourceTree = "<group>"; };
+		CEF0F54F266761E2002BB2B7 /* MobileNetV2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNetV2.mlmodel; sourceTree = "<group>"; };
 		CEF51B83265B91A6000D856D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CEFD731A2665BF1400EB10C5 /* BenchmarkUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenchmarkUtils.swift; sourceTree = "<group>"; };
 		CEFD731C2665D24B00EB10C5 /* BatteryStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryStateManager.swift; sourceTree = "<group>"; };
@@ -190,6 +200,11 @@
 		CEA24D852653546E00C9368E /* Classifier */ = {
 			isa = PBXGroup;
 			children = (
+				CEF0F54926675DC9002BB2B7 /* DenseNet121.mlmodel */,
+				CEF0F54726675DC8002BB2B7 /* MnasNet.mlmodel */,
+				CEF0F54A26675DCA002BB2B7 /* MobileNetV3Small.mlmodel */,
+				CEF0F54F266761E2002BB2B7 /* MobileNetV2.mlmodel */,
+				CEF0F54826675DC9002BB2B7 /* NASNetMobile.mlmodel */,
 				CEA24D9C265354CA00C9368E /* Int8 */,
 				CEA24D9A2653549B00C9368E /* Float32 */,
 			);
@@ -223,8 +238,8 @@
 		CEC4C1FA265DD3960080F1E3 /* materials */ = {
 			isa = PBXGroup;
 			children = (
-				CEC4C1FD265DEE980080F1E3 /* activitybench_iphone.png */,
-				CEC4C1FC265DD9760080F1E3 /* activitybench_ipad.png */,
+				CE7D2ACA266779D5006DFD87 /* activitybench_iphone.png */,
+				CE7D2ACB26677C05006DFD87 /* activitybench_ipad.png */,
 			);
 			path = materials;
 			sourceTree = "<group>";
@@ -311,8 +326,10 @@
 			files = (
 				CEA24D992653546E00C9368E /* ResNet18.mlmodel in Sources */,
 				CE6A4CE62651FF8C0082966F /* ContentView.swift in Sources */,
+				CEF0F54C26675DCA002BB2B7 /* NASNetMobile.mlmodel in Sources */,
 				CE6A4CFA265202080082966F /* DeviceInformation.swift in Sources */,
 				CEA24D942653546E00C9368E /* PyramidNet18.mlmodel in Sources */,
+				CEF0F54D26675DCA002BB2B7 /* DenseNet121.mlmodel in Sources */,
 				CEFD731D2665D24B00EB10C5 /* BatteryStateManager.swift in Sources */,
 				CE6A4CFE26520B0F0082966F /* RunView.swift in Sources */,
 				CEA24D9E2653874F00C9368E /* ResultView.swift in Sources */,
@@ -322,8 +339,10 @@
 				CEA24D972653546E00C9368E /* EfficientNetB0.mlmodel in Sources */,
 				CE6A4D06265240AB0082966F /* BenchmarkManager.swift in Sources */,
 				CEA24DA02653942E00C9368E /* ModelInformation.swift in Sources */,
+				CEF0F54B26675DCA002BB2B7 /* MnasNet.mlmodel in Sources */,
 				CE6A4D0A265245A40082966F /* BenchmarkDataset.swift in Sources */,
 				CEA24D952653546E00C9368E /* EfficientNetB0Int8.mlmodel in Sources */,
+				CEF0F550266761E2002BB2B7 /* MobileNetV2.mlmodel in Sources */,
 				CE6A4D0F26524ECF0082966F /* AccelerometerManager.swift in Sources */,
 				CE6A4CF42652001F0082966F /* TopView.swift in Sources */,
 				CEA24D922653546E00C9368E /* ResNet18Int8.mlmodel in Sources */,
@@ -335,6 +354,7 @@
 				CE6A4D11265259070082966F /* BenchmarkResult.swift in Sources */,
 				CEA24D932653546E00C9368E /* MobileNetInt8.mlmodel in Sources */,
 				CE6A4D0C2652495C0082966F /* ActivityClassifierUtiles.swift in Sources */,
+				CEF0F54E26675DCA002BB2B7 /* MobileNetV3Small.mlmodel in Sources */,
 				CEA24D982653546E00C9368E /* VGG16Int8.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

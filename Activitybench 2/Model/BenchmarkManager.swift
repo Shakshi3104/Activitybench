@@ -280,8 +280,38 @@ private extension BenchmarkManager {
                     fatalError("Couldn't create EfficientNetB0Int8")
                 }
             }
+        case .mobileNetV2:
+            do {
+                return try MobileNetV2(configuration: configuration)
+            } catch {
+                fatalError("Couldn't create MobileNet2")
+            }
+        case .mobileNetV3Small:
+            do {
+                return try MobileNetV3Small(configuration: configuration)
+            } catch {
+                fatalError("Couldn't create MobileNetV3Small")
+            }
+        case .nasNetMobile:
+            do {
+                return try NASNetMobile(configuration: configuration)
+            } catch {
+                fatalError("Couldn't create NASNetMobile")
+            }
+        case .mnasNet:
+            do {
+                return try MnasNet(configuration: configuration)
+            } catch {
+                fatalError("Couldn't create MnasNet")
+            }
+        case .denseNet121:
+            do {
+                return try DenseNet121(configuration: configuration)
+            } catch {
+                fatalError("Couldn't create DenseNet121")
+            }
         }
-    }
+    } 
     
     /// Generate data for pushing to Firestore
     func getPushingData() -> [String: Any] {

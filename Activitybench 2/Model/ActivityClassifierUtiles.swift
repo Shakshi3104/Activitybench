@@ -14,6 +14,11 @@ enum ModelArchitecture: String, CaseIterable {
     case resNet18 = "ResNet 18"
     case pyramidNet18 = "PyramidNet 18"
     case mobileNet = "MobileNet"
+    case mobileNetV2 = "MobileNetV2"
+    case mobileNetV3Small = "MobileNetV3Small"
+    case mnasNet = "MnasNet"
+    case nasNetMobile = "Mobile NASNet"
+    case denseNet121 = "DenseNet 121"
     case efficientNetB0 = "EfficientNet B0"
 }
 
