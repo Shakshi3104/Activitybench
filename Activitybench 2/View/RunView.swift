@@ -67,7 +67,7 @@ struct RunBatteryView: View {
     
     @State private var currentProgress = 0.0
     // バッテリーが100%から90%になるまで (10%減少するまで)
-    private let total = 1.0 - 0.99
+    private let total = 1.0 - 0.95
     
     @EnvironmentObject var benchmarkManager: BenchmarkManager
     
