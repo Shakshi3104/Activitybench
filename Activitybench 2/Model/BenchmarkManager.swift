@@ -155,7 +155,7 @@ private extension BenchmarkManager {
         
         // Firebaseにデータを送る
         let data = getPushingData()
-//        pushFirestore(data: data, collectionName: "battery")
+        pushFirestore(data: data, collectionName: "battery")
     }
 }
 

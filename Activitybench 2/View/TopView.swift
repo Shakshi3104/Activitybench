@@ -12,7 +12,9 @@ struct TopView: View {
     
     @State var isPresented = false
     @State var isFinished = false
-    @State var isNotBatteryMax = false
+    
+    @State var isNotCollectBatteryState = false
+    @State var notCollectBatteryStateSelection = 0
     
     /// - Tag: Option selections
     @State private var quantizationSelection = 0
@@ -69,7 +71,18 @@ struct TopView: View {
                         Button(action: {
                             if benchmarkType == .battery {
                                 if benchmarkManager.batteryStateManager.batteryLevel != 1.0 {
-                                    isNotBatteryMax = true
+                                    isNotCollectBatteryState = true
+                                    isPresented = false
+                                    isFinished = false
+                                    notCollectBatteryStateSelection = 0
+                                    return
+                                }
+                                
+                                if benchmarkManager.batteryStateManager.batteryState != .unplugged {
+                                    isNotCollectBatteryState = true
+                                    isPresented = false
+                                    isFinished = false
+                                    notCollectBatteryStateSelection = 1
                                     return
                                 }
                             }
@@ -97,9 +110,17 @@ struct TopView: View {
                         }, label: {
                             Text("Run Inference Benchmark")
                         })
-                        .alert(isPresented: $isNotBatteryMax, content: {
-                            Alert(title: Text("Warning"),
-                                  message: Text("Battery level is not 100%. Please charging."))
+                        .alert(isPresented: $isNotCollectBatteryState, content: {
+                            switch notCollectBatteryStateSelection {
+                            case 0:
+                                return Alert(title: Text("Warning"),
+                                      message: Text("Battery level is not 100%. Please charge."))
+                            case 1:
+                                return Alert(title: Text("Warning"),
+                                      message: Text("Please unplag."))
+                            default:
+                                return Alert(title: Text("Warning"))
+                            }
                         })
                         .sheet(isPresented: $isPresented, content: {
                             switch benchmarkType {

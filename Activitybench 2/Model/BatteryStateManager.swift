@@ -63,6 +63,7 @@ class BatteryStateManager: ObservableObject {
 private extension BatteryStateManager {
     @objc func batteryLevelChanged(notification: Notification) {
         self.batteryLevel = UIDevice.current.batteryLevel
+        print("Battery level is changed: \(batteryLevel)")
     }
     
     @objc func batteryStateChanged(notification: Notification) {
