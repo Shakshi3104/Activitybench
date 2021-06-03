@@ -11,15 +11,18 @@ import Foundation
 
 enum ModelArchitecture: String, CaseIterable {
     case vgg16 = "VGG16"
+    case inceptionV3 = "Inception V3"
     case resNet18 = "ResNet 18"
     case pyramidNet18 = "PyramidNet 18"
+    case xception = "Xception"
+    case denseNet121 = "DenseNet 121"
     case mobileNet = "MobileNet"
     case mobileNetV2 = "MobileNetV2"
     case mobileNetV3Small = "MobileNetV3Small"
-    case mnasNet = "MnasNet"
     case nasNetMobile = "Mobile NASNet"
-    case denseNet121 = "DenseNet 121"
+    case mnasNet = "MnasNet"
     case efficientNetB0 = "EfficientNet B0"
+    case efficientNetLite0 = "EfficientNet lite0"
 }
 
 enum Quantization: String, CaseIterable {

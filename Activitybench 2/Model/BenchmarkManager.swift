@@ -310,6 +310,24 @@ private extension BenchmarkManager {
             } catch {
                 fatalError("Couldn't create DenseNet121")
             }
+        case .inceptionV3:
+            do {
+                return try InceptionV3(configuration: configuration)
+            } catch {
+                fatalError("Couldn't create InceptionV3")
+            }
+        case .xception:
+            do {
+                return try Xception(configuration: configuration)
+            } catch {
+                fatalError("Couldn't create Xception")
+            }
+        case .efficientNetLite0:
+            do {
+                return try EfficientNet_lite0(configuration: configuration)
+            } catch {
+                fatalError("Couldn't create EfficientNet lite0")
+            }
         }
     } 
     

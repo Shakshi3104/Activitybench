@@ -261,6 +261,54 @@ extension DenseNet121: UnifiedMLModel {
     }
 }
 
+extension InceptionV3: UnifiedMLModel {
+    var size: String {
+        return "57.2MB"
+    }
+    
+    func prediction(input: MLMultiArray) throws -> UnifiedModelOutput {
+        let output = try self.prediction(input: InceptionV3Input(input: input))
+        return output
+    }
+    
+    func predictions(inputs: [MLMultiArray]) throws -> [UnifiedModelOutput] {
+        let outputs = try self.predictions(inputs: inputs.map { InceptionV3Input(input: $0) })
+        return outputs
+    }
+}
+
+extension Xception: UnifiedMLModel {
+    var size: String {
+        return "82.7MB"
+    }
+    
+    func prediction(input: MLMultiArray) throws -> UnifiedModelOutput {
+        let output = try self.prediction(input: XceptionInput(input: input))
+        return output
+    }
+    
+    func predictions(inputs: [MLMultiArray]) throws -> [UnifiedModelOutput] {
+        let outputs = try self.predictions(inputs: inputs.map { XceptionInput(input: $0) } )
+        return outputs
+    }
+}
+
+extension EfficientNet_lite0: UnifiedMLModel {
+    var size: String {
+        return "43.1MB"
+    }
+    
+    func prediction(input: MLMultiArray) throws -> UnifiedModelOutput {
+        let output = try self.prediction(input: EfficientNet_lite0Input(input: input))
+        return output
+    }
+    
+    func predictions(inputs: [MLMultiArray]) throws -> [UnifiedModelOutput] {
+        let outputs = try self.predictions(inputs: inputs.map { EfficientNet_lite0Input(input: $0) })
+        return outputs
+    }
+}
+
 // MARK: - Extend ModelOutput
 extension VGG16Output: UnifiedModelOutput { }
 
@@ -291,3 +339,9 @@ extension NASNetMobileOutput: UnifiedModelOutput { }
 extension MnasNetOutput: UnifiedModelOutput { }
 
 extension DenseNet121Output: UnifiedModelOutput { }
+
+extension InceptionV3Output: UnifiedModelOutput { }
+
+extension XceptionOutput: UnifiedModelOutput { }
+
+extension EfficientNet_lite0Output: UnifiedModelOutput { }
