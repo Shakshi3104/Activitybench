@@ -178,18 +178,11 @@
 		CE6A4CF8265201880082966F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CE6A4D0D26524E820082966F /* Extensions */,
+				CE7BAEB22668ABFA00DC63C7 /* Utilities */,
 				CE1C1208265754E900D07EE1 /* Dataset */,
 				CEA24D852653546E00C9368E /* Classifier */,
-				CE6A4D0D26524E820082966F /* Extensions */,
-				CE6A4CF9265202080082966F /* DeviceInformation.swift */,
-				CE6A4D05265240AB0082966F /* BenchmarkManager.swift */,
-				CE6A4D10265259070082966F /* BenchmarkResult.swift */,
-				CE6A4D09265245A40082966F /* BenchmarkDataset.swift */,
-				CE6A4D0B2652495C0082966F /* ActivityClassifierUtiles.swift */,
-				CE6A4D0E26524ECF0082966F /* AccelerometerManager.swift */,
-				CEA24D9F2653942E00C9368E /* ModelInformation.swift */,
-				CEFD731A2665BF1400EB10C5 /* BenchmarkUtils.swift */,
-				CEFD731C2665D24B00EB10C5 /* BatteryStateManager.swift */,
+				CE7BAEB12668ABDE00DC63C7 /* Benchmark */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -201,6 +194,29 @@
 				CE6A4D03265230040082966F /* MLModel+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CE7BAEB12668ABDE00DC63C7 /* Benchmark */ = {
+			isa = PBXGroup;
+			children = (
+				CE6A4D05265240AB0082966F /* BenchmarkManager.swift */,
+				CE6A4D10265259070082966F /* BenchmarkResult.swift */,
+				CE6A4D09265245A40082966F /* BenchmarkDataset.swift */,
+				CE6A4D0E26524ECF0082966F /* AccelerometerManager.swift */,
+				CEFD731A2665BF1400EB10C5 /* BenchmarkUtils.swift */,
+			);
+			path = Benchmark;
+			sourceTree = "<group>";
+		};
+		CE7BAEB22668ABFA00DC63C7 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				CE6A4CF9265202080082966F /* DeviceInformation.swift */,
+				CE6A4D0B2652495C0082966F /* ActivityClassifierUtiles.swift */,
+				CEA24D9F2653942E00C9368E /* ModelInformation.swift */,
+				CEFD731C2665D24B00EB10C5 /* BatteryStateManager.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		CEA24D852653546E00C9368E /* Classifier */ = {
