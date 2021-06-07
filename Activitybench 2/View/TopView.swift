@@ -35,6 +35,8 @@ struct TopView: View {
     
     /// - Tag: Benchmark manager
     @EnvironmentObject var benchmarkManager: BenchmarkManager
+    /// - Tag: Battery state manager
+    @EnvironmentObject var batteryStateManager: BatteryStateManager
     
     var body: some View {
         NavigationView {
@@ -70,7 +72,7 @@ struct TopView: View {
                         
                         Button(action: {
                             if benchmarkType == .battery {
-                                if benchmarkManager.batteryStateManager.batteryLevel != 1.0 {
+                                if batteryStateManager.batteryLevel != 1.0 {
                                     isNotCollectBatteryState = true
                                     isPresented = false
                                     isFinished = false
@@ -78,7 +80,7 @@ struct TopView: View {
                                     return
                                 }
                                 
-                                if benchmarkManager.batteryStateManager.batteryState != .unplugged {
+                                if batteryStateManager.batteryState != .unplugged {
                                     isNotCollectBatteryState = true
                                     isPresented = false
                                     isFinished = false

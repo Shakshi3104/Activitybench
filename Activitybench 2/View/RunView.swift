@@ -70,6 +70,7 @@ struct RunBatteryView: View {
     private let total = 1.0 - 0.95
     
     @EnvironmentObject var benchmarkManager: BenchmarkManager
+    @EnvironmentObject var batteryStateManager: BatteryStateManager
     
     var body: some View {
         VStack {
@@ -88,7 +89,7 @@ struct RunBatteryView: View {
                 ProgressView("", value: currentProgress, total: total)
                     .onReceive(timer, perform: { _ in
                         if currentProgress < total {
-                            currentProgress = Double(1.0 - benchmarkManager.batteryStateManager.batteryLevel)
+                            currentProgress = Double(1.0 - batteryStateManager.batteryLevel)
 //                            currentProgress += 0.01
                             
                             if currentProgress > total {

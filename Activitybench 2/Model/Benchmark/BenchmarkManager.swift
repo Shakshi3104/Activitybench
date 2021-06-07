@@ -26,7 +26,6 @@ class BenchmarkManager: ObservableObject {
     private var model: UnifiedMLModel!
     
     /// - Tag: Battery monitoring
-    @Published var batteryStateManager = BatteryStateManager()
     private var startTime: Date!
     
     
@@ -57,8 +56,6 @@ class BenchmarkManager: ObservableObject {
     
     func cancel() {
         let _ = accelerometerManager.stopUpdate()
-        batteryStateManager.stopBatteryMonitoring()
-        
         // 画面の明るさを80%にする
         UIScreen.main.brightness = 0.8
         
@@ -122,9 +119,6 @@ private extension BenchmarkManager {
         // モデルの設定
         self.setModel(modelConfig)
         
-        // バッテリーの監視を開始
-        self.batteryStateManager.startBatteryMonitoring()
-        
         self.startTime = Date()
         // 推論時間とバッテリー消費量の計測開始
         accelerometerManager.startUpdate(100.0, model: model)
@@ -137,9 +131,6 @@ private extension BenchmarkManager {
         let elapsed = Date().timeIntervalSince(self.startTime)
         let formatter = DateComponentsFormatter()
         print("elapsed time: \(formatter.string(from: elapsed) ?? "?")")
-        
-        // バッテリーの監視を止める
-        self.batteryStateManager.stopBatteryMonitoring()
         
         // 推論時間・バッテリー消費量を保存する
         self.results.inferenceTime = result.predictionTime
