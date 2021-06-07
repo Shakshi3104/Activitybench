@@ -1,4 +1,4 @@
-# Activitybench 2
+# Activitybench 3
 
 Activitybench is an app for benchmarking activity recogntion CNN models, measureing accuracy, latency, etc. on the Apple devices.
 
@@ -14,8 +14,6 @@ This app measures accuracy, latency, battery consumption.
 ## Usage
 
 Just setect a model, press **Run**, and wait a hour to measure the benchmark!
-
-It takes about a hour to measure battery consumption.
 
 ## Requirements
 - Xcode 12.0+
