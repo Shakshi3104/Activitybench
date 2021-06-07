@@ -39,7 +39,8 @@ struct RunLatencyView: View {
                                 currentProgress = total
                             }
                         }
-                        else {
+                        
+                        if currentProgress >= total {
                             benchmarkManager.finish(benckmarkType: .latency)
                             
                             isPresented = false
@@ -90,13 +91,13 @@ struct RunBatteryView: View {
                     .onReceive(timer, perform: { _ in
                         if currentProgress < total {
                             currentProgress = Double(1.0 - batteryStateManager.batteryLevel)
-//                            currentProgress += 0.01
                             
                             if currentProgress > total {
                                 currentProgress = total
                             }
                         }
-                        else {
+                        
+                        if currentProgress >= total {
                             benchmarkManager.finish(benckmarkType: .battery)
                             
                             isPresented = false
@@ -126,6 +127,7 @@ struct RunView_Previews: PreviewProvider {
             RunBatteryView(isPresented: .constant(true),
                            isFinished: .constant(false))
                 .environmentObject(BenchmarkManager())
+                .environmentObject(BatteryStateManager())
         }
     }
 }

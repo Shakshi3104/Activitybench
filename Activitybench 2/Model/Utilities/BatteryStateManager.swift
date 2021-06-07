@@ -68,6 +68,7 @@ private extension BatteryStateManager {
     
     @objc func batteryStateChanged(notification: Notification) {
         self.batteryState = UIDevice.current.batteryState
+        print("Battery state is changed: \(batteryState.rawValue)")
         
         switch batteryState {
         case .unplugged:
