@@ -28,6 +28,10 @@ class BenchmarkManager: ObservableObject {
     /// - Tag: Battery monitoring
     private var startTime: Date!
     
+    init() {
+        print("init BenchmarkManager")
+    }
+    
     
     func run(_ modelConfig: ModelConfiguration, benchmarkType: BenchmarkType, isBrightnessMax: Bool? = nil) {
         switch benchmarkType {

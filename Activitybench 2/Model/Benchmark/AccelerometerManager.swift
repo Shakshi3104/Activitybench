@@ -30,7 +30,7 @@ class AccelerometerManager {
     private var batteryLevels = [Float]()
     
     init() {
-        UIDevice.current.isBatteryMonitoringEnabled = true
+        print("init AccelerometerManager")
     }
     
     /// Processing when the sensor data value is acquired
