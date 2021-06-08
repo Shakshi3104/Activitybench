@@ -12,6 +12,7 @@ import Firebase
 struct Activitybench2App: App {
     @Environment(\.scenePhase) private var scenePhase
     @StateObject private var batteryStateManager = BatteryStateManager()
+    @StateObject private var benchmarkManager = BenchmarkManager()
     
     init() {
         FirebaseApp.configure()
@@ -20,7 +21,7 @@ struct Activitybench2App: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(BenchmarkManager())
+                .environmentObject(benchmarkManager)
                 .environmentObject(batteryStateManager)
         }
         .onChange(of: scenePhase) { scene in
