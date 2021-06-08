@@ -32,6 +32,18 @@ class BatteryStateManager: ObservableObject {
     func startBatteryMonitoring() {
         print("Start battery monitoring")
         
+        self.batteryLevel = UIDevice.current.batteryLevel
+        self.batteryState = UIDevice.current.batteryState
+        
+        switch batteryState {
+        case .unplugged:
+            self.batteryCharging = false
+        case .charging, .full:
+            self.batteryCharging = true
+        default:
+            self.batteryCharging = nil
+        }
+        
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(batteryLevelChanged(notification:)),
