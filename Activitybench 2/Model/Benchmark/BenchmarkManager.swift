@@ -102,7 +102,7 @@ private extension BenchmarkManager {
         
         // Firebaseにデータを送る
         let data = getPushingData()
-        pushFirestore(data: data, collectionName: "latency")
+        pushFirestore(data: data, collectionName: "latency_v2")
     }
 }
 
@@ -200,6 +200,12 @@ private extension BenchmarkManager {
     /// Create MLModel
     func createMLModel(_ modelArchitecture: ModelArchitecture, quantization: Quantization, configuration: MLModelConfiguration) -> UnifiedMLModel {
         switch modelArchitecture {
+        case .simpleCNN:
+            do {
+                return try SimpleCNN(configuration: configuration)
+            } catch {
+                fatalError("Couldn't create SimpleCNN")
+            }
         case .vgg16:
             switch quantization {
             case .float32:
