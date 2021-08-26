@@ -10,6 +10,7 @@ import Foundation
 // MARK: - Benchmark options
 
 enum ModelArchitecture: String, CaseIterable {
+    case simpleCNN = "Simple CNN"
     case vgg16 = "VGG16"
     case inceptionV3 = "Inception V3"
     case resNet18 = "ResNet 18"

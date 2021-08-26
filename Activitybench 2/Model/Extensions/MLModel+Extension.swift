@@ -309,6 +309,22 @@ extension EfficientNetLite0: UnifiedMLModel {
     }
 }
 
+extension SimpleCNN: UnifiedMLModel {
+    var size: String {
+        return "5.3MB"
+    }
+    
+    func prediction(input: MLMultiArray) throws -> UnifiedModelOutput {
+        let output = try self.prediction(input: SimpleCNNInput(input: input))
+        return output
+    }
+    
+    func predictions(inputs: [MLMultiArray]) throws -> [UnifiedModelOutput] {
+        let outputs = try self.predictions(inputs: inputs.map { SimpleCNNInput(input: $0) } )
+        return outputs
+    }
+}
+
 // MARK: - Extend ModelOutput
 extension VGG16Output: UnifiedModelOutput { }
 
@@ -345,3 +361,5 @@ extension InceptionV3Output: UnifiedModelOutput { }
 extension XceptionOutput: UnifiedModelOutput { }
 
 extension EfficientNetLite0Output: UnifiedModelOutput { }
+
+extension SimpleCNNOutput: UnifiedModelOutput { }
