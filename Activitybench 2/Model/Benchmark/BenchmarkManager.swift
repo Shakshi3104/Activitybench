@@ -319,7 +319,7 @@ private extension BenchmarkManager {
             }
         case .efficientNetLite0:
             do {
-                return try EfficientNet_lite0(configuration: configuration)
+                return try EfficientNetLite0(configuration: configuration)
             } catch {
                 fatalError("Couldn't create EfficientNet lite0")
             }

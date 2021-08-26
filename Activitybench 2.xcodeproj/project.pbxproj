@@ -23,24 +23,25 @@
 		CE6A4D0C2652495C0082966F /* ActivityClassifierUtiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A4D0B2652495C0082966F /* ActivityClassifierUtiles.swift */; };
 		CE6A4D0F26524ECF0082966F /* AccelerometerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A4D0E26524ECF0082966F /* AccelerometerManager.swift */; };
 		CE6A4D11265259070082966F /* BenchmarkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A4D10265259070082966F /* BenchmarkResult.swift */; };
-		CE8EE071266F750F00BB1C58 /* DenseNet121.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE05C266F750F00BB1C58 /* DenseNet121.mlmodel */; };
+		CE6DAA5126D74C8E0090854F /* Xception.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE6DAA4326D74C8E0090854F /* Xception.mlmodel */; };
+		CE6DAA5226D74C8E0090854F /* EfficientNetB0.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE6DAA4426D74C8E0090854F /* EfficientNetB0.mlmodel */; };
+		CE6DAA5326D74C8E0090854F /* MobileNetV2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE6DAA4526D74C8E0090854F /* MobileNetV2.mlmodel */; };
+		CE6DAA5426D74C8E0090854F /* SimpleCNN.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE6DAA4626D74C8E0090854F /* SimpleCNN.mlmodel */; };
+		CE6DAA5526D74C8E0090854F /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE6DAA4726D74C8E0090854F /* MobileNet.mlmodel */; };
+		CE6DAA5626D74C8E0090854F /* NASNetMobile.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE6DAA4826D74C8E0090854F /* NASNetMobile.mlmodel */; };
+		CE6DAA5726D74C8E0090854F /* VGG16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE6DAA4926D74C8E0090854F /* VGG16.mlmodel */; };
+		CE6DAA5826D74C8E0090854F /* MnasNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE6DAA4A26D74C8E0090854F /* MnasNet.mlmodel */; };
+		CE6DAA5926D74C8E0090854F /* PyramidNet18.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE6DAA4B26D74C8E0090854F /* PyramidNet18.mlmodel */; };
+		CE6DAA5A26D74C8E0090854F /* MobileNetV3Small.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE6DAA4C26D74C8E0090854F /* MobileNetV3Small.mlmodel */; };
+		CE6DAA5B26D74C8E0090854F /* DenseNet121.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE6DAA4D26D74C8E0090854F /* DenseNet121.mlmodel */; };
+		CE6DAA5C26D74C8E0090854F /* ResNet18.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE6DAA4E26D74C8E0090854F /* ResNet18.mlmodel */; };
+		CE6DAA5D26D74C8E0090854F /* InceptionV3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE6DAA4F26D74C8E0090854F /* InceptionV3.mlmodel */; };
+		CE6DAA5E26D74C8E0090854F /* EfficientNetLite0.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE6DAA5026D74C8E0090854F /* EfficientNetLite0.mlmodel */; };
 		CE8EE072266F750F00BB1C58 /* PyramidNet18Int8.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE05D266F750F00BB1C58 /* PyramidNet18Int8.mlmodel */; };
-		CE8EE073266F750F00BB1C58 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE05E266F750F00BB1C58 /* MobileNet.mlmodel */; };
-		CE8EE074266F750F00BB1C58 /* InceptionV3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE05F266F750F00BB1C58 /* InceptionV3.mlmodel */; };
-		CE8EE075266F750F00BB1C58 /* EfficientNet_lite0.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE060266F750F00BB1C58 /* EfficientNet_lite0.mlmodel */; };
-		CE8EE076266F750F00BB1C58 /* NASNetMobile.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE061266F750F00BB1C58 /* NASNetMobile.mlmodel */; };
 		CE8EE077266F750F00BB1C58 /* ResNet18Int8.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE062266F750F00BB1C58 /* ResNet18Int8.mlmodel */; };
 		CE8EE078266F750F00BB1C58 /* MobileNetInt8.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE063266F750F00BB1C58 /* MobileNetInt8.mlmodel */; };
-		CE8EE079266F750F00BB1C58 /* Xception.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE064266F750F00BB1C58 /* Xception.mlmodel */; };
-		CE8EE07A266F750F00BB1C58 /* PyramidNet18.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE065266F750F00BB1C58 /* PyramidNet18.mlmodel */; };
-		CE8EE07B266F750F00BB1C58 /* MobileNetV3Small.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE066266F750F00BB1C58 /* MobileNetV3Small.mlmodel */; };
 		CE8EE07C266F750F00BB1C58 /* EfficientNetB0Int8.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE067266F750F00BB1C58 /* EfficientNetB0Int8.mlmodel */; };
-		CE8EE07D266F750F00BB1C58 /* VGG16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE068266F750F00BB1C58 /* VGG16.mlmodel */; };
-		CE8EE07E266F750F00BB1C58 /* MobileNetV2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE069266F750F00BB1C58 /* MobileNetV2.mlmodel */; };
-		CE8EE07F266F750F00BB1C58 /* EfficientNetB0.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE06A266F750F00BB1C58 /* EfficientNetB0.mlmodel */; };
 		CE8EE080266F750F00BB1C58 /* VGG16Int8.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE06B266F750F00BB1C58 /* VGG16Int8.mlmodel */; };
-		CE8EE081266F750F00BB1C58 /* ResNet18.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE06C266F750F00BB1C58 /* ResNet18.mlmodel */; };
-		CE8EE082266F750F00BB1C58 /* MnasNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE06D266F750F00BB1C58 /* MnasNet.mlmodel */; };
 		CE92DE3126D7387500CD1B5C /* activitybench_xtest_v2.csv in Resources */ = {isa = PBXBuildFile; fileRef = CE92DE2F26D7387500CD1B5C /* activitybench_xtest_v2.csv */; };
 		CE92DE3226D7387500CD1B5C /* activitybench_ytest_v2.csv in Resources */ = {isa = PBXBuildFile; fileRef = CE92DE3026D7387500CD1B5C /* activitybench_ytest_v2.csv */; };
 		CEA24D9E2653874F00C9368E /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA24D9D2653874F00C9368E /* ResultView.swift */; };
@@ -69,26 +70,27 @@
 		CE6A4D0B2652495C0082966F /* ActivityClassifierUtiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityClassifierUtiles.swift; sourceTree = "<group>"; };
 		CE6A4D0E26524ECF0082966F /* AccelerometerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccelerometerManager.swift; sourceTree = "<group>"; };
 		CE6A4D10265259070082966F /* BenchmarkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenchmarkResult.swift; sourceTree = "<group>"; };
+		CE6DAA4326D74C8E0090854F /* Xception.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Xception.mlmodel; sourceTree = "<group>"; };
+		CE6DAA4426D74C8E0090854F /* EfficientNetB0.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = EfficientNetB0.mlmodel; sourceTree = "<group>"; };
+		CE6DAA4526D74C8E0090854F /* MobileNetV2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNetV2.mlmodel; sourceTree = "<group>"; };
+		CE6DAA4626D74C8E0090854F /* SimpleCNN.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SimpleCNN.mlmodel; sourceTree = "<group>"; };
+		CE6DAA4726D74C8E0090854F /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
+		CE6DAA4826D74C8E0090854F /* NASNetMobile.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = NASNetMobile.mlmodel; sourceTree = "<group>"; };
+		CE6DAA4926D74C8E0090854F /* VGG16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = VGG16.mlmodel; sourceTree = "<group>"; };
+		CE6DAA4A26D74C8E0090854F /* MnasNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MnasNet.mlmodel; sourceTree = "<group>"; };
+		CE6DAA4B26D74C8E0090854F /* PyramidNet18.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = PyramidNet18.mlmodel; sourceTree = "<group>"; };
+		CE6DAA4C26D74C8E0090854F /* MobileNetV3Small.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNetV3Small.mlmodel; sourceTree = "<group>"; };
+		CE6DAA4D26D74C8E0090854F /* DenseNet121.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DenseNet121.mlmodel; sourceTree = "<group>"; };
+		CE6DAA4E26D74C8E0090854F /* ResNet18.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ResNet18.mlmodel; sourceTree = "<group>"; };
+		CE6DAA4F26D74C8E0090854F /* InceptionV3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = InceptionV3.mlmodel; sourceTree = "<group>"; };
+		CE6DAA5026D74C8E0090854F /* EfficientNetLite0.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = EfficientNetLite0.mlmodel; sourceTree = "<group>"; };
 		CE7D2ACA266779D5006DFD87 /* activitybench_iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = activitybench_iphone.png; sourceTree = "<group>"; };
 		CE7D2ACB26677C05006DFD87 /* activitybench_ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = activitybench_ipad.png; sourceTree = "<group>"; };
-		CE8EE05C266F750F00BB1C58 /* DenseNet121.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DenseNet121.mlmodel; sourceTree = "<group>"; };
 		CE8EE05D266F750F00BB1C58 /* PyramidNet18Int8.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = PyramidNet18Int8.mlmodel; sourceTree = "<group>"; };
-		CE8EE05E266F750F00BB1C58 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
-		CE8EE05F266F750F00BB1C58 /* InceptionV3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = InceptionV3.mlmodel; sourceTree = "<group>"; };
-		CE8EE060266F750F00BB1C58 /* EfficientNet_lite0.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = EfficientNet_lite0.mlmodel; sourceTree = "<group>"; };
-		CE8EE061266F750F00BB1C58 /* NASNetMobile.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = NASNetMobile.mlmodel; sourceTree = "<group>"; };
 		CE8EE062266F750F00BB1C58 /* ResNet18Int8.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ResNet18Int8.mlmodel; sourceTree = "<group>"; };
 		CE8EE063266F750F00BB1C58 /* MobileNetInt8.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNetInt8.mlmodel; sourceTree = "<group>"; };
-		CE8EE064266F750F00BB1C58 /* Xception.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Xception.mlmodel; sourceTree = "<group>"; };
-		CE8EE065266F750F00BB1C58 /* PyramidNet18.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = PyramidNet18.mlmodel; sourceTree = "<group>"; };
-		CE8EE066266F750F00BB1C58 /* MobileNetV3Small.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNetV3Small.mlmodel; sourceTree = "<group>"; };
 		CE8EE067266F750F00BB1C58 /* EfficientNetB0Int8.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = EfficientNetB0Int8.mlmodel; sourceTree = "<group>"; };
-		CE8EE068266F750F00BB1C58 /* VGG16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = VGG16.mlmodel; sourceTree = "<group>"; };
-		CE8EE069266F750F00BB1C58 /* MobileNetV2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNetV2.mlmodel; sourceTree = "<group>"; };
-		CE8EE06A266F750F00BB1C58 /* EfficientNetB0.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = EfficientNetB0.mlmodel; sourceTree = "<group>"; };
 		CE8EE06B266F750F00BB1C58 /* VGG16Int8.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = VGG16Int8.mlmodel; sourceTree = "<group>"; };
-		CE8EE06C266F750F00BB1C58 /* ResNet18.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ResNet18.mlmodel; sourceTree = "<group>"; };
-		CE8EE06D266F750F00BB1C58 /* MnasNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MnasNet.mlmodel; sourceTree = "<group>"; };
 		CE92DE2F26D7387500CD1B5C /* activitybench_xtest_v2.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = activitybench_xtest_v2.csv; sourceTree = "<group>"; };
 		CE92DE3026D7387500CD1B5C /* activitybench_ytest_v2.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = activitybench_ytest_v2.csv; sourceTree = "<group>"; };
 		CEA24D9D2653874F00C9368E /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
@@ -243,19 +245,20 @@
 		CE8EE086266F756B00BB1C58 /* Float32 */ = {
 			isa = PBXGroup;
 			children = (
-				CE8EE05C266F750F00BB1C58 /* DenseNet121.mlmodel */,
-				CE8EE05E266F750F00BB1C58 /* MobileNet.mlmodel */,
-				CE8EE05F266F750F00BB1C58 /* InceptionV3.mlmodel */,
-				CE8EE060266F750F00BB1C58 /* EfficientNet_lite0.mlmodel */,
-				CE8EE061266F750F00BB1C58 /* NASNetMobile.mlmodel */,
-				CE8EE064266F750F00BB1C58 /* Xception.mlmodel */,
-				CE8EE065266F750F00BB1C58 /* PyramidNet18.mlmodel */,
-				CE8EE066266F750F00BB1C58 /* MobileNetV3Small.mlmodel */,
-				CE8EE068266F750F00BB1C58 /* VGG16.mlmodel */,
-				CE8EE069266F750F00BB1C58 /* MobileNetV2.mlmodel */,
-				CE8EE06A266F750F00BB1C58 /* EfficientNetB0.mlmodel */,
-				CE8EE06C266F750F00BB1C58 /* ResNet18.mlmodel */,
-				CE8EE06D266F750F00BB1C58 /* MnasNet.mlmodel */,
+				CE6DAA4D26D74C8E0090854F /* DenseNet121.mlmodel */,
+				CE6DAA4426D74C8E0090854F /* EfficientNetB0.mlmodel */,
+				CE6DAA5026D74C8E0090854F /* EfficientNetLite0.mlmodel */,
+				CE6DAA4F26D74C8E0090854F /* InceptionV3.mlmodel */,
+				CE6DAA4A26D74C8E0090854F /* MnasNet.mlmodel */,
+				CE6DAA4726D74C8E0090854F /* MobileNet.mlmodel */,
+				CE6DAA4526D74C8E0090854F /* MobileNetV2.mlmodel */,
+				CE6DAA4C26D74C8E0090854F /* MobileNetV3Small.mlmodel */,
+				CE6DAA4826D74C8E0090854F /* NASNetMobile.mlmodel */,
+				CE6DAA4B26D74C8E0090854F /* PyramidNet18.mlmodel */,
+				CE6DAA4E26D74C8E0090854F /* ResNet18.mlmodel */,
+				CE6DAA4626D74C8E0090854F /* SimpleCNN.mlmodel */,
+				CE6DAA4926D74C8E0090854F /* VGG16.mlmodel */,
+				CE6DAA4326D74C8E0090854F /* Xception.mlmodel */,
 			);
 			path = Float32;
 			sourceTree = "<group>";
@@ -349,41 +352,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE8EE07E266F750F00BB1C58 /* MobileNetV2.mlmodel in Sources */,
-				CE8EE074266F750F00BB1C58 /* InceptionV3.mlmodel in Sources */,
+				CE6DAA5C26D74C8E0090854F /* ResNet18.mlmodel in Sources */,
+				CE6DAA5426D74C8E0090854F /* SimpleCNN.mlmodel in Sources */,
+				CE6DAA5726D74C8E0090854F /* VGG16.mlmodel in Sources */,
 				CE6A4CE62651FF8C0082966F /* ContentView.swift in Sources */,
-				CE8EE075266F750F00BB1C58 /* EfficientNet_lite0.mlmodel in Sources */,
 				CE8EE07C266F750F00BB1C58 /* EfficientNetB0Int8.mlmodel in Sources */,
 				CE6A4CFA265202080082966F /* DeviceInformation.swift in Sources */,
+				CE6DAA5826D74C8E0090854F /* MnasNet.mlmodel in Sources */,
+				CE6DAA5D26D74C8E0090854F /* InceptionV3.mlmodel in Sources */,
+				CE6DAA5326D74C8E0090854F /* MobileNetV2.mlmodel in Sources */,
 				CE8EE080266F750F00BB1C58 /* VGG16Int8.mlmodel in Sources */,
+				CE6DAA5226D74C8E0090854F /* EfficientNetB0.mlmodel in Sources */,
 				CEFD731D2665D24B00EB10C5 /* BatteryStateManager.swift in Sources */,
 				CE6A4CFE26520B0F0082966F /* RunView.swift in Sources */,
-				CE8EE079266F750F00BB1C58 /* Xception.mlmodel in Sources */,
-				CE8EE081266F750F00BB1C58 /* ResNet18.mlmodel in Sources */,
-				CE8EE07F266F750F00BB1C58 /* EfficientNetB0.mlmodel in Sources */,
+				CE6DAA5626D74C8E0090854F /* NASNetMobile.mlmodel in Sources */,
+				CE6DAA5126D74C8E0090854F /* Xception.mlmodel in Sources */,
 				CEA24D9E2653874F00C9368E /* ResultView.swift in Sources */,
+				CE6DAA5526D74C8E0090854F /* MobileNet.mlmodel in Sources */,
 				CE6A4CFC265203B80082966F /* UtilesView.swift in Sources */,
 				CE6A4D04265230040082966F /* MLModel+Extension.swift in Sources */,
+				CE6DAA5A26D74C8E0090854F /* MobileNetV3Small.mlmodel in Sources */,
 				CE8EE077266F750F00BB1C58 /* ResNet18Int8.mlmodel in Sources */,
 				CE6A4D06265240AB0082966F /* BenchmarkManager.swift in Sources */,
 				CE8EE072266F750F00BB1C58 /* PyramidNet18Int8.mlmodel in Sources */,
+				CE6DAA5E26D74C8E0090854F /* EfficientNetLite0.mlmodel in Sources */,
 				CEA24DA02653942E00C9368E /* ModelInformation.swift in Sources */,
-				CE8EE071266F750F00BB1C58 /* DenseNet121.mlmodel in Sources */,
 				CE6A4D0A265245A40082966F /* BenchmarkDataset.swift in Sources */,
-				CE8EE082266F750F00BB1C58 /* MnasNet.mlmodel in Sources */,
 				CE6A4D0F26524ECF0082966F /* AccelerometerManager.swift in Sources */,
 				CE6A4CF42652001F0082966F /* TopView.swift in Sources */,
-				CE8EE07A266F750F00BB1C58 /* PyramidNet18.mlmodel in Sources */,
-				CE8EE07D266F750F00BB1C58 /* VGG16.mlmodel in Sources */,
-				CE8EE07B266F750F00BB1C58 /* MobileNetV3Small.mlmodel in Sources */,
 				CE6A4D0226522F910082966F /* MLMultiArray+Extension.swift in Sources */,
 				CEFD731B2665BF1400EB10C5 /* BenchmarkUtils.swift in Sources */,
-				CE8EE073266F750F00BB1C58 /* MobileNet.mlmodel in Sources */,
 				CE8EE078266F750F00BB1C58 /* MobileNetInt8.mlmodel in Sources */,
+				CE6DAA5926D74C8E0090854F /* PyramidNet18.mlmodel in Sources */,
 				CE6A4CE42651FF8C0082966F /* Activitybench2App.swift in Sources */,
 				CE6A4D11265259070082966F /* BenchmarkResult.swift in Sources */,
 				CE6A4D0C2652495C0082966F /* ActivityClassifierUtiles.swift in Sources */,
-				CE8EE076266F750F00BB1C58 /* NASNetMobile.mlmodel in Sources */,
+				CE6DAA5B26D74C8E0090854F /* DenseNet121.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

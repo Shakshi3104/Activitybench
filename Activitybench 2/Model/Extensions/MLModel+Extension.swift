@@ -293,18 +293,18 @@ extension Xception: UnifiedMLModel {
     }
 }
 
-extension EfficientNet_lite0: UnifiedMLModel {
+extension EfficientNetLite0: UnifiedMLModel {
     var size: String {
         return "43.1MB"
     }
     
     func prediction(input: MLMultiArray) throws -> UnifiedModelOutput {
-        let output = try self.prediction(input: EfficientNet_lite0Input(input: input))
+        let output = try self.prediction(input: EfficientNetLite0Input(input: input))
         return output
     }
     
     func predictions(inputs: [MLMultiArray]) throws -> [UnifiedModelOutput] {
-        let outputs = try self.predictions(inputs: inputs.map { EfficientNet_lite0Input(input: $0) })
+        let outputs = try self.predictions(inputs: inputs.map { EfficientNetLite0Input(input: $0) })
         return outputs
     }
 }
@@ -344,4 +344,4 @@ extension InceptionV3Output: UnifiedModelOutput { }
 
 extension XceptionOutput: UnifiedModelOutput { }
 
-extension EfficientNet_lite0Output: UnifiedModelOutput { }
+extension EfficientNetLite0Output: UnifiedModelOutput { }
