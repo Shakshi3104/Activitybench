@@ -41,8 +41,8 @@
 		CE8EE080266F750F00BB1C58 /* VGG16Int8.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE06B266F750F00BB1C58 /* VGG16Int8.mlmodel */; };
 		CE8EE081266F750F00BB1C58 /* ResNet18.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE06C266F750F00BB1C58 /* ResNet18.mlmodel */; };
 		CE8EE082266F750F00BB1C58 /* MnasNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE06D266F750F00BB1C58 /* MnasNet.mlmodel */; };
-		CE8EE083266F750F00BB1C58 /* activitybench_ytest.csv in Resources */ = {isa = PBXBuildFile; fileRef = CE8EE06F266F750F00BB1C58 /* activitybench_ytest.csv */; };
-		CE8EE084266F750F00BB1C58 /* activitybench_xtest.csv in Resources */ = {isa = PBXBuildFile; fileRef = CE8EE070266F750F00BB1C58 /* activitybench_xtest.csv */; };
+		CE92DE3126D7387500CD1B5C /* activitybench_xtest_v2.csv in Resources */ = {isa = PBXBuildFile; fileRef = CE92DE2F26D7387500CD1B5C /* activitybench_xtest_v2.csv */; };
+		CE92DE3226D7387500CD1B5C /* activitybench_ytest_v2.csv in Resources */ = {isa = PBXBuildFile; fileRef = CE92DE3026D7387500CD1B5C /* activitybench_ytest_v2.csv */; };
 		CEA24D9E2653874F00C9368E /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA24D9D2653874F00C9368E /* ResultView.swift */; };
 		CEA24DA02653942E00C9368E /* ModelInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA24D9F2653942E00C9368E /* ModelInformation.swift */; };
 		CEF51B84265B91A6000D856D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEF51B83265B91A6000D856D /* GoogleService-Info.plist */; };
@@ -89,8 +89,8 @@
 		CE8EE06B266F750F00BB1C58 /* VGG16Int8.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = VGG16Int8.mlmodel; sourceTree = "<group>"; };
 		CE8EE06C266F750F00BB1C58 /* ResNet18.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ResNet18.mlmodel; sourceTree = "<group>"; };
 		CE8EE06D266F750F00BB1C58 /* MnasNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MnasNet.mlmodel; sourceTree = "<group>"; };
-		CE8EE06F266F750F00BB1C58 /* activitybench_ytest.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = activitybench_ytest.csv; sourceTree = "<group>"; };
-		CE8EE070266F750F00BB1C58 /* activitybench_xtest.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = activitybench_xtest.csv; sourceTree = "<group>"; };
+		CE92DE2F26D7387500CD1B5C /* activitybench_xtest_v2.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = activitybench_xtest_v2.csv; sourceTree = "<group>"; };
+		CE92DE3026D7387500CD1B5C /* activitybench_ytest_v2.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = activitybench_ytest_v2.csv; sourceTree = "<group>"; };
 		CEA24D9D2653874F00C9368E /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		CEA24D9F2653942E00C9368E /* ModelInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelInformation.swift; sourceTree = "<group>"; };
 		CEC4C1F9265DD2110080F1E3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -222,8 +222,8 @@
 		CE8EE06E266F750F00BB1C58 /* Dataset */ = {
 			isa = PBXGroup;
 			children = (
-				CE8EE06F266F750F00BB1C58 /* activitybench_ytest.csv */,
-				CE8EE070266F750F00BB1C58 /* activitybench_xtest.csv */,
+				CE92DE2F26D7387500CD1B5C /* activitybench_xtest_v2.csv */,
+				CE92DE3026D7387500CD1B5C /* activitybench_ytest_v2.csv */,
 			);
 			path = Dataset;
 			sourceTree = "<group>";
@@ -334,11 +334,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE92DE3226D7387500CD1B5C /* activitybench_ytest_v2.csv in Resources */,
 				CE6A4CEB2651FF8D0082966F /* Preview Assets.xcassets in Resources */,
 				CEF51B84265B91A6000D856D /* GoogleService-Info.plist in Resources */,
-				CE8EE084266F750F00BB1C58 /* activitybench_xtest.csv in Resources */,
-				CE8EE083266F750F00BB1C58 /* activitybench_ytest.csv in Resources */,
 				CE6A4CE82651FF8D0082966F /* Assets.xcassets in Resources */,
+				CE92DE3126D7387500CD1B5C /* activitybench_xtest_v2.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
