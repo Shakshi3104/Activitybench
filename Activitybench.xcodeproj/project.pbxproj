@@ -55,7 +55,7 @@
 /* Begin PBXFileReference section */
 		CE609C1526D759440039079F /* activitybench_ytest_v2.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = activitybench_ytest_v2.csv; sourceTree = "<group>"; };
 		CE609C1626D759440039079F /* activitybench_xtest_v2.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = activitybench_xtest_v2.csv; sourceTree = "<group>"; };
-		CE6A4CE02651FF8C0082966F /* Activitybench 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Activitybench 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE6A4CE02651FF8C0082966F /* Activitybench.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Activitybench.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6A4CE32651FF8C0082966F /* Activitybench2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activitybench2App.swift; sourceTree = "<group>"; };
 		CE6A4CE52651FF8C0082966F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CE6A4CE72651FF8D0082966F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -96,7 +96,7 @@
 		CEA24D9D2653874F00C9368E /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		CEA24D9F2653942E00C9368E /* ModelInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelInformation.swift; sourceTree = "<group>"; };
 		CEC4C1F9265DD2110080F1E3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		CEC4C1FB265DD8A20080F1E3 /* Activitybench 2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Activitybench 2.entitlements"; sourceTree = "<group>"; };
+		CEC4C1FB265DD8A20080F1E3 /* Activitybench.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Activitybench.entitlements; sourceTree = "<group>"; };
 		CEF51B83265B91A6000D856D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CEFD731A2665BF1400EB10C5 /* BenchmarkUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenchmarkUtils.swift; sourceTree = "<group>"; };
 		CEFD731C2665D24B00EB10C5 /* BatteryStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryStateManager.swift; sourceTree = "<group>"; };
@@ -120,7 +120,7 @@
 			children = (
 				CEC4C1FA265DD3960080F1E3 /* materials */,
 				CEC4C1F9265DD2110080F1E3 /* README.md */,
-				CE6A4CE22651FF8C0082966F /* Activitybench 2 */,
+				CE6A4CE22651FF8C0082966F /* Activitybench */,
 				CE6A4CE12651FF8C0082966F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -128,16 +128,16 @@
 		CE6A4CE12651FF8C0082966F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CE6A4CE02651FF8C0082966F /* Activitybench 2.app */,
+				CE6A4CE02651FF8C0082966F /* Activitybench.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CE6A4CE22651FF8C0082966F /* Activitybench 2 */ = {
+		CE6A4CE22651FF8C0082966F /* Activitybench */ = {
 			isa = PBXGroup;
 			children = (
 				CEF51B83265B91A6000D856D /* GoogleService-Info.plist */,
-				CEC4C1FB265DD8A20080F1E3 /* Activitybench 2.entitlements */,
+				CEC4C1FB265DD8A20080F1E3 /* Activitybench.entitlements */,
 				CE6A4CF8265201880082966F /* Model */,
 				CE6A4CF22651FFE80082966F /* View */,
 				CE6A4CE32651FF8C0082966F /* Activitybench2App.swift */,
@@ -145,7 +145,7 @@
 				CE6A4CEC2651FF8D0082966F /* Info.plist */,
 				CE6A4CE92651FF8D0082966F /* Preview Content */,
 			);
-			path = "Activitybench 2";
+			path = Activitybench;
 			sourceTree = "<group>";
 		};
 		CE6A4CE92651FF8D0082966F /* Preview Content */ = {
@@ -275,9 +275,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CE6A4CDF2651FF8C0082966F /* Activitybench 2 */ = {
+		CE6A4CDF2651FF8C0082966F /* Activitybench */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CE6A4CEF2651FF8D0082966F /* Build configuration list for PBXNativeTarget "Activitybench 2" */;
+			buildConfigurationList = CE6A4CEF2651FF8D0082966F /* Build configuration list for PBXNativeTarget "Activitybench" */;
 			buildPhases = (
 				CE6A4CDC2651FF8C0082966F /* Sources */,
 				CE6A4CDD2651FF8C0082966F /* Frameworks */,
@@ -287,13 +287,13 @@
 			);
 			dependencies = (
 			);
-			name = "Activitybench 2";
+			name = Activitybench;
 			packageProductDependencies = (
 				CE6A4CF62652017C0082966F /* DeviceHardware */,
 				CEF51B86265B923A000D856D /* FirebaseFirestore */,
 			);
 			productName = "Activitybench 2";
-			productReference = CE6A4CE02651FF8C0082966F /* Activitybench 2.app */;
+			productReference = CE6A4CE02651FF8C0082966F /* Activitybench.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -310,7 +310,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CE6A4CDB2651FF8C0082966F /* Build configuration list for PBXProject "Activitybench 2" */;
+			buildConfigurationList = CE6A4CDB2651FF8C0082966F /* Build configuration list for PBXProject "Activitybench" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -327,7 +327,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CE6A4CDF2651FF8C0082966F /* Activitybench 2 */,
+				CE6A4CDF2651FF8C0082966F /* Activitybench */,
 			);
 		};
 /* End PBXProject section */
@@ -515,12 +515,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Activitybench 2/Activitybench 2.entitlements";
+				CODE_SIGN_ENTITLEMENTS = Activitybench/Activitybench.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Activitybench 2/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Activitybench/Preview Content\"";
 				DEVELOPMENT_TEAM = WHBF4Z49B6;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Activitybench 2/Info.plist";
+				INFOPLIST_FILE = Activitybench/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -528,7 +528,7 @@
 				);
 				MARKETING_VERSION = 3.2.0;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.shakshi.Activitybench-2";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shakshi.Activitybench;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -542,12 +542,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Activitybench 2/Activitybench 2.entitlements";
+				CODE_SIGN_ENTITLEMENTS = Activitybench/Activitybench.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Activitybench 2/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Activitybench/Preview Content\"";
 				DEVELOPMENT_TEAM = WHBF4Z49B6;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Activitybench 2/Info.plist";
+				INFOPLIST_FILE = Activitybench/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -555,7 +555,7 @@
 				);
 				MARKETING_VERSION = 3.2.0;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.shakshi.Activitybench-2";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shakshi.Activitybench;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -567,7 +567,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CE6A4CDB2651FF8C0082966F /* Build configuration list for PBXProject "Activitybench 2" */ = {
+		CE6A4CDB2651FF8C0082966F /* Build configuration list for PBXProject "Activitybench" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CE6A4CED2651FF8D0082966F /* Debug */,
@@ -576,7 +576,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CE6A4CEF2651FF8D0082966F /* Build configuration list for PBXNativeTarget "Activitybench 2" */ = {
+		CE6A4CEF2651FF8D0082966F /* Build configuration list for PBXNativeTarget "Activitybench" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CE6A4CF02651FF8D0082966F /* Debug */,
