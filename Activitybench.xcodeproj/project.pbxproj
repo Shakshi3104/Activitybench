@@ -46,7 +46,7 @@
 		CE8EE080266F750F00BB1C58 /* VGG16Int8.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE06B266F750F00BB1C58 /* VGG16Int8.mlmodel */; };
 		CEA24D9E2653874F00C9368E /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA24D9D2653874F00C9368E /* ResultView.swift */; };
 		CEA24DA02653942E00C9368E /* ModelInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA24D9F2653942E00C9368E /* ModelInformation.swift */; };
-		CEF51B84265B91A6000D856D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEF51B83265B91A6000D856D /* GoogleService-Info.plist */; };
+		CEDD7EAB26E1FE21007366F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEDD7EAA26E1FE21007366F6 /* GoogleService-Info.plist */; };
 		CEF51B87265B923A000D856D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CEF51B86265B923A000D856D /* FirebaseFirestore */; };
 		CEFD731B2665BF1400EB10C5 /* BenchmarkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD731A2665BF1400EB10C5 /* BenchmarkUtils.swift */; };
 		CEFD731D2665D24B00EB10C5 /* BatteryStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD731C2665D24B00EB10C5 /* BatteryStateManager.swift */; };
@@ -97,7 +97,7 @@
 		CEA24D9F2653942E00C9368E /* ModelInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelInformation.swift; sourceTree = "<group>"; };
 		CEC4C1F9265DD2110080F1E3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CEC4C1FB265DD8A20080F1E3 /* Activitybench.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Activitybench.entitlements; sourceTree = "<group>"; };
-		CEF51B83265B91A6000D856D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CEDD7EAA26E1FE21007366F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CEFD731A2665BF1400EB10C5 /* BenchmarkUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenchmarkUtils.swift; sourceTree = "<group>"; };
 		CEFD731C2665D24B00EB10C5 /* BatteryStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryStateManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,7 +136,7 @@
 		CE6A4CE22651FF8C0082966F /* Activitybench */ = {
 			isa = PBXGroup;
 			children = (
-				CEF51B83265B91A6000D856D /* GoogleService-Info.plist */,
+				CEDD7EAA26E1FE21007366F6 /* GoogleService-Info.plist */,
 				CEC4C1FB265DD8A20080F1E3 /* Activitybench.entitlements */,
 				CE6A4CF8265201880082966F /* Model */,
 				CE6A4CF22651FFE80082966F /* View */,
@@ -339,9 +339,9 @@
 			files = (
 				CE609C1726D759440039079F /* activitybench_ytest_v2.csv in Resources */,
 				CE6A4CEB2651FF8D0082966F /* Preview Assets.xcassets in Resources */,
-				CEF51B84265B91A6000D856D /* GoogleService-Info.plist in Resources */,
 				CE609C1826D759440039079F /* activitybench_xtest_v2.csv in Resources */,
 				CE6A4CE82651FF8D0082966F /* Assets.xcassets in Resources */,
+				CEDD7EAB26E1FE21007366F6 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
