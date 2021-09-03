@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		CE609C1726D759440039079F /* activitybench_ytest_v2.csv in Resources */ = {isa = PBXBuildFile; fileRef = CE609C1526D759440039079F /* activitybench_ytest_v2.csv */; };
 		CE609C1826D759440039079F /* activitybench_xtest_v2.csv in Resources */ = {isa = PBXBuildFile; fileRef = CE609C1626D759440039079F /* activitybench_xtest_v2.csv */; };
-		CE6A4CE42651FF8C0082966F /* Activitybench2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A4CE32651FF8C0082966F /* Activitybench2App.swift */; };
+		CE6A4CE42651FF8C0082966F /* ActivitybenchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A4CE32651FF8C0082966F /* ActivitybenchApp.swift */; };
 		CE6A4CE62651FF8C0082966F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A4CE52651FF8C0082966F /* ContentView.swift */; };
 		CE6A4CE82651FF8D0082966F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE6A4CE72651FF8D0082966F /* Assets.xcassets */; };
 		CE6A4CEB2651FF8D0082966F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE6A4CEA2651FF8D0082966F /* Preview Assets.xcassets */; };
@@ -56,7 +56,7 @@
 		CE609C1526D759440039079F /* activitybench_ytest_v2.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = activitybench_ytest_v2.csv; sourceTree = "<group>"; };
 		CE609C1626D759440039079F /* activitybench_xtest_v2.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = activitybench_xtest_v2.csv; sourceTree = "<group>"; };
 		CE6A4CE02651FF8C0082966F /* Activitybench.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Activitybench.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE6A4CE32651FF8C0082966F /* Activitybench2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activitybench2App.swift; sourceTree = "<group>"; };
+		CE6A4CE32651FF8C0082966F /* ActivitybenchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitybenchApp.swift; sourceTree = "<group>"; };
 		CE6A4CE52651FF8C0082966F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CE6A4CE72651FF8D0082966F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE6A4CEA2651FF8D0082966F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -140,7 +140,7 @@
 				CEC4C1FB265DD8A20080F1E3 /* Activitybench.entitlements */,
 				CE6A4CF8265201880082966F /* Model */,
 				CE6A4CF22651FFE80082966F /* View */,
-				CE6A4CE32651FF8C0082966F /* Activitybench2App.swift */,
+				CE6A4CE32651FF8C0082966F /* ActivitybenchApp.swift */,
 				CE6A4CE72651FF8D0082966F /* Assets.xcassets */,
 				CE6A4CEC2651FF8D0082966F /* Info.plist */,
 				CE6A4CE92651FF8D0082966F /* Preview Content */,
@@ -384,7 +384,7 @@
 				CEFD731B2665BF1400EB10C5 /* BenchmarkUtils.swift in Sources */,
 				CE8EE078266F750F00BB1C58 /* MobileNetInt8.mlmodel in Sources */,
 				CE6DAA5926D74C8E0090854F /* PyramidNet18.mlmodel in Sources */,
-				CE6A4CE42651FF8C0082966F /* Activitybench2App.swift in Sources */,
+				CE6A4CE42651FF8C0082966F /* ActivitybenchApp.swift in Sources */,
 				CE6A4D11265259070082966F /* BenchmarkResult.swift in Sources */,
 				CE6A4D0C2652495C0082966F /* ActivityClassifierUtiles.swift in Sources */,
 				CE6DAA5B26D74C8E0090854F /* DenseNet121.mlmodel in Sources */,

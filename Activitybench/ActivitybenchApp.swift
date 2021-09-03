@@ -9,7 +9,7 @@ import SwiftUI
 import Firebase
 
 @main
-struct Activitybench2App: App {
+struct ActivitybenchApp: App {
     @Environment(\.scenePhase) private var scenePhase
     @StateObject private var batteryStateManager = BatteryStateManager()
     @StateObject private var benchmarkManager = BenchmarkManager()
