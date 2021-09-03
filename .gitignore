@@ -90,5 +90,5 @@ fastlane/test_output
 iOSInjectionProject/
 
 # Big files
-Activitybench\ 2/Model/Classifier/
-Activitybench\ 2/Model/Dataset/
+Activitybench/Model/Classifier/
+Activitybench/Model/Dataset/
