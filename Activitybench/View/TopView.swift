@@ -124,7 +124,7 @@ struct TopView: View {
                                 return Alert(title: Text("Warning"))
                             }
                         })
-                        .sheet(isPresented: $isPresented, content: {
+                        .fullScreenCover(isPresented: $isPresented, content: {
                             switch benchmarkType {
                             case .latency:
                                 RunLatencyView(isPresented: $isPresented, isFinished: $isFinished)
