@@ -49,7 +49,11 @@ struct TopView: View {
                 }
                 
                 Section(header: Text("Select Benchmark")) {
-                    OptionSelectionView(key: "Benchmark Type", selection: $benchmarkSelection, items: benckmarkTypes)
+                    #if DEBUG
+                        OptionSelectionView(key: "Benchmark Type", selection: $benchmarkSelection, items: benckmarkTypes)
+                    #else
+                        ListRow(key: "Benchmark Type", value: "Latency")
+                    #endif
                     OptionSelectionView(key: "Model", selection: $modelArchitectureSelection, items: modelArchitecture)
                     OptionSelectionView(key: "Quantization", selection: $quantizationSelection, items: quantization)
                     OptionSelectionView(key: "Compute Units", selection: $computeUnitsSelection, items: computeUnits)
@@ -124,7 +128,7 @@ struct TopView: View {
                                 return Alert(title: Text("Warning"))
                             }
                         })
-                        .sheet(isPresented: $isPresented, content: {
+                        .fullScreenCover(isPresented: $isPresented, content: {
                             switch benchmarkType {
                             case .latency:
                                 RunLatencyView(isPresented: $isPresented, isFinished: $isFinished)

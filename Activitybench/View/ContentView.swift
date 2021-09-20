@@ -9,7 +9,21 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        TopView()
+        TabView {
+            // Activitybench
+            TopView()
+                .tabItem {
+                    Image(systemName: "speedometer")
+                    Text("Benchmark")
+                }
+            
+            // DeviceHardware
+            DeviceHardwareView()
+                .tabItem {
+                    Image(systemName: "iphone")
+                    Text("Device")
+                }
+        }
     }
 }
 
