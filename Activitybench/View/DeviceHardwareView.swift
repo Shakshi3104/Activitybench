@@ -25,7 +25,17 @@ struct DeviceHardwareView: View {
                 }
             }
             .listStyle(InsetGroupedListStyle())
+            // Navigation Title
             .navigationTitle(DeviceInfo.shared.device)
+//            .toolbar {
+//                ToolbarItem(placement: .navigationBarTrailing) {
+//                    Button(action: {
+//                        
+//                    }, label: {
+//                        Image(systemName: "slider.horizontal.3")
+//                    })
+//                }
+//            }
         }
     }
 }
