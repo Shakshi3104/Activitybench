@@ -88,7 +88,6 @@
 		CE6DAA4E26D74C8E0090854F /* ResNet18.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ResNet18.mlmodel; sourceTree = "<group>"; };
 		CE6DAA4F26D74C8E0090854F /* InceptionV3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = InceptionV3.mlmodel; sourceTree = "<group>"; };
 		CE6DAA5026D74C8E0090854F /* EfficientNetLite0.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = EfficientNetLite0.mlmodel; sourceTree = "<group>"; };
-		CE7D2ACA266779D5006DFD87 /* activitybench_iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = activitybench_iphone.png; sourceTree = "<group>"; };
 		CE7D2ACB26677C05006DFD87 /* activitybench_ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = activitybench_ipad.png; sourceTree = "<group>"; };
 		CE8A80FE26EC5F79002A07E9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE8EE05D266F750F00BB1C58 /* PyramidNet18Int8.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = PyramidNet18Int8.mlmodel; sourceTree = "<group>"; };
@@ -102,6 +101,7 @@
 		CEC4C1F9265DD2110080F1E3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CEC4C1FB265DD8A20080F1E3 /* Activitybench.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Activitybench.entitlements; sourceTree = "<group>"; };
 		CEE7748A26F8711400EA3EE5 /* DeviceHardwareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceHardwareView.swift; sourceTree = "<group>"; };
+		CEE7748C26F8782700EA3EE5 /* activitybench_iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = activitybench_iphone.png; sourceTree = "<group>"; };
 		CEFD731A2665BF1400EB10C5 /* BenchmarkUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenchmarkUtils.swift; sourceTree = "<group>"; };
 		CEFD731C2665D24B00EB10C5 /* BatteryStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryStateManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -272,7 +272,7 @@
 		CEC4C1FA265DD3960080F1E3 /* materials */ = {
 			isa = PBXGroup;
 			children = (
-				CE7D2ACA266779D5006DFD87 /* activitybench_iphone.png */,
+				CEE7748C26F8782700EA3EE5 /* activitybench_iphone.png */,
 				CE7D2ACB26677C05006DFD87 /* activitybench_ipad.png */,
 			);
 			path = materials;
@@ -534,7 +534,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.3.1;
+				MARKETING_VERSION = 3.4.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shakshi.Activitybench;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -561,7 +561,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.3.1;
+				MARKETING_VERSION = 3.4.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shakshi.Activitybench;
 				PRODUCT_NAME = "$(TARGET_NAME)";
