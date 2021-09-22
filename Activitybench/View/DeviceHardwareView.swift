@@ -36,7 +36,7 @@ struct DeviceHardwareView: View {
 //                    })
 //                }
 //            }
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
