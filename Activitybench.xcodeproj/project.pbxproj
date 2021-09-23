@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE35ADF126FC684200DD978C /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35ADF026FC684200DD978C /* SettingView.swift */; };
 		CE609C1726D759440039079F /* activitybench_ytest_v2.csv in Resources */ = {isa = PBXBuildFile; fileRef = CE609C1526D759440039079F /* activitybench_ytest_v2.csv */; };
 		CE609C1826D759440039079F /* activitybench_xtest_v2.csv in Resources */ = {isa = PBXBuildFile; fileRef = CE609C1626D759440039079F /* activitybench_xtest_v2.csv */; };
 		CE6A4CE42651FF8C0082966F /* ActivitybenchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A4CE32651FF8C0082966F /* ActivitybenchApp.swift */; };
@@ -55,6 +56,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE35ADF026FC684200DD978C /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		CE609C1526D759440039079F /* activitybench_ytest_v2.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = activitybench_ytest_v2.csv; sourceTree = "<group>"; };
 		CE609C1626D759440039079F /* activitybench_xtest_v2.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = activitybench_xtest_v2.csv; sourceTree = "<group>"; };
 		CE6A4CE02651FF8C0082966F /* Activitybench.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Activitybench.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +121,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE35ADEE26FC67CC00DD978C /* ActivitybenchView */ = {
+			isa = PBXGroup;
+			children = (
+				CE6A4CF32652001F0082966F /* TopView.swift */,
+				CE6A4CFB265203B80082966F /* UtilesView.swift */,
+				CE6A4CFD26520B0F0082966F /* RunView.swift */,
+				CEA24D9D2653874F00C9368E /* ResultView.swift */,
+			);
+			path = ActivitybenchView;
+			sourceTree = "<group>";
+		};
+		CE35ADEF26FC67E600DD978C /* DeviceView */ = {
+			isa = PBXGroup;
+			children = (
+				CEE7748A26F8711400EA3EE5 /* DeviceHardwareView.swift */,
+				CE35ADF026FC684200DD978C /* SettingView.swift */,
+			);
+			path = DeviceView;
+			sourceTree = "<group>";
+		};
 		CE6A4CD72651FF8C0082966F = {
 			isa = PBXGroup;
 			children = (
@@ -165,11 +187,8 @@
 			isa = PBXGroup;
 			children = (
 				CE6A4CE52651FF8C0082966F /* ContentView.swift */,
-				CE6A4CF32652001F0082966F /* TopView.swift */,
-				CE6A4CFB265203B80082966F /* UtilesView.swift */,
-				CE6A4CFD26520B0F0082966F /* RunView.swift */,
-				CEA24D9D2653874F00C9368E /* ResultView.swift */,
-				CEE7748A26F8711400EA3EE5 /* DeviceHardwareView.swift */,
+				CE35ADEE26FC67CC00DD978C /* ActivitybenchView */,
+				CE35ADEF26FC67E600DD978C /* DeviceView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -388,6 +407,7 @@
 				CE6A4D0A265245A40082966F /* BenchmarkDataset.swift in Sources */,
 				CE6A4D0F26524ECF0082966F /* AccelerometerManager.swift in Sources */,
 				CE6A4CF42652001F0082966F /* TopView.swift in Sources */,
+				CE35ADF126FC684200DD978C /* SettingView.swift in Sources */,
 				CE6A4D0226522F910082966F /* MLMultiArray+Extension.swift in Sources */,
 				CEFD731B2665BF1400EB10C5 /* BenchmarkUtils.swift in Sources */,
 				CE8EE078266F750F00BB1C58 /* MobileNetInt8.mlmodel in Sources */,
