@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DeviceHardwareView: View {
     private let deviceInfo = DeviceInfo.shared
+    @State private var isPresented = false
     
     var body: some View {
         NavigationView {
@@ -27,16 +28,26 @@ struct DeviceHardwareView: View {
             .listStyle(InsetGroupedListStyle())
             // Navigation Title
             .navigationTitle(DeviceInfo.shared.device)
-//            .toolbar {
-//                ToolbarItem(placement: .navigationBarTrailing) {
-//                    Button(action: {
-//                        
-//                    }, label: {
-//                        Image(systemName: "slider.horizontal.3")
-//                    })
-//                }
-//            }
+            // Setting
+            #if DEBUG
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        isPresented.toggle()
+                    }, label: {
+                        Image(systemName: "slider.horizontal.3")
+                    })
+                }
+            }
+            .sheet(isPresented: $isPresented) {
+                // onDismiss
+            } content: {
+                SettingView()
+            }
+            #endif
+
         }.navigationViewStyle(StackNavigationViewStyle())
+        
     }
 }
 
