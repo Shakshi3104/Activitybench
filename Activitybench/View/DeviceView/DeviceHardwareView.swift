@@ -35,7 +35,7 @@ struct DeviceHardwareView: View {
                     Button(action: {
                         isPresented.toggle()
                     }, label: {
-                        Image(systemName: "slider.horizontal.3")
+                        Image(systemName: "gear")
                     })
                 }
             }
