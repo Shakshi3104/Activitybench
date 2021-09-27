@@ -29,7 +29,7 @@ struct DeviceHardwareView: View {
             // Navigation Title
             .navigationTitle(DeviceInfo.shared.device)
             // Setting
-            #if DEBUG
+            #if !targetEnvironment(macCatalyst)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {

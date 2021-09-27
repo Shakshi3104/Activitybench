@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-// MARK:- RunLatencyView
+// MARK: - RunLatencyView
 struct RunLatencyView: View {
     @Binding var isPresented: Bool
     @Binding var isFinished: Bool
@@ -61,7 +61,7 @@ struct RunLatencyView: View {
     }
 }
 
-// MARK:- RunBatteryView
+// MARK: - RunBatteryView
 struct RunBatteryView: View {
     @Binding var isPresented: Bool
     @Binding var isFinished: Bool
@@ -118,6 +118,7 @@ struct RunBatteryView: View {
     }
 }
 
+// MARK: - Preview
 struct RunView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
