@@ -71,8 +71,8 @@ class BenchmarkManager: ObservableObject {
 private extension BenchmarkManager {
     /// Benchmarking latency
     func runLatency(_ modelConfig: ModelConfiguration) {
-        // 画面の明るさを最も暗くする
-        UIScreen.main.brightness = 0.0
+        // 画面の明るさを真ん中にする
+        UIScreen.main.brightness = 0.5
         
         // モデルの設定
         self.setModel(modelConfig)
