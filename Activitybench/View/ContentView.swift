@@ -20,13 +20,31 @@ struct ContentView: View {
             // DeviceHardware
             DeviceHardwareView()
                 .tabItem {
-                    Image(systemName: "iphone")
+                    getDeviceIcon()
                     Text("Device")
                 }
         }
     }
 }
 
+// MARK: - Change the device icon for each OS
+func getDeviceIcon() -> Image {
+    #if targetEnvironment(macCatalyst)
+        // TODO: Change the device icon for each Mac series via DeviceHardware
+        return Image(systemName: "laptopcomputer")
+    #else
+    switch UIDevice.current.userInterfaceIdiom {
+    case .phone:
+        return Image(systemName: "iphone")
+    case .pad:
+        return Image(systemName: "ipad")
+    default:
+        return Image(systemName: "ipod")
+    }
+    #endif
+}
+
+// MARK:-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
