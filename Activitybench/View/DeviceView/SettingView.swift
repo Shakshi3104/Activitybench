@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SettingView: View {
+    @Environment(\.presentationMode) private var presentationMode
     @State private var isActivePackages = false
     
     var body: some View {
@@ -36,10 +37,21 @@ struct SettingView: View {
             .listStyle(InsetGroupedListStyle())
             .navigationTitle("Setting")
             .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button(action: {
+                        // close sheet
+                        presentationMode.wrappedValue.dismiss()
+                    }, label: {
+                        Text("Cancel")
+                    })
+                }
+            }
         }
     }
 }
-// MARK:- Package list
+
+// MARK: - Package list
 struct PackageList: View {
     var body: some View {
         List {
@@ -50,7 +62,7 @@ struct PackageList: View {
     }
 }
 
-// MARK:- Previews
+// MARK: - Previews
 struct SettingView_Previews: PreviewProvider {
     static var previews: some View {
         SettingView()
