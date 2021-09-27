@@ -43,6 +43,11 @@ class AccelerometerManager {
             predictionData.append(x)
             predictionData.append(y)
             predictionData.append(z)
+        } else {
+            // for macOS
+            for _ in 1...3 {
+                predictionData.append(Double.random(in: -2.0 ..< 2.0))
+            }
         }
         
         // predict activity
