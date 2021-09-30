@@ -35,8 +35,6 @@ struct SettingView: View {
                 }
             }
             .listStyle(InsetGroupedListStyle())
-            .navigationTitle("Setting")
-            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button(action: {
@@ -46,8 +44,18 @@ struct SettingView: View {
                         Text("Cancel")
                     })
                 }
+                
+                ToolbarItem(placement: .confirmationAction) {
+                    Button {
+                        presentationMode.wrappedValue.dismiss()
+                    } label: {
+                        Text("Done")
+                    }
+
+                }
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
