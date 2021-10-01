@@ -48,7 +48,6 @@
 		CE8EE080266F750F00BB1C58 /* VGG16Int8.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE06B266F750F00BB1C58 /* VGG16Int8.mlmodel */; };
 		CEA24D9E2653874F00C9368E /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA24D9D2653874F00C9368E /* ResultView.swift */; };
 		CEA24DA02653942E00C9368E /* ModelInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA24D9F2653942E00C9368E /* ModelInformation.swift */; };
-		CEBFFB1326E2052E0003592F /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CEBFFB1226E2052E0003592F /* Settings.bundle */; };
 		CEE7748B26F8711400EA3EE5 /* DeviceHardwareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7748A26F8711400EA3EE5 /* DeviceHardwareView.swift */; };
 		CEF51B87265B923A000D856D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CEF51B86265B923A000D856D /* FirebaseFirestore */; };
 		CEFD731B2665BF1400EB10C5 /* BenchmarkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD731A2665BF1400EB10C5 /* BenchmarkUtils.swift */; };
@@ -99,7 +98,6 @@
 		CE8EE06B266F750F00BB1C58 /* VGG16Int8.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = VGG16Int8.mlmodel; sourceTree = "<group>"; };
 		CEA24D9D2653874F00C9368E /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		CEA24D9F2653942E00C9368E /* ModelInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelInformation.swift; sourceTree = "<group>"; };
-		CEBFFB1226E2052E0003592F /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		CEC4C1F9265DD2110080F1E3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CEC4C1FB265DD8A20080F1E3 /* Activitybench.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Activitybench.entitlements; sourceTree = "<group>"; };
 		CEE7748A26F8711400EA3EE5 /* DeviceHardwareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceHardwareView.swift; sourceTree = "<group>"; };
@@ -170,7 +168,6 @@
 				CE6A4CE72651FF8D0082966F /* Assets.xcassets */,
 				CE6A4CEC2651FF8D0082966F /* Info.plist */,
 				CE6A4CE92651FF8D0082966F /* Preview Content */,
-				CEBFFB1226E2052E0003592F /* Settings.bundle */,
 			);
 			path = Activitybench;
 			sourceTree = "<group>";
@@ -366,7 +363,6 @@
 				CE6A4CEB2651FF8D0082966F /* Preview Assets.xcassets in Resources */,
 				CE609C1826D759440039079F /* activitybench_xtest_v2.csv in Resources */,
 				CE6A4CE82651FF8D0082966F /* Assets.xcassets in Resources */,
-				CEBFFB1326E2052E0003592F /* Settings.bundle in Resources */,
 				CE8A80FF26EC5F79002A07E9 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -554,7 +550,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.5.0;
+				MARKETING_VERSION = 3.6.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shakshi.Activitybench;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -581,7 +577,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.5.0;
+				MARKETING_VERSION = 3.6.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shakshi.Activitybench;
 				PRODUCT_NAME = "$(TARGET_NAME)";

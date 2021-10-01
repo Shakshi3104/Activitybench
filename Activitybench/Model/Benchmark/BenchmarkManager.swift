@@ -102,8 +102,8 @@ private extension BenchmarkManager {
         
         // Firebaseにデータを送る
         let data = getPushingData()
-        // 設定.appで変更していなかったら(デフォルトのままなら)nilが返ってくる 
-        let collectionName: String = UserDefaults.standard.string(forKey: "latency_collection_name") ?? "latency_v2"
+        // App内の設定でセットした名前
+        let collectionName: String = UserDefaults.standard.string(forKey: "latencyCollectionName") ?? "latency_v2"
         print("⚙️: \(collectionName)")
         pushFirestore(data: data, collectionName: collectionName)
     }
@@ -153,7 +153,7 @@ private extension BenchmarkManager {
         
         // Firebaseにデータを送る
         let data = getPushingData()
-        let collectionName: String = UserDefaults.standard.string(forKey: "battery_collection_name") ?? "battery_v2"
+        let collectionName: String = "battery_v2"
         print("⚙️: \(collectionName)")
         pushFirestore(data: data, collectionName: collectionName)
     }

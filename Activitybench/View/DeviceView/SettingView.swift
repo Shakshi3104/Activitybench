@@ -10,6 +10,8 @@ import SwiftUI
 struct SettingView: View {
     @Environment(\.presentationMode) private var presentationMode
     @State private var isActivePackages = false
+    @State private var collectionName = ""
+    private let defaultCollectionName = "latency_v2"
     
     var body: some View {
         NavigationView {
@@ -19,7 +21,12 @@ struct SettingView: View {
                 }
                 
                 Section(header: Text("Firebase")) {
-                    ListRow(key: "Collection name", value: "latency_v2")
+                    HStack {
+                        Text("Collection name")
+                        Spacer()
+                        TextField(defaultCollectionName, text: $collectionName)
+                            .multilineTextAlignment(.trailing)
+                    }
                 }
                 
                 Section(header: Text("Information")) {
@@ -47,6 +54,12 @@ struct SettingView: View {
                 
                 ToolbarItem(placement: .confirmationAction) {
                     Button {
+                        // set collection name in UserDefaults
+                        let key = "latencyCollectionName"
+                        let value = collectionName.isEmpty ?  defaultCollectionName : collectionName
+                        
+                        UserDefaults.standard.set(value, forKey: key)
+                        
                         presentationMode.wrappedValue.dismiss()
                     } label: {
                         Text("Done")
@@ -56,6 +69,15 @@ struct SettingView: View {
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
+        .onAppear {
+            let value = UserDefaults.standard.string(forKey: "latencyCollectionName") ?? ""
+            
+            if value == defaultCollectionName {
+                collectionName = ""
+            } else {
+                collectionName = value
+            }
+        }
     }
 }
 
