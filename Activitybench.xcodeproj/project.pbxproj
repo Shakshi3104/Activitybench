@@ -36,9 +36,9 @@
 		CE530B95270D593100401289 /* InceptionV3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE530B79270D593100401289 /* InceptionV3.mlmodel */; };
 		CE530B96270D593100401289 /* InceptionV3Int8.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE530B7A270D593100401289 /* InceptionV3Int8.mlmodel */; };
 		CE530B97270D593100401289 /* XceptionInt8.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE530B7B270D593100401289 /* XceptionInt8.mlmodel */; };
+		CE530B9A270D5E1400401289 /* activitybench_xtest_v3.csv in Resources */ = {isa = PBXBuildFile; fileRef = CE530B98270D5E1400401289 /* activitybench_xtest_v3.csv */; };
+		CE530B9B270D5E1400401289 /* activitybench_ytest_v3.csv in Resources */ = {isa = PBXBuildFile; fileRef = CE530B99270D5E1400401289 /* activitybench_ytest_v3.csv */; };
 		CE5557B4270AD62700E6A071 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5557B3270AD62700E6A071 /* SafariView.swift */; };
-		CE609C1726D759440039079F /* activitybench_ytest_v2.csv in Resources */ = {isa = PBXBuildFile; fileRef = CE609C1526D759440039079F /* activitybench_ytest_v2.csv */; };
-		CE609C1826D759440039079F /* activitybench_xtest_v2.csv in Resources */ = {isa = PBXBuildFile; fileRef = CE609C1626D759440039079F /* activitybench_xtest_v2.csv */; };
 		CE6A4CE42651FF8C0082966F /* ActivitybenchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A4CE32651FF8C0082966F /* ActivitybenchApp.swift */; };
 		CE6A4CE62651FF8C0082966F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A4CE52651FF8C0082966F /* ContentView.swift */; };
 		CE6A4CE82651FF8D0082966F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE6A4CE72651FF8D0082966F /* Assets.xcassets */; };
@@ -94,9 +94,9 @@
 		CE530B79270D593100401289 /* InceptionV3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = InceptionV3.mlmodel; sourceTree = "<group>"; };
 		CE530B7A270D593100401289 /* InceptionV3Int8.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = InceptionV3Int8.mlmodel; sourceTree = "<group>"; };
 		CE530B7B270D593100401289 /* XceptionInt8.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = XceptionInt8.mlmodel; sourceTree = "<group>"; };
+		CE530B98270D5E1400401289 /* activitybench_xtest_v3.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = activitybench_xtest_v3.csv; sourceTree = "<group>"; };
+		CE530B99270D5E1400401289 /* activitybench_ytest_v3.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = activitybench_ytest_v3.csv; sourceTree = "<group>"; };
 		CE5557B3270AD62700E6A071 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
-		CE609C1526D759440039079F /* activitybench_ytest_v2.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = activitybench_ytest_v2.csv; sourceTree = "<group>"; };
-		CE609C1626D759440039079F /* activitybench_xtest_v2.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = activitybench_xtest_v2.csv; sourceTree = "<group>"; };
 		CE6A4CE02651FF8C0082966F /* Activitybench.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Activitybench.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6A4CE32651FF8C0082966F /* ActivitybenchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitybenchApp.swift; sourceTree = "<group>"; };
 		CE6A4CE52651FF8C0082966F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -309,8 +309,8 @@
 		CE8EE06E266F750F00BB1C58 /* Dataset */ = {
 			isa = PBXGroup;
 			children = (
-				CE609C1626D759440039079F /* activitybench_xtest_v2.csv */,
-				CE609C1526D759440039079F /* activitybench_ytest_v2.csv */,
+				CE530B98270D5E1400401289 /* activitybench_xtest_v3.csv */,
+				CE530B99270D5E1400401289 /* activitybench_ytest_v3.csv */,
 			);
 			path = Dataset;
 			sourceTree = "<group>";
@@ -389,9 +389,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE609C1726D759440039079F /* activitybench_ytest_v2.csv in Resources */,
+				CE530B9B270D5E1400401289 /* activitybench_ytest_v3.csv in Resources */,
 				CE6A4CEB2651FF8D0082966F /* Preview Assets.xcassets in Resources */,
-				CE609C1826D759440039079F /* activitybench_xtest_v2.csv in Resources */,
+				CE530B9A270D5E1400401289 /* activitybench_xtest_v3.csv in Resources */,
 				CE6A4CE82651FF8D0082966F /* Assets.xcassets in Resources */,
 				CE8A80FF26EC5F79002A07E9 /* GoogleService-Info.plist in Resources */,
 			);

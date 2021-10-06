@@ -10,12 +10,12 @@ import CoreML
 
 
 private func loadData() -> [[Double]] {
-    guard let fileURL: URL = Bundle.main.url(forResource: "activitybench_xtest_v2", withExtension: "csv") else {
-                fatalError("Couldn't find activitybench_xtest_v2.csv")
+    guard let fileURL: URL = Bundle.main.url(forResource: "activitybench_xtest_v3", withExtension: "csv") else {
+                fatalError("Couldn't find activitybench_xtest_v3.csv")
     }
 
     guard let csvString = try? String(contentsOf: fileURL, encoding: String.Encoding.utf8) else {
-        fatalError("Couldn't read activitybench_xtest_v2.csv")
+        fatalError("Couldn't read activitybench_xtest_v3.csv")
     }
 
     // 改行コード区切り->カンマ区切り->Doubleに変換-> [[Double]]
@@ -31,12 +31,12 @@ private func loadDataAsMLMultiArray() -> [MLMultiArray] {
 }
 
 private func loadTarget() -> [Int] {
-    guard let fileURL = Bundle.main.url(forResource: "activitybench_ytest_v2", withExtension: ".csv") else {
-        fatalError("Couldn't find activitybench_ytest_v2.csv")
+    guard let fileURL = Bundle.main.url(forResource: "activitybench_ytest_v3", withExtension: ".csv") else {
+        fatalError("Couldn't find activitybench_ytest_v3.csv")
     }
     
     guard let csvString = try? String(contentsOf: fileURL, encoding: String.Encoding.utf8) else {
-        fatalError("Couldn't read activitybench_ytest_v2.csv")
+        fatalError("Couldn't read activitybench_ytest_v3.csv")
     }
     
     // 改行コード区切り->Intに変換-> [Int]
