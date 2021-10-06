@@ -24,7 +24,7 @@ protocol UnifiedModelOutput {
 // MARK: - VGG16
 extension VGG16: UnifiedMLModel {
     var size: String {
-        return "18.1MB"
+        return "154MB"
     }
     
     func prediction(input: MLMultiArray) throws -> UnifiedModelOutput {
@@ -40,7 +40,7 @@ extension VGG16: UnifiedMLModel {
 
 extension VGG16Int8: UnifiedMLModel {
     var size: String {
-        return "4.6MB"
+        return "38.6MB"
     }
     
     func prediction(input: MLMultiArray) throws -> UnifiedModelOutput {
@@ -57,7 +57,7 @@ extension VGG16Int8: UnifiedMLModel {
 // MARK: - ResNet 18
 extension ResNet18: UnifiedMLModel {
     var size: String {
-        return "728KB"
+        return "15.4MB"
     }
     
     func prediction(input: MLMultiArray) throws -> UnifiedModelOutput {
@@ -73,7 +73,7 @@ extension ResNet18: UnifiedMLModel {
 
 extension ResNet18Int8: UnifiedMLModel {
     var size: String {
-        return "465KB"
+        return "4MB"
     }
     
     func prediction(input: MLMultiArray) throws -> UnifiedModelOutput {
@@ -139,7 +139,7 @@ extension PyramidNet18: UnifiedMLModel {
 
 extension PyramidNet18Int8: UnifiedMLModel {
     var size: String {
-        return "465KB"
+        return "459KB"
     }
     
     func prediction(input: MLMultiArray) throws -> UnifiedModelOutput {
@@ -203,6 +203,22 @@ extension MobileNetV2: UnifiedMLModel {
     }
 }
 
+extension MobileNetV2Int8: UnifiedMLModel {
+    var size: String {
+        return "7.1MB"
+    }
+    
+    func prediction(input: MLMultiArray) throws -> UnifiedModelOutput {
+        let output = try self.prediction(input: MobileNetV2Int8Input(input: input))
+        return output
+    }
+    
+    func predictions(inputs: [MLMultiArray]) throws -> [UnifiedModelOutput] {
+        let outputs = try self.predictions(inputs: inputs.map { MobileNetV2Int8Input(input: $0) })
+        return outputs
+    }
+}
+
 // MARK: - MobileNetV3 Small
 extension MobileNetV3Small: UnifiedMLModel {
     var size: String {
@@ -216,6 +232,22 @@ extension MobileNetV3Small: UnifiedMLModel {
     
     func predictions(inputs: [MLMultiArray]) throws -> [UnifiedModelOutput] {
         let outputs = try self.predictions(inputs: inputs.map { MobileNetV3SmallInput(input: $0) })
+        return outputs
+    }
+}
+
+extension MobileNetV3SmallInt8: UnifiedMLModel {
+    var size: String {
+        return "3.1MB"
+    }
+    
+    func prediction(input: MLMultiArray) throws -> UnifiedModelOutput {
+        let output = try self.prediction(input: MobileNetV3SmallInt8Input(input: input))
+        return output
+    }
+    
+    func predictions(inputs: [MLMultiArray]) throws -> [UnifiedModelOutput] {
+        let outputs = try self.predictions(inputs: inputs.map { MobileNetV3SmallInt8Input(input: $0) })
         return outputs
     }
 }
@@ -237,6 +269,22 @@ extension NASNetMobile: UnifiedMLModel {
     }
 }
 
+extension NASNetMobileInt8: UnifiedMLModel {
+    var size: String {
+        return "4.9MB"
+    }
+    
+    func prediction(input: MLMultiArray) throws -> UnifiedModelOutput {
+        let output = try self.prediction(input: NASNetMobileInt8Input(input: input))
+        return output
+    }
+    
+    func predictions(inputs: [MLMultiArray]) throws -> [UnifiedModelOutput] {
+        let outputs = try self.predictions(inputs: inputs.map { NASNetMobileInt8Input(input: $0) })
+        return outputs
+    }
+}
+
 // MARK: - MnasNet
 extension MnasNet: UnifiedMLModel {
     var size: String {
@@ -250,6 +298,22 @@ extension MnasNet: UnifiedMLModel {
     
     func predictions(inputs: [MLMultiArray]) throws -> [UnifiedModelOutput] {
         let outputs = try self.predictions(inputs: inputs.map { MnasNetInput(input: $0) })
+        return outputs
+    }
+}
+
+extension MnasNetInt8: UnifiedMLModel {
+    var size: String {
+        return "9.7MB"
+    }
+    
+    func prediction(input: MLMultiArray) throws -> UnifiedModelOutput {
+        let output = try self.prediction(input: MnasNetInt8Input(input: input))
+        return output
+    }
+    
+    func predictions(inputs: [MLMultiArray]) throws -> [UnifiedModelOutput] {
+        let outputs = try self.predictions(inputs: inputs.map { MnasNetInt8Input(input: $0) })
         return outputs
     }
 }
@@ -271,6 +335,22 @@ extension DenseNet121: UnifiedMLModel {
     }
 }
 
+extension DenseNet121Int8: UnifiedMLModel {
+    var size: String {
+        return "6.1MB"
+    }
+    
+    func prediction(input: MLMultiArray) throws -> UnifiedModelOutput {
+        let output = try self.prediction(input: DenseNet121Int8Input(input: input))
+        return output
+    }
+    
+    func predictions(inputs: [MLMultiArray]) throws -> [UnifiedModelOutput] {
+        let outputs = try self.predictions(inputs: inputs.map { DenseNet121Int8Input(input: $0) })
+        return outputs
+    }
+}
+
 // MARK: - Inception-v3
 extension InceptionV3: UnifiedMLModel {
     var size: String {
@@ -284,6 +364,22 @@ extension InceptionV3: UnifiedMLModel {
     
     func predictions(inputs: [MLMultiArray]) throws -> [UnifiedModelOutput] {
         let outputs = try self.predictions(inputs: inputs.map { InceptionV3Input(input: $0) })
+        return outputs
+    }
+}
+
+extension InceptionV3Int8: UnifiedMLModel {
+    var size: String {
+        return "14.7MB"
+    }
+    
+    func prediction(input: MLMultiArray) throws -> UnifiedModelOutput {
+        let output = try self.prediction(input: InceptionV3Int8Input(input: input))
+        return output
+    }
+    
+    func predictions(inputs: [MLMultiArray]) throws -> [UnifiedModelOutput] {
+        let outputs = try self.predictions(inputs: inputs.map { InceptionV3Int8Input(input: $0) })
         return outputs
     }
 }
@@ -305,7 +401,23 @@ extension Xception: UnifiedMLModel {
     }
 }
 
-// MARK: EfficientNet lite0
+extension XceptionInt8: UnifiedMLModel {
+    var size: String {
+        return "21.3MB"
+    }
+    
+    func prediction(input: MLMultiArray) throws -> UnifiedModelOutput {
+        let output = try self.prediction(input: XceptionInt8Input(input: input))
+        return output
+    }
+    
+    func predictions(inputs: [MLMultiArray]) throws -> [UnifiedModelOutput] {
+        let outputs = try self.predictions(inputs: inputs.map { XceptionInt8Input(input: $0) })
+        return outputs
+    }
+}
+
+// MARK: - EfficientNet lite0
 extension EfficientNetLite0: UnifiedMLModel {
     var size: String {
         return "43.1MB"
@@ -322,7 +434,23 @@ extension EfficientNetLite0: UnifiedMLModel {
     }
 }
 
-// MARK: Simple CNN
+extension EfficientNetLite0Int8: UnifiedMLModel {
+    var size: String {
+        return "11.2MB"
+    }
+    
+    func prediction(input: MLMultiArray) throws -> UnifiedModelOutput {
+        let output = try self.prediction(input: EfficientNetLite0Int8Input(input: input))
+        return output
+    }
+    
+    func predictions(inputs: [MLMultiArray]) throws -> [UnifiedModelOutput] {
+        let outputs = try self.predictions(inputs: inputs.map { EfficientNetLite0Int8Input(input: $0) })
+        return outputs
+    }
+}
+
+// MARK: - Simple CNN
 extension SimpleCNN: UnifiedMLModel {
     var size: String {
         return "5.3MB"
@@ -335,6 +463,22 @@ extension SimpleCNN: UnifiedMLModel {
     
     func predictions(inputs: [MLMultiArray]) throws -> [UnifiedModelOutput] {
         let outputs = try self.predictions(inputs: inputs.map { SimpleCNNInput(input: $0) } )
+        return outputs
+    }
+}
+
+extension SimpleCNNInt8: UnifiedMLModel {
+    var size: String {
+        return "1.3MB"
+    }
+    
+    func prediction(input: MLMultiArray) throws -> UnifiedModelOutput {
+        let output = try self.prediction(input: SimpleCNNInt8Input(input: input))
+        return output
+    }
+    
+    func predictions(inputs: [MLMultiArray]) throws -> [UnifiedModelOutput] {
+        let outputs = try self.predictions(inputs: inputs.map { SimpleCNNInt8Input(input: $0) })
         return outputs
     }
 }

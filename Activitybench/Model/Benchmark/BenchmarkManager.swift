@@ -206,10 +206,19 @@ private extension BenchmarkManager {
     func createMLModel(_ modelArchitecture: ModelArchitecture, quantization: Quantization, configuration: MLModelConfiguration) -> UnifiedMLModel {
         switch modelArchitecture {
         case .simpleCNN:
-            do {
-                return try SimpleCNN(configuration: configuration)
-            } catch {
-                fatalError("Couldn't create SimpleCNN")
+            switch quantization {
+            case .float32:
+                do {
+                    return try SimpleCNN(configuration: configuration)
+                } catch {
+                    fatalError("Couldn't create SimpleCNN")
+                }
+            case .int8:
+                do {
+                    return try SimpleCNNInt8(configuration: configuration)
+                } catch {
+                    fatalError("Couldn't create SimpleCNNInt8")
+                }
             }
         case .vgg16:
             switch quantization {
@@ -287,57 +296,129 @@ private extension BenchmarkManager {
                 }
             }
         case .mobileNetV2:
-            do {
-                return try MobileNetV2(configuration: configuration)
-            } catch {
-                fatalError("Couldn't create MobileNet2")
+            switch quantization {
+            case .float32:
+                do {
+                    return try MobileNetV2(configuration: configuration)
+                } catch {
+                    fatalError("Couldn't create MobileNet2")
+                }
+            case .int8:
+                do {
+                    return try MobileNetV2Int8(configuration: configuration)
+                } catch {
+                    fatalError("Couldn't create MobileNet2Int8")
+                }
             }
         case .mobileNetV3Small:
-            do {
-                return try MobileNetV3Small(configuration: configuration)
-            } catch {
-                fatalError("Couldn't create MobileNetV3Small")
+            switch quantization {
+            case .float32:
+                do {
+                    return try MobileNetV3Small(configuration: configuration)
+                } catch {
+                    fatalError("Couldn't create MobileNetV3Small")
+                }
+            case .int8:
+                do {
+                    return try MobileNetV3SmallInt8(configuration: configuration)
+                } catch {
+                    fatalError("Couldn't create MobileNetV3SmallInt8")
+                }
             }
         case .nasNetMobile:
-            do {
-                return try NASNetMobile(configuration: configuration)
-            } catch {
-                fatalError("Couldn't create NASNetMobile")
+            switch quantization {
+            case .float32:
+                do {
+                    return try NASNetMobile(configuration: configuration)
+                } catch {
+                    fatalError("Couldn't create NASNetMobile")
+                }
+            case .int8:
+                do {
+                    return try NASNetMobileInt8(configuration: configuration)
+                } catch {
+                    fatalError("Couldn't create NASNetMobileInt8")
+                }
             }
         case .mnasNet:
-            do {
-                return try MnasNet(configuration: configuration)
-            } catch {
-                fatalError("Couldn't create MnasNet")
+            switch quantization {
+            case .float32:
+                do {
+                    return try MnasNet(configuration: configuration)
+                } catch {
+                    fatalError("Couldn't create MnasNet")
+                }
+            case .int8:
+                do {
+                    return try MnasNetInt8(configuration: configuration)
+                } catch {
+                    fatalError("Couldn't create MnasNetInt8")
+                }
             }
         case .denseNet121:
-            do {
-                return try DenseNet121(configuration: configuration)
-            } catch {
-                fatalError("Couldn't create DenseNet121")
+            switch quantization {
+            case .float32:
+                do {
+                    return try DenseNet121(configuration: configuration)
+                } catch {
+                    fatalError("Couldn't create DenseNet121")
+                }
+            case .int8:
+                do {
+                    return try DenseNet121Int8(configuration: configuration)
+                } catch {
+                    fatalError("Couldn't create DenseNet121Int8")
+                }
             }
         case .inceptionV3:
-            do {
-                return try InceptionV3(configuration: configuration)
-            } catch {
-                fatalError("Couldn't create InceptionV3")
+            switch quantization {
+            case .float32:
+                do {
+                    return try InceptionV3(configuration: configuration)
+                } catch {
+                    fatalError("Couldn't create InceptionV3")
+                }
+            case .int8:
+                do {
+                    return try InceptionV3Int8(configuration: configuration)
+                } catch {
+                    fatalError("Couldn't create InceptionV3Int8")
+                }
             }
         case .xception:
-            do {
-                return try Xception(configuration: configuration)
-            } catch {
-                fatalError("Couldn't create Xception")
+            switch quantization {
+            case .float32:
+                do {
+                    return try Xception(configuration: configuration)
+                } catch {
+                    fatalError("Couldn't create Xception")
+                }
+            case .int8:
+                do {
+                    return try XceptionInt8(configuration: configuration)
+                } catch {
+                    fatalError("Couldn't create XceptionInt8")
+                }
             }
         case .efficientNetLite0:
-            do {
-                return try EfficientNetLite0(configuration: configuration)
-            } catch {
-                fatalError("Couldn't create EfficientNet lite0")
+            switch quantization {
+            case .float32:
+                do {
+                    return try EfficientNetLite0(configuration: configuration)
+                } catch {
+                    fatalError("Couldn't create EfficientNetLite0")
+                }
+            case .int8:
+                do {
+                    return try EfficientNetLite0Int8(configuration: configuration)
+                } catch {
+                    fatalError("Couldn't create EfficientNetLite0Int8")
+                }
             }
         }
     } 
     
-    /// Generate data for pushing to Firestore
+    /// Generatedata for pushing to Firestore
     func getPushingData() -> [String: Any] {
         var data = [String: Any]()
         
