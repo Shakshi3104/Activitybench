@@ -11,7 +11,7 @@ struct SettingView: View {
     @Environment(\.presentationMode) private var presentationMode
     @State private var isActivePackages = false
     @State private var collectionName = ""
-    private let defaultCollectionName = "latency_v2"
+    private let defaultCollectionName = "latency_v3"
     @State private var urlItem: URLItem?
     
     var body: some View {

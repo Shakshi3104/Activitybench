@@ -103,7 +103,7 @@ private extension BenchmarkManager {
         // Firebaseにデータを送る
         let data = getPushingData()
         // App内の設定でセットした名前
-        let collectionName: String = UserDefaults.standard.string(forKey: "latencyCollectionName") ?? "latency_v2"
+        let collectionName: String = UserDefaults.standard.string(forKey: "latencyCollectionName") ?? "latency_v3"
         print("⚙️: \(collectionName)")
         pushFirestore(data: data, collectionName: collectionName)
     }
@@ -153,7 +153,7 @@ private extension BenchmarkManager {
         
         // Firebaseにデータを送る
         let data = getPushingData()
-        let collectionName: String = "battery_v2"
+        let collectionName: String = "battery_v3"
         print("⚙️: \(collectionName)")
         pushFirestore(data: data, collectionName: collectionName)
     }
