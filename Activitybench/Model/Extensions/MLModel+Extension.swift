@@ -21,6 +21,7 @@ protocol UnifiedModelOutput {
 }
 
 // MARK: - Extend MLModel
+// MARK: - VGG16
 extension VGG16: UnifiedMLModel {
     var size: String {
         return "18.1MB"
@@ -53,6 +54,7 @@ extension VGG16Int8: UnifiedMLModel {
     }
 }
 
+// MARK: - ResNet 18
 extension ResNet18: UnifiedMLModel {
     var size: String {
         return "728KB"
@@ -85,6 +87,7 @@ extension ResNet18Int8: UnifiedMLModel {
     }
 }
 
+// MARK: - MobileNet
 extension MobileNet: UnifiedMLModel {
     var size: String {
         return "24MB"
@@ -117,6 +120,7 @@ extension MobileNetInt8: UnifiedMLModel {
     }
 }
 
+// MARK: PyramidNet 18
 extension PyramidNet18: UnifiedMLModel {
     var size: String {
         return "1.6MB"
@@ -149,6 +153,7 @@ extension PyramidNet18Int8: UnifiedMLModel {
     }
 }
 
+// MARK: - EfficientNet B0
 extension EfficientNetB0: UnifiedMLModel {
     var size: String {
         return "45.7MB"
@@ -181,6 +186,7 @@ extension EfficientNetB0Int8: UnifiedMLModel {
     }
 }
 
+// MARK: - MobileNetV2
 extension MobileNetV2: UnifiedMLModel {
     var size: String {
         return "26.9MB"
@@ -197,6 +203,7 @@ extension MobileNetV2: UnifiedMLModel {
     }
 }
 
+// MARK: - MobileNetV3 Small
 extension MobileNetV3Small: UnifiedMLModel {
     var size: String {
         return "11.6MB"
@@ -213,6 +220,7 @@ extension MobileNetV3Small: UnifiedMLModel {
     }
 }
 
+// MARK: NASNet Mobile
 extension NASNetMobile: UnifiedMLModel {
     var size: String {
         return "16.5MB"
@@ -229,6 +237,7 @@ extension NASNetMobile: UnifiedMLModel {
     }
 }
 
+// MARK: - MnasNet
 extension MnasNet: UnifiedMLModel {
     var size: String {
         return "37.4MB"
@@ -245,6 +254,7 @@ extension MnasNet: UnifiedMLModel {
     }
 }
 
+// MARK: - DenseNet 121
 extension DenseNet121: UnifiedMLModel {
     var size: String {
         return "22.3MB"
@@ -261,6 +271,7 @@ extension DenseNet121: UnifiedMLModel {
     }
 }
 
+// MARK: - Inception-v3
 extension InceptionV3: UnifiedMLModel {
     var size: String {
         return "57.2MB"
@@ -277,6 +288,7 @@ extension InceptionV3: UnifiedMLModel {
     }
 }
 
+// MARK: - Xception
 extension Xception: UnifiedMLModel {
     var size: String {
         return "82.7MB"
@@ -293,6 +305,7 @@ extension Xception: UnifiedMLModel {
     }
 }
 
+// MARK: EfficientNet lite0
 extension EfficientNetLite0: UnifiedMLModel {
     var size: String {
         return "43.1MB"
@@ -309,6 +322,7 @@ extension EfficientNetLite0: UnifiedMLModel {
     }
 }
 
+// MARK: Simple CNN
 extension SimpleCNN: UnifiedMLModel {
     var size: String {
         return "5.3MB"
@@ -348,18 +362,36 @@ extension EfficientNetB0Int8Output: UnifiedModelOutput { }
 
 extension MobileNetV2Output: UnifiedModelOutput { }
 
+extension MobileNetV2Int8Output: UnifiedModelOutput { }
+
 extension MobileNetV3SmallOutput: UnifiedModelOutput { }
+
+extension MobileNetV3SmallInt8Output: UnifiedModelOutput { }
 
 extension NASNetMobileOutput: UnifiedModelOutput { }
 
+extension NASNetMobileInt8Output: UnifiedModelOutput { }
+
 extension MnasNetOutput: UnifiedModelOutput { }
+
+extension MnasNetInt8Output: UnifiedModelOutput { }
 
 extension DenseNet121Output: UnifiedModelOutput { }
 
+extension DenseNet121Int8Output: UnifiedModelOutput { }
+
 extension InceptionV3Output: UnifiedModelOutput { }
+
+extension InceptionV3Int8Output: UnifiedModelOutput { }
 
 extension XceptionOutput: UnifiedModelOutput { }
 
+extension XceptionInt8Output: UnifiedModelOutput { }
+
 extension EfficientNetLite0Output: UnifiedModelOutput { }
 
+extension EfficientNetLite0Int8Output: UnifiedModelOutput { }
+
 extension SimpleCNNOutput: UnifiedModelOutput { }
+
+extension SimpleCNNInt8Output: UnifiedModelOutput { }
