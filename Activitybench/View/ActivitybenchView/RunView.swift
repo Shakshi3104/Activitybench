@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-// MARK: - RunLatencyView
-struct RunLatencyView: View {
+// MARK: - RunView
+struct RunView: View {
     @Binding var isPresented: Bool
     @Binding var isFinished: Bool
     
@@ -61,74 +61,13 @@ struct RunLatencyView: View {
     }
 }
 
-// MARK: - RunBatteryView
-struct RunBatteryView: View {
-    @Binding var isPresented: Bool
-    @Binding var isFinished: Bool
-    
-    @State private var currentProgress = 0.0
-    // バッテリーが100%から90%になるまで (10%減少するまで)
-    private let total = 1.0 - 0.95
-    
-    @EnvironmentObject var benchmarkManager: BenchmarkManager
-    @EnvironmentObject var batteryStateManager: BatteryStateManager
-    
-    var body: some View {
-        VStack {
-            Image(systemName: "battery.100")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 70, height: 70, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                .foregroundColor(.secondary)
-            
-            Text("Running Benchmarks...")
-            
-            HStack {
-                Spacer()
-                let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-                
-                ProgressView("", value: currentProgress, total: total)
-                    .onReceive(timer, perform: { _ in
-                        if currentProgress < total {
-                            currentProgress = Double(1.0 - batteryStateManager.batteryLevel)
-                            
-                            if currentProgress > total {
-                                currentProgress = total
-                            }
-                        }
-                        
-                        if currentProgress >= total {
-                            benchmarkManager.finish(benckmarkType: .battery)
-                            
-                            isPresented = false
-                            isFinished = true
-                        }
-                    })
-                Spacer()
-            }
-            
-            Button(action: {
-                isPresented = false
-                
-                benchmarkManager.cancel()
-            }, label: {
-                Text("Cancel")
-            })
-        }
-    }
-}
-
 // MARK: - Preview
 struct RunView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            RunLatencyView(isPresented: .constant(true),
+            RunView(isPresented: .constant(true),
                     isFinished: .constant(false))
                 .environmentObject(BenchmarkManager())
-            RunBatteryView(isPresented: .constant(true),
-                           isFinished: .constant(false))
-                .environmentObject(BenchmarkManager())
-                .environmentObject(BatteryStateManager())
         }
     }
 }

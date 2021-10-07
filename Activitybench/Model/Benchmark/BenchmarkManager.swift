@@ -11,7 +11,7 @@ import CoreML
 import UIKit
 import FirebaseFirestore
 
-// MARK:- BenchmarkManager
+// MARK: - BenchmarkManager
 class BenchmarkManager: ObservableObject {
     private let dataset = BenchmarkDataset()
     private let accelerometerManager = AccelerometerManager()
@@ -33,28 +33,12 @@ class BenchmarkManager: ObservableObject {
     }
     
     
-    func run(_ modelConfig: ModelConfiguration, benchmarkType: BenchmarkType, isBrightnessMax: Bool? = nil) {
-        switch benchmarkType {
-        case .latency:
-            self.runLatency(modelConfig)
-        case .battery:
-            if let isBrightnessMaxUnwrapped = isBrightnessMax {
-                self.runBattery(modelConfig, isBrightnessMax: isBrightnessMaxUnwrapped)
-            } else {
-                // nilのときは画面を暗くして実行する
-                self.runBattery(modelConfig, isBrightnessMax: false)
-            }
-        }
+    func run(_ modelConfig: ModelConfiguration) {
+        self.runLatency(modelConfig)
     }
     
     func finish(benckmarkType: BenchmarkType) {
-        switch benckmarkType {
-        case .latency:
-            self.finishLatency()
-        case .battery:
-            self.finishBattery()
-        }
-        
+        self.finishLatency()
         print("Finished running benchmarks!!")
     }
     
@@ -67,7 +51,7 @@ class BenchmarkManager: ObservableObject {
     }
 }
 
-// MARK:- BenchmarkManager latency
+// MARK: - BenchmarkManager latency
 private extension BenchmarkManager {
     /// Benchmarking latency
     func runLatency(_ modelConfig: ModelConfiguration) {
@@ -109,57 +93,7 @@ private extension BenchmarkManager {
     }
 }
 
-// MARK:- BenchmarkManager battery
-private extension BenchmarkManager {
-    
-    /// Benchmarking battery
-    func runBattery(_ modelConfig: ModelConfiguration, isBrightnessMax: Bool) {
-        if isBrightnessMax {
-            UIScreen.main.brightness = 1.0
-        } else {
-            UIScreen.main.brightness = 0.0
-        }
-        
-        // バックライトの情報を記録
-        self.results.isBrightnessMax = isBrightnessMax
-        
-        // モデルの設定
-        self.setModel(modelConfig)
-        
-        self.startTime = Date()
-        // 推論時間とバッテリー消費量の計測開始
-        accelerometerManager.startUpdate(100.0, model: model)
-    }
-    
-    /// Finish battery benchmarking
-    func finishBattery() {
-        // 加速度センサの値の取得を止める
-        let result = accelerometerManager.stopUpdate()
-        let elapsed = Date().timeIntervalSince(self.startTime)
-        let formatter = DateComponentsFormatter()
-        print("elapsed time: \(formatter.string(from: elapsed) ?? "?")")
-        
-        // 推論時間・バッテリー消費量を保存する
-        self.results.inferenceTime = result.predictionTime
-        self.results.batteryConsumption = result.batteryConsumption * 100
-        self.results.batteryConsumptionTime = elapsed
-        
-        // 画面の明るさを0.0->1.0->0.5にする
-        UIScreen.main.brightness = 0.0
-        sleep(1)
-        UIScreen.main.brightness = 1.0
-        sleep(1)
-        UIScreen.main.brightness = 0.5
-        
-        // Firebaseにデータを送る
-        let data = getPushingData()
-        let collectionName: String = "battery_v3"
-        print("⚙️: \(collectionName)")
-        pushFirestore(data: data, collectionName: collectionName)
-    }
-}
-
-// MARK:- BenchmarkManager utils
+// MARK: - BenchmarkManager utils
 private extension BenchmarkManager {
     /// Set model for benchmark
     func setModel(_ modelConfig: ModelConfiguration) {

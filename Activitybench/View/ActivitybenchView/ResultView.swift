@@ -10,8 +10,6 @@ import SwiftUI
 struct ResultView: View {
     private let deviceInfo = DeviceInfo.shared
     
-    var benchmarkType: BenchmarkType
-    
     @EnvironmentObject var benchmarkManager: BenchmarkManager
         
     var body: some View {
@@ -20,20 +18,11 @@ struct ResultView: View {
                 HStack {
                     Spacer()
                     VStack {
-                        switch benchmarkType {
-                        case .latency:
-                            Spacer()
-                            ScoreView(name: "Accuracy", score: "\(String(format: "%.2f", benchmarkManager.results.accuracy))%")
-                            Spacer()
-                            ScoreView(name: "Inference time", score: "\(String(format: "%.5f", benchmarkManager.results.inferenceTime))s")
-                            Spacer()
-                        case .battery:
-                            Spacer()
-                            ScoreView(name: "Battery Consumption time", score: "\(formatTimeInterval(time: benchmarkManager.results.batteryConsumptionTime))")
-                            Spacer()
-                            ScoreView(name: "Brightness", score: "\(benchmarkManager.results.isBrightnessMax ? "High" : "Low")")
-                            Spacer()
-                        }
+                        Spacer()
+                        ScoreView(name: "Accuracy", score: "\(String(format: "%.2f", benchmarkManager.results.accuracy))%")
+                        Spacer()
+                        ScoreView(name: "Inference time", score: "\(String(format: "%.5f", benchmarkManager.results.inferenceTime))s")
+                        Spacer()
                     }
                     Spacer()
                 }
@@ -47,7 +36,9 @@ struct ResultView: View {
             }
             
             DeviceInfoListSection()
-        }.listStyle(InsetGroupedListStyle())
+            
+        }
+        .listStyle(InsetGroupedListStyle())
     }
     
     private func formatTimeInterval(time: TimeInterval) -> String {

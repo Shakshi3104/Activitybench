@@ -13,15 +13,11 @@ struct TopView: View {
     @State var isPresented = false
     @State var isFinished = false
     
-    @State var isNotCollectBatteryState = false
-    @State var notCollectBatteryStateSelection = 0
-    
     /// - Tag: Option selections
     @State private var quantizationSelection = 0
     @State private var computeUnitsSelection = 0
     @State private var modelArchitectureSelection = 0
     @State private var benchmarkSelection = 0
-    @State private var brightnessSelection = 0
     
     /// - Tag: Benchmark options
     /// - Model architecture
@@ -31,7 +27,6 @@ struct TopView: View {
     private let modelArchitecture = ModelArchitecture.allCases.map { $0.rawValue }
     private let quantization = Quantization.allCases.map { $0.rawValue }
     private let computeUnits = ComputeUnits.allCases.map { $0.rawValue }
-    private let benckmarkTypes = BenchmarkType.allCases.map { $0.rawValue }
     
     /// - Tag: Benchmark manager
     @EnvironmentObject var benchmarkManager: BenchmarkManager
@@ -49,49 +44,22 @@ struct TopView: View {
                 }
                 
                 Section(header: Text("Select Benchmark")) {
-                    #if DEBUG
-                        OptionSelectionView(key: "Benchmark Type", selection: $benchmarkSelection, items: benckmarkTypes)
-                    #else
-                        ListRow(key: "Benchmark Type", value: "Latency")
-                    #endif
+                   
+                    OptionSelectionView(key: "Benchmark Type", selection: $benchmarkSelection, items: [BenchmarkType.latency.rawValue])
                     OptionSelectionView(key: "Model", selection: $modelArchitectureSelection, items: modelArchitecture)
                     OptionSelectionView(key: "Quantization", selection: $quantizationSelection, items: quantization)
                     OptionSelectionView(key: "Compute Units", selection: $computeUnitsSelection, items: computeUnits)
                     
-                    if benchmarkSelection == 1 {
-                        OptionSelectionView(key: "Display Brightness", selection: $brightnessSelection, items: ["Min", "Max"])
-                    }
-                    
                     ZStack {
-                        // benchmark type
-                        let benchmarkType = BenchmarkType(rawValue: benckmarkTypes[benchmarkSelection])!
-                        
                         NavigationLink(
                             destination:
-                                ResultView(benchmarkType: benchmarkType),
+                                ResultView(),
                             isActive: $isFinished,
                             label: {
                                 EmptyView()
                             })
                         
                         Button(action: {
-                            if benchmarkType == .battery {
-                                if batteryStateManager.batteryLevel != 1.0 {
-                                    isNotCollectBatteryState = true
-                                    isPresented = false
-                                    isFinished = false
-                                    notCollectBatteryStateSelection = 0
-                                    return
-                                }
-                                
-                                if batteryStateManager.batteryState != .unplugged {
-                                    isNotCollectBatteryState = true
-                                    isPresented = false
-                                    isFinished = false
-                                    notCollectBatteryStateSelection = 1
-                                    return
-                                }
-                            }
                             
                             isPresented = true
                             isFinished = false
@@ -107,34 +75,14 @@ struct TopView: View {
                                 computeUnits: computeUnits
                             )
                             
-                            benchmarkManager.run(
-                                modelConfig,
-                                benchmarkType: benchmarkType,
-                                isBrightnessMax: brightnessSelection == 0 ? false : true
-                            )
+                            // run benckmark
+                            benchmarkManager.run(modelConfig)
 
                         }, label: {
                             Text("Run Inference Benchmark")
                         })
-                        .alert(isPresented: $isNotCollectBatteryState, content: {
-                            switch notCollectBatteryStateSelection {
-                            case 0:
-                                return Alert(title: Text("Warning"),
-                                      message: Text("Battery level is not 100%. Please charge."))
-                            case 1:
-                                return Alert(title: Text("Warning"),
-                                      message: Text("Please unplag."))
-                            default:
-                                return Alert(title: Text("Warning"))
-                            }
-                        })
                         .fullScreenCover(isPresented: $isPresented, content: {
-                            switch benchmarkType {
-                            case .latency:
-                                RunLatencyView(isPresented: $isPresented, isFinished: $isFinished)
-                            case .battery:
-                                RunBatteryView(isPresented: $isPresented, isFinished: $isFinished)
-                            }
+                            RunView(isPresented: $isPresented, isFinished: $isFinished)
                         }) 
                     }
                 }
