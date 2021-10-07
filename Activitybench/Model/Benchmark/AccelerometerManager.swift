@@ -115,7 +115,12 @@ class AccelerometerManager {
     }
     
     /// Stop measuring sensor data
-    func stopUpdate() -> (predictionTime: Double, batteryConsumption: Float) {
+    func stopUpdate() -> (predictionTime: Double,
+                          batteryConsumption: Float,
+                          systemUsage: Double,
+                          userUsage: Double,
+                          totalUsage: Double,
+                          percentCPU: Float) {
         self.timer.invalidate()
         
         if motionManager.isAccelerometerActive {
@@ -126,6 +131,10 @@ class AccelerometerManager {
         
         let predictionTime = predictionTimes.count != 0 ? predictionTimes.reduce(0, +) / Double(predictionTimes.count) : 0
         let batteryConsumption = batteryLevels.count != 0 ? (batteryLevels.first ?? 0) - (batteryLevels.last ?? 0) : 0
+        let systemUsage = systemUsages.count != 0 ? systemUsages.reduce(0, +) / Double(systemUsages.count) : 0
+        let userUsage = userUsages.count != 0 ? userUsages.reduce(0, +) / Double(userUsages.count) : 0
+        let totalUsage = totalUsages.count != 0 ? totalUsages.reduce(0, +) / Double(totalUsages.count) : 0
+        let percentCPU = appUsages.count != 0 ? appUsages.reduce(0, +) / Float(appUsages.count) : 0
         
         predictionTimes.removeAll()
         batteryLevels.removeAll()
@@ -134,6 +143,11 @@ class AccelerometerManager {
         totalUsages.removeAll()
         appUsages.removeAll()
         
-        return (predictionTime, batteryConsumption)
+        return (predictionTime,
+                batteryConsumption,
+                systemUsage,
+                userUsage,
+                totalUsage,
+                percentCPU)
     }
 }
