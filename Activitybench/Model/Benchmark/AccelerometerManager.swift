@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import CoreMotion
 import CoreML
+import ProcessorKit
 
 class AccelerometerManager {
     /// - Tag: input of activity classifier
@@ -26,8 +27,18 @@ class AccelerometerManager {
     private var model: UnifiedMLModel!
     
     /// - Tag: Performance
+    /// - Inference time
+    /// - Battery level (deprecated)
+    /// - CPU system usage
+    /// - CPU user usage
+    /// - CPU total usage
+    /// - CPU app usage (% CPU)
     private var predictionTimes = [Double]()
     private var batteryLevels = [Float]()
+    private var systemUsages = [Double]()
+    private var userUsages = [Double]()
+    private var totalUsages = [Double]()
+    private var appUsages = [Float]()
     
     init() {
         print("init AccelerometerManager")
@@ -69,13 +80,22 @@ class AccelerometerManager {
             
             predictionTimes.append(predictionTime)
             
+            let deviceUsage = CPU.systemUsage()
+            let appUsage = CPU.appUsage()
+            print("⚙️ system: \(deviceUsage.system), user: \(deviceUsage.user)")
+            print("⚙️ % CPU: \(appUsage)")
+            systemUsages.append(deviceUsage.system)
+            userUsages.append(deviceUsage.user)
+            totalUsages.append(deviceUsage.system + deviceUsage.user)
+            appUsages.append(appUsage)
+            
             let batteryLevel = UIDevice.current.batteryLevel
             batteryLevels.append(batteryLevel)
             
             print("\(output.classLabel) (\(output.Identity[output.classLabel] ?? 0))")
             
             // init predictionData
-            predictionData = [Double]()
+            predictionData.removeAll()
         }
     }
     
@@ -102,13 +122,17 @@ class AccelerometerManager {
             motionManager.stopAccelerometerUpdates()
         }
         
-        predictionData = [Double]()
+        predictionData.removeAll()
         
         let predictionTime = predictionTimes.count != 0 ? predictionTimes.reduce(0, +) / Double(predictionTimes.count) : 0
         let batteryConsumption = batteryLevels.count != 0 ? (batteryLevels.first ?? 0) - (batteryLevels.last ?? 0) : 0
         
-        predictionTimes = [Double]()
-        batteryLevels = [Float]()
+        predictionTimes.removeAll()
+        batteryLevels.removeAll()
+        systemUsages.removeAll()
+        userUsages.removeAll()
+        totalUsages.removeAll()
+        appUsages.removeAll()
         
         return (predictionTime, batteryConsumption)
     }

@@ -55,6 +55,7 @@
 		CE6A4D0C2652495C0082966F /* ActivityClassifierUtiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A4D0B2652495C0082966F /* ActivityClassifierUtiles.swift */; };
 		CE6A4D0F26524ECF0082966F /* AccelerometerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A4D0E26524ECF0082966F /* AccelerometerManager.swift */; };
 		CE6A4D11265259070082966F /* BenchmarkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A4D10265259070082966F /* BenchmarkResult.swift */; };
+		CE7FCDD0270EBC1300ED1E46 /* ProcessorKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE7FCDCF270EBC1300ED1E46 /* ProcessorKit */; };
 		CE8A80FF26EC5F79002A07E9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE8A80FE26EC5F79002A07E9 /* GoogleService-Info.plist */; };
 		CEA24D9E2653874F00C9368E /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA24D9D2653874F00C9368E /* ResultView.swift */; };
 		CEA24DA02653942E00C9368E /* ModelInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA24D9F2653942E00C9368E /* ModelInformation.swift */; };
@@ -131,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE7FCDD0270EBC1300ED1E46 /* ProcessorKit in Frameworks */,
 				CE6A4CF72652017C0082966F /* DeviceHardware in Frameworks */,
 				CEF51B87265B923A000D856D /* FirebaseFirestore in Frameworks */,
 			);
@@ -343,6 +345,7 @@
 			packageProductDependencies = (
 				CE6A4CF62652017C0082966F /* DeviceHardware */,
 				CEF51B86265B923A000D856D /* FirebaseFirestore */,
+				CE7FCDCF270EBC1300ED1E46 /* ProcessorKit */,
 			);
 			productName = "Activitybench 2";
 			productReference = CE6A4CE02651FF8C0082966F /* Activitybench.app */;
@@ -374,6 +377,7 @@
 			packageReferences = (
 				CE6A4CF52652017C0082966F /* XCRemoteSwiftPackageReference "DeviceHardware" */,
 				CEF51B85265B923A000D856D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				CE7FCDCE270EBC1300ED1E46 /* XCRemoteSwiftPackageReference "ProcessorKit" */,
 			);
 			productRefGroup = CE6A4CE12651FF8C0082966F /* Products */;
 			projectDirPath = "";
@@ -660,6 +664,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		CE7FCDCE270EBC1300ED1E46 /* XCRemoteSwiftPackageReference "ProcessorKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Shakshi3104/ProcessorKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.1;
+			};
+		};
 		CEF51B85265B923A000D856D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -675,6 +687,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CE6A4CF52652017C0082966F /* XCRemoteSwiftPackageReference "DeviceHardware" */;
 			productName = DeviceHardware;
+		};
+		CE7FCDCF270EBC1300ED1E46 /* ProcessorKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE7FCDCE270EBC1300ED1E46 /* XCRemoteSwiftPackageReference "ProcessorKit" */;
+			productName = ProcessorKit;
 		};
 		CEF51B86265B923A000D856D /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;

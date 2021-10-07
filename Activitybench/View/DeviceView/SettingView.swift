@@ -119,6 +119,12 @@ struct PackageList: View {
                         urlItem = URLItem(url: url)
                     }
                 }
+            Text("ProcessorKit")
+                .onTapGesture {
+                    if let url = URL(string: "https://github.com/Shakshi3104/ProcessorKit") {
+                        urlItem = URLItem(url: url)
+                    }
+                }
         }
         .listStyle(InsetGroupedListStyle())
         .sheet(item: $urlItem) {

@@ -101,6 +101,15 @@
         }
       },
       {
+        "package": "ProcessorKit",
+        "repositoryURL": "https://github.com/Shakshi3104/ProcessorKit",
+        "state": {
+          "branch": null,
+          "revision": "9f48604d8259f1f53864425cdf0f239f6e097140",
+          "version": "0.1.1"
+        }
+      },
+      {
         "package": "Promises",
         "repositoryURL": "https://github.com/google/promises.git",
         "state": {
