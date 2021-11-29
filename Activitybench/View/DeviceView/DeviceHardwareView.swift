@@ -27,7 +27,7 @@ struct DeviceHardwareView: View {
             }
             .listStyle(InsetGroupedListStyle())
             // Navigation Title
-            .navigationTitle(DeviceInfo.shared.device)
+            .navigationTitle(deviceInfo.device)
             // Setting
             #if !targetEnvironment(macCatalyst)
             .toolbar {
