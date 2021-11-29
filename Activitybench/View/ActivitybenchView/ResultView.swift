@@ -22,6 +22,10 @@ struct ResultView: View {
                         ScoreView(name: "Accuracy", score: "\(String(format: "%.2f", benchmarkManager.results.accuracy))%")
                         Spacer()
                         ScoreView(name: "Inference time", score: "\(String(format: "%.5f", benchmarkManager.results.inferenceTime))s")
+                        Divider()
+                        ScoreView(name: "CPU load", score: "\(String(format: "%.2f", benchmarkManager.results.cpuLoad))%")
+                        Spacer()
+                        CoreLoadScoreView(coreLoad: benchmarkManager.results.coreLoad)
                         Spacer()
                     }
                     Spacer()
@@ -60,6 +64,32 @@ struct ScoreView: View {
                 .font(.title3)
             Text(name)
                 .font(.caption)
+        }
+    }
+}
+
+struct CoreLoadScoreView: View {
+    var coreLoad: [Double]
+    private let coreTypes = DeviceInfo.shared.coreTypes
+    
+    var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 4)
+    
+    var body: some View {
+        LazyVGrid(columns: columns) {
+            ForEach(0..<coreLoad.count) { index in
+                VStack {
+                    Text("\(String(format: "%.2f", coreLoad[index]))%")
+                        .font(.body)
+                    Text("Core \(index + 1)")
+                        .font(.caption)
+                    
+                    if coreTypes[index] != .plain {
+                        Text("(\(String(coreTypes[index].rawValue.first!)) core)")
+                            .font(.caption2)
+                    }
+                }
+                .padding(.vertical, 2)
+            }
         }
     }
 }

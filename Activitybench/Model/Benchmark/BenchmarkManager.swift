@@ -76,8 +76,11 @@ private extension BenchmarkManager {
         
         // 推論時間・バッテリー消費量を保存する
         self.results.inferenceTime = result.predictionTime
-        self.results.batteryConsumption = result.batteryConsumption * 100
         print("Window prediction time: \(result.predictionTime)")
+        
+        // CPU負荷を保存する
+        self.results.cpuLoad = result.totalUsage
+        self.results.coreLoad = result.coreUsage
         
         // 画面の明るさを最も明るくする
         UIScreen.main.brightness = 1.0
@@ -359,9 +362,8 @@ private extension BenchmarkManager {
         // Model performance
         data["accuracy"] = self.results.accuracy
         data["Prediction time"] = self.results.inferenceTime
-        data["Battery consumption"] = self.results.batteryConsumption
-        data["Battery consumption time"] = self.results.batteryConsumptionTime
-        data["Brightness max"] = self.results.isBrightnessMax
+        data["CPU load"] = self.results.cpuLoad
+        data["Core load"] = self.results.coreLoad
         
         // Model information
         data["Model"] = self.modelInfo.configuration.architecture.rawValue
