@@ -16,19 +16,17 @@ class BenchmarkResult: ObservableObject {
     // - brightness
     @Published var accuracy: Double
     @Published var inferenceTime: Double
-    @Published var batteryConsumption: Float
-    @Published var batteryConsumptionTime: Double
-    @Published var isBrightnessMax: Bool
+    @Published var cpuLoad: Double
+    @Published var coreLoad: [Double]
     
-    init(accuracy: Double, inferenceTime: Double, batteryConsumption: Float, batteryConsumptionTime: Double, isBrightnessMax: Bool) {
+    init(accuracy: Double, inferenceTime: Double, cpuLoad: Double, coreLoad: [Double]) {
         self.accuracy = accuracy
         self.inferenceTime = inferenceTime
-        self.batteryConsumption = batteryConsumption
-        self.batteryConsumptionTime = batteryConsumptionTime
-        self.isBrightnessMax = isBrightnessMax
+        self.cpuLoad = cpuLoad
+        self.coreLoad = coreLoad
     }
     
     convenience init() {
-        self.init(accuracy: 0, inferenceTime: 0, batteryConsumption: 0, batteryConsumptionTime: 0, isBrightnessMax: false)
+        self.init(accuracy: 0, inferenceTime: 0, cpuLoad: 0, coreLoad: Array(repeating: 0, count: DeviceInfo.shared.cpuCount))
     }
 }

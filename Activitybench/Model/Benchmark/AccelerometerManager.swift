@@ -28,16 +28,11 @@ class AccelerometerManager {
     
     /// - Tag: Performance
     /// - Inference time
-    /// - Battery level (deprecated)
-    /// - CPU system usage
-    /// - CPU user usage
     /// - CPU total usage
     /// - CPU app usage (% CPU)
     private var predictionTimes = [Double]()
-    private var batteryLevels = [Float]()
-    private var systemUsages = [Double]()
-    private var userUsages = [Double]()
     private var totalUsages = [Double]()
+    private var coreUsages = [[Double]]()
     private var appUsages = [Float]()
     
     init() {
@@ -80,17 +75,21 @@ class AccelerometerManager {
             
             predictionTimes.append(predictionTime)
             
+            // CPU load
             let deviceUsage = CPU.systemUsage()
+            let coreUsage = CPU.coreUsage()
             let appUsage = CPU.appUsage()
             print("⚙️ system: \(deviceUsage.system), user: \(deviceUsage.user)")
             print("⚙️ % CPU: \(appUsage)")
-            systemUsages.append(deviceUsage.system)
-            userUsages.append(deviceUsage.user)
-            totalUsages.append(deviceUsage.system + deviceUsage.user)
-            appUsages.append(appUsage)
             
-            let batteryLevel = UIDevice.current.batteryLevel
-            batteryLevels.append(batteryLevel)
+            totalUsages.append(deviceUsage.system + deviceUsage.user)
+            
+            let coreTotalUsage = coreUsage.map { $0.system + $0.user }
+            coreUsages.append(coreTotalUsage)
+            print("⚙️ each core: ")
+            let _ = coreTotalUsage.map { print("💎 \($0)") }
+            
+            appUsages.append(appUsage)
             
             print("\(output.classLabel) (\(output.Identity[output.classLabel] ?? 0))")
             
@@ -116,10 +115,8 @@ class AccelerometerManager {
     
     /// Stop measuring sensor data
     func stopUpdate() -> (predictionTime: Double,
-                          batteryConsumption: Float,
-                          systemUsage: Double,
-                          userUsage: Double,
                           totalUsage: Double,
+                          coreUsage: [Double],
                           percentCPU: Float) {
         self.timer.invalidate()
         
@@ -129,25 +126,30 @@ class AccelerometerManager {
         
         predictionData.removeAll()
         
+        // summrize benchmark
+        /// Latency
         let predictionTime = predictionTimes.count != 0 ? predictionTimes.reduce(0, +) / Double(predictionTimes.count) : 0
-        let batteryConsumption = batteryLevels.count != 0 ? (batteryLevels.first ?? 0) - (batteryLevels.last ?? 0) : 0
-        let systemUsage = systemUsages.count != 0 ? systemUsages.reduce(0, +) / Double(systemUsages.count) : 0
-        let userUsage = userUsages.count != 0 ? userUsages.reduce(0, +) / Double(userUsages.count) : 0
+        /// CPU load (All)
         let totalUsage = totalUsages.count != 0 ? totalUsages.reduce(0, +) / Double(totalUsages.count) : 0
+        /// % CPU
         let percentCPU = appUsages.count != 0 ? appUsages.reduce(0, +) / Float(appUsages.count) : 0
+        /// Each Core load
+        let coreUsage = coreUsages.count != 0 ? (0..<coreUsages.first!.count).map { index in
+            coreUsages.map { usage in
+                usage[index]
+            }
+            .reduce(0, +)
+            / Double(coreUsages.count)
+        } : Array(repeating: 0.0, count: DeviceInfo.shared.cpuCount)
         
         predictionTimes.removeAll()
-        batteryLevels.removeAll()
-        systemUsages.removeAll()
-        userUsages.removeAll()
         totalUsages.removeAll()
         appUsages.removeAll()
+        coreUsages.removeAll()
         
         return (predictionTime,
-                batteryConsumption,
-                systemUsage,
-                userUsage,
                 totalUsage,
+                coreUsage,
                 percentCPU)
     }
 }
