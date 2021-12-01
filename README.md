@@ -2,7 +2,7 @@
 
 Activitybench is an app for benchmarking activity recogntion CNN models, measureing accuracy, latency, etc. on the Apple devices.
 
-This app measures accuracy, latency, battery consumption.
+This app measures accuracy, latency and CPU load (overall and each core).
 
 ### iPhone
 ![](materials/activitybench_iphone.png)
@@ -22,4 +22,5 @@ Just setect a model, press **Run**, and wait a hour to measure the benchmark!
 
 ## Swift Package Dependencies
 - [DeviceHardware](https://github.com/Shakshi3104/DeviceHardware)
+- [ProcessorKit](https://github.com/Shakshi3104/ProcessorKit)
 - [FirebaseFirestore](https://github.com/firebase/firebase-ios-sdk)

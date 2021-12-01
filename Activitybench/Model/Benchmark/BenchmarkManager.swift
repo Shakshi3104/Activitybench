@@ -25,9 +25,6 @@ class BenchmarkManager: ObservableObject {
     /// - Tag: Model
     private var model: UnifiedMLModel!
     
-    /// - Tag: Battery monitoring
-    private var startTime: Date!
-    
     init() {
         print("init BenchmarkManager")
     }
@@ -354,7 +351,10 @@ private extension BenchmarkManager {
             }
         }
     } 
-    
+}
+
+// MARK: - Benchmark Manager Firebase
+private extension BenchmarkManager {
     /// Generatedata for pushing to Firestore
     func getPushingData() -> [String: Any] {
         var data = [String: Any]()
@@ -383,6 +383,7 @@ private extension BenchmarkManager {
         
         data["RAM [B]"] = deviceInfo.ram
         data["Processor count"] = deviceInfo.cpuCount
+        data["Core type"] = deviceInfo.coreTypes.map { $0.rawValue }
         data["Model Identifier"] = deviceInfo.modelIdentifier
         
         return data
