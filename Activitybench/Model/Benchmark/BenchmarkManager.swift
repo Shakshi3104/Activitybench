@@ -383,6 +383,7 @@ private extension BenchmarkManager {
         
         data["RAM [B]"] = deviceInfo.ram
         data["Processor count"] = deviceInfo.cpuCount
+        data["Core type"] = deviceInfo.coreTypes.map { $0.rawValue }
         data["Model Identifier"] = deviceInfo.modelIdentifier
         
         return data
