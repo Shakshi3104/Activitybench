@@ -65,7 +65,6 @@
 		CEA24DA02653942E00C9368E /* ModelInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA24D9F2653942E00C9368E /* ModelInformation.swift */; };
 		CEE7748B26F8711400EA3EE5 /* DeviceHardwareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7748A26F8711400EA3EE5 /* DeviceHardwareView.swift */; };
 		CEF51B87265B923A000D856D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CEF51B86265B923A000D856D /* FirebaseFirestore */; };
-		CEFD731B2665BF1400EB10C5 /* BenchmarkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD731A2665BF1400EB10C5 /* BenchmarkUtils.swift */; };
 		CEFD731D2665D24B00EB10C5 /* BatteryStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD731C2665D24B00EB10C5 /* BatteryStateManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -131,7 +130,6 @@
 		CEC4C1F9265DD2110080F1E3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CEC4C1FB265DD8A20080F1E3 /* Activitybench.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Activitybench.entitlements; sourceTree = "<group>"; };
 		CEE7748A26F8711400EA3EE5 /* DeviceHardwareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceHardwareView.swift; sourceTree = "<group>"; };
-		CEFD731A2665BF1400EB10C5 /* BenchmarkUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenchmarkUtils.swift; sourceTree = "<group>"; };
 		CEFD731C2665D24B00EB10C5 /* BatteryStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryStateManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -295,7 +293,6 @@
 				CE6A4D10265259070082966F /* BenchmarkResult.swift */,
 				CE6A4D09265245A40082966F /* BenchmarkDataset.swift */,
 				CE6A4D0E26524ECF0082966F /* AccelerometerManager.swift */,
-				CEFD731A2665BF1400EB10C5 /* BenchmarkUtils.swift */,
 			);
 			path = Benchmark;
 			sourceTree = "<group>";
@@ -460,7 +457,6 @@
 				CE530B89270D593100401289 /* NASNetMobile.mlmodel in Sources */,
 				CE6A4D0226522F910082966F /* MLMultiArray+Extension.swift in Sources */,
 				CE530B8A270D593100401289 /* MobileNetV2Int8.mlmodel in Sources */,
-				CEFD731B2665BF1400EB10C5 /* BenchmarkUtils.swift in Sources */,
 				CE530B82270D593100401289 /* MobileNetV3Small.mlmodel in Sources */,
 				CE530B92270D593100401289 /* MobileNetInt8.mlmodel in Sources */,
 				CE6A4CE42651FF8C0082966F /* ActivitybenchApp.swift in Sources */,

@@ -34,7 +34,7 @@ class BenchmarkManager: ObservableObject {
         self.runLatency(modelConfig)
     }
     
-    func finish(benckmarkType: BenchmarkType) {
+    func finish() {
         self.finishLatency()
         print("Finished running benchmarks!!")
     }

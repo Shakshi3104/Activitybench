@@ -41,7 +41,7 @@ struct RunView: View {
                         }
                         
                         if currentProgress >= total {
-                            benchmarkManager.finish(benckmarkType: .latency)
+                            benchmarkManager.finish()
                             
                             isPresented = false
                             isFinished = true

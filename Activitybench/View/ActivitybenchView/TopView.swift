@@ -45,7 +45,7 @@ struct TopView: View {
                 
                 Section(header: Text("Select Benchmark")) {
                    
-                    OptionSelectionView(key: "Benchmark Type", selection: $benchmarkSelection, items: [BenchmarkType.latency.rawValue])
+                    OptionSelectionView(key: "Benchmark Type", selection: $benchmarkSelection, items: ["Latency"])
                     OptionSelectionView(key: "Model", selection: $modelArchitectureSelection, items: modelArchitecture)
                     OptionSelectionView(key: "Quantization", selection: $quantizationSelection, items: quantization)
                     OptionSelectionView(key: "Compute Units", selection: $computeUnitsSelection, items: computeUnits)
