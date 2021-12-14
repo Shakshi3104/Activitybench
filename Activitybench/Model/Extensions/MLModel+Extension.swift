@@ -483,6 +483,75 @@ extension SimpleCNNInt8: UnifiedMLModel {
     }
 }
 
+// MARK: - MarNasNet-A
+extension MarNASNetA: UnifiedMLModel {
+    var size: String {
+        return "1.3MB"
+    }
+    
+    func prediction(input: MLMultiArray) throws -> UnifiedModelOutput {
+        let output = try self.prediction(input: MarNASNetAInput(input: input))
+        return output
+    }
+    
+    func predictions(inputs: [MLMultiArray]) throws -> [UnifiedModelOutput] {
+        let outputs = try self.predictions(inputs: inputs.map { MarNASNetAInput(input: $0) })
+        return outputs
+    }
+}
+
+// MARK: - MarNasNet-B
+extension MarNASNetB: UnifiedMLModel {
+    var size: String {
+        return "448KB"
+    }
+    
+    func prediction(input: MLMultiArray) throws -> UnifiedModelOutput {
+        let output = try self.prediction(input: MarNASNetBInput(input: input))
+        return output
+    }
+    
+    func predictions(inputs: [MLMultiArray]) throws -> [UnifiedModelOutput] {
+        let outputs = try self.predictions(inputs: inputs.map { MarNASNetBInput(input: $0) })
+        return outputs
+    }
+}
+
+// MARK: - MarNASNet-C
+extension MarNASNetC: UnifiedMLModel {
+    var size: String {
+        return "3.1MB"
+    }
+    
+    func prediction(input: MLMultiArray) throws -> UnifiedModelOutput {
+        let output = try self.prediction(input: MarNASNetCInput(input: input))
+        return output
+    }
+    
+    func predictions(inputs: [MLMultiArray]) throws -> [UnifiedModelOutput] {
+        let outputs = try self.predictions(inputs: inputs.map { MarNASNetCInput(input: $0) })
+        return outputs
+    }
+}
+
+// MARK: - MarNASNet-E
+extension MarNASNetE: UnifiedMLModel {
+    var size: String {
+        return "4.6MB"
+    }
+    
+    func prediction(input: MLMultiArray) throws -> UnifiedModelOutput {
+        let output = try self.prediction(input: MarNASNetEInput(input: input))
+        return output
+    }
+    
+    func predictions(inputs: [MLMultiArray]) throws -> [UnifiedModelOutput] {
+        let outputs = try self.predictions(inputs: inputs.map { MarNASNetEInput(input: $0) })
+        return outputs
+    }
+}
+
+
 // MARK: - Extend ModelOutput
 extension VGG16Output: UnifiedModelOutput { }
 
@@ -539,3 +608,11 @@ extension EfficientNetLite0Int8Output: UnifiedModelOutput { }
 extension SimpleCNNOutput: UnifiedModelOutput { }
 
 extension SimpleCNNInt8Output: UnifiedModelOutput { }
+
+extension MarNASNetAOutput: UnifiedModelOutput { }
+
+extension MarNASNetBOutput: UnifiedModelOutput { }
+
+extension MarNASNetCOutput: UnifiedModelOutput { }
+
+extension MarNASNetEOutput: UnifiedModelOutput { }

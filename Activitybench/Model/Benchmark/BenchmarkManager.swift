@@ -34,7 +34,7 @@ class BenchmarkManager: ObservableObject {
         self.runLatency(modelConfig)
     }
     
-    func finish(benckmarkType: BenchmarkType) {
+    func finish() {
         self.finishLatency()
         print("Finished running benchmarks!!")
     }
@@ -348,6 +348,30 @@ private extension BenchmarkManager {
                 } catch {
                     fatalError("Couldn't create EfficientNetLite0Int8")
                 }
+            }
+        case .marNASNetA:
+            do {
+                return try MarNASNetA(configuration: configuration)
+            } catch {
+                fatalError("Couldn't create MarNASNetA")
+            }
+        case .marNASNetB:
+            do {
+                return try MarNASNetB(configuration: configuration)
+            } catch {
+                fatalError("Couldn't create MarNASNetB")
+            }
+        case .marNASNetC:
+            do {
+                return try MarNASNetC(configuration: configuration)
+            } catch {
+                fatalError("Couldn't create MarNASNetC")
+            }
+        case .marNASNetE:
+            do {
+                return try MarNASNetE(configuration: configuration)
+            } catch {
+                fatalError("Couldn't create MarNASNetE")
             }
         }
     } 
