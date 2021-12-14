@@ -134,7 +134,7 @@ class AccelerometerManager {
         /// % CPU
         let percentCPU = appUsages.count != 0 ? appUsages.reduce(0, +) / Float(appUsages.count) : 0
         /// Each Core load
-        let coreUsage = coreUsages.count != 0 ? (0..<coreUsages.first!.count).map { index in
+        let coreUsage = coreUsages.count != 0 ? coreUsages.first!.indices.map { index in
             coreUsages.map { usage in
                 usage[index]
             }
