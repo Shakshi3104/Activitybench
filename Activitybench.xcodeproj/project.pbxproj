@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE252246277055D700564CEA /* MarNASNetC0.5.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE252241277055D700564CEA /* MarNASNetC0.5.mlmodel */; };
+		CE252247277055D700564CEA /* MarNASNetC1.4.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE252242277055D700564CEA /* MarNASNetC1.4.mlmodel */; };
+		CE252248277055D700564CEA /* MarNASNetC0.35.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE252243277055D700564CEA /* MarNASNetC0.35.mlmodel */; };
+		CE252249277055D700564CEA /* MarNASNetC0.75.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE252244277055D700564CEA /* MarNASNetC0.75.mlmodel */; };
 		CE35ADF126FC684200DD978C /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35ADF026FC684200DD978C /* SettingView.swift */; };
 		CE530B7C270D593100401289 /* MnasNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE530B60270D593000401289 /* MnasNet.mlmodel */; };
 		CE530B7D270D593100401289 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE530B61270D593000401289 /* MobileNet.mlmodel */; };
@@ -69,6 +73,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE252241277055D700564CEA /* MarNASNetC0.5.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MarNASNetC0.5.mlmodel; sourceTree = "<group>"; };
+		CE252242277055D700564CEA /* MarNASNetC1.4.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MarNASNetC1.4.mlmodel; sourceTree = "<group>"; };
+		CE252243277055D700564CEA /* MarNASNetC0.35.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MarNASNetC0.35.mlmodel; sourceTree = "<group>"; };
+		CE252244277055D700564CEA /* MarNASNetC0.75.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MarNASNetC0.75.mlmodel; sourceTree = "<group>"; };
 		CE35ADF026FC684200DD978C /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		CE35EB3B2754CC8C00AC759D /* activitybench_iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = activitybench_iphone.png; sourceTree = "<group>"; };
 		CE35EB3C2755EE9200AC759D /* activitybench_ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = activitybench_ipad.png; sourceTree = "<group>"; };
@@ -171,6 +179,10 @@
 		CE530B5E270D58EB00401289 /* Float32 */ = {
 			isa = PBXGroup;
 			children = (
+				CE252243277055D700564CEA /* MarNASNetC0.35.mlmodel */,
+				CE252241277055D700564CEA /* MarNASNetC0.5.mlmodel */,
+				CE252244277055D700564CEA /* MarNASNetC0.75.mlmodel */,
+				CE252242277055D700564CEA /* MarNASNetC1.4.mlmodel */,
 				CE5F2F652768360D001B9C72 /* MarNASNetA.mlmodel */,
 				CE5F2F682768360E001B9C72 /* MarNASNetB.mlmodel */,
 				CE5F2F662768360E001B9C72 /* MarNASNetC.mlmodel */,
@@ -417,6 +429,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE252249277055D700564CEA /* MarNASNetC0.75.mlmodel in Sources */,
 				CE6A4CE62651FF8C0082966F /* ContentView.swift in Sources */,
 				CE530B85270D593100401289 /* VGG16Int8.mlmodel in Sources */,
 				CE530B84270D593100401289 /* VGG16.mlmodel in Sources */,
@@ -453,6 +466,8 @@
 				CE5557B4270AD62700E6A071 /* SafariView.swift in Sources */,
 				CE6A4CF42652001F0082966F /* TopView.swift in Sources */,
 				CE35ADF126FC684200DD978C /* SettingView.swift in Sources */,
+				CE252248277055D700564CEA /* MarNASNetC0.35.mlmodel in Sources */,
+				CE252246277055D700564CEA /* MarNASNetC0.5.mlmodel in Sources */,
 				CE530B89270D593100401289 /* NASNetMobile.mlmodel in Sources */,
 				CE5F2F6C2768360E001B9C72 /* MarNASNetB.mlmodel in Sources */,
 				CE6A4D0226522F910082966F /* MLMultiArray+Extension.swift in Sources */,
@@ -466,6 +481,7 @@
 				CE6A4D0C2652495C0082966F /* ActivityClassifierUtiles.swift in Sources */,
 				CE530B7C270D593100401289 /* MnasNet.mlmodel in Sources */,
 				CE530B83270D593100401289 /* SimpleCNN.mlmodel in Sources */,
+				CE252247277055D700564CEA /* MarNASNetC1.4.mlmodel in Sources */,
 				CE530B8C270D593100401289 /* ResNet18.mlmodel in Sources */,
 				CE530B7E270D593100401289 /* MobileNetV3SmallInt8.mlmodel in Sources */,
 			);
