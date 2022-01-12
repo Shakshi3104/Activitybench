@@ -373,30 +373,6 @@ private extension BenchmarkManager {
             } catch {
                 fatalError("Couldn't create MarNASNetE")
             }
-        case .marNASNetC_0_35:
-            do {
-                return try MarNASNetC0_35(configuration: configuration)
-            } catch {
-                fatalError("Couldn't create MarNASNetC0_35")
-            }
-        case .marNASNetC_0_5:
-            do {
-                return try MarNASNetC0_5(configuration: configuration)
-            } catch {
-                fatalError("Couldn't create MarNASNetC0_5")
-            }
-        case .marNASNetC_0_75:
-            do {
-                return try MarNASNetC0_75(configuration: configuration)
-            } catch {
-                fatalError("Couldn't create MarNASNetC0_75")
-            }
-        case .marNASNetC_1_4:
-            do {
-                return try MarNASNetC1_4(configuration: configuration)
-            } catch {
-                fatalError("Couldn't create MarNASNet1_4")
-            }
         }
     } 
 }

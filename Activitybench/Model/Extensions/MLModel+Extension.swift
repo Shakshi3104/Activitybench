@@ -537,7 +537,7 @@ extension MarNASNetC: UnifiedMLModel {
 // MARK: - MarNASNet-E
 extension MarNASNetE: UnifiedMLModel {
     var size: String {
-        return "4.6MB"
+        return "8.2MB"
     }
     
     func prediction(input: MLMultiArray) throws -> UnifiedModelOutput {
@@ -547,72 +547,6 @@ extension MarNASNetE: UnifiedMLModel {
     
     func predictions(inputs: [MLMultiArray]) throws -> [UnifiedModelOutput] {
         let outputs = try self.predictions(inputs: inputs.map { MarNASNetEInput(input: $0) })
-        return outputs
-    }
-}
-
-// MARK: - MarNASNet-C - depth mulitplier
-
-extension MarNASNetC0_35: UnifiedMLModel {
-    var size: String {
-        return "500KB"
-    }
-    
-    func prediction(input: MLMultiArray) throws -> UnifiedModelOutput {
-        let output = try self.prediction(input: MarNASNetC0_35Input(input: input))
-        return output
-    }
-    
-    func predictions(inputs: [MLMultiArray]) throws -> [UnifiedModelOutput] {
-        let outputs = try self.predictions(inputs: inputs.map { MarNASNetC0_35Input(input: $0) })
-        return outputs
-    }
-}
-
-extension MarNASNetC0_5: UnifiedMLModel {
-    var size: String {
-        return "874KB"
-    }
-    
-    func prediction(input: MLMultiArray) throws -> UnifiedModelOutput {
-        let output = try self.prediction(input: MarNASNetC0_5Input(input: input))
-        return output
-    }
-    
-    func predictions(inputs: [MLMultiArray]) throws -> [UnifiedModelOutput] {
-        let outputs = try self.predictions(inputs: inputs.map { MarNASNetC0_5Input(input: $0) })
-        return outputs
-    }
-}
-
-extension MarNASNetC0_75: UnifiedMLModel {
-    var size: String {
-        return "1.8MB"
-    }
-    
-    func prediction(input: MLMultiArray) throws -> UnifiedModelOutput {
-        let output = try self.prediction(input: MarNASNetC0_75Input(input: input))
-        return output
-    }
-    
-    func predictions(inputs: [MLMultiArray]) throws -> [UnifiedModelOutput] {
-        let outputs = try self.predictions(inputs: inputs.map { MarNASNetC0_75Input(input: $0) })
-        return outputs
-    }
-}
-
-extension MarNASNetC1_4: UnifiedMLModel {
-    var size: String {
-        return "7.3MB"
-    }
-    
-    func prediction(input: MLMultiArray) throws -> UnifiedModelOutput {
-        let output = try self.prediction(input: MarNASNetC1_4Input(input: input))
-        return output
-    }
-    
-    func predictions(inputs: [MLMultiArray]) throws -> [UnifiedModelOutput] {
-        let outputs = try self.predictions(inputs: inputs.map { MarNASNetC1_4Input(input: $0) })
         return outputs
     }
 }
@@ -681,11 +615,3 @@ extension MarNASNetBOutput: UnifiedModelOutput { }
 extension MarNASNetCOutput: UnifiedModelOutput { }
 
 extension MarNASNetEOutput: UnifiedModelOutput { }
-
-extension MarNASNetC0_35Output: UnifiedModelOutput { }
-
-extension MarNASNetC0_5Output: UnifiedModelOutput { }
-
-extension MarNASNetC0_75Output: UnifiedModelOutput { }
-
-extension MarNASNetC1_4Output: UnifiedModelOutput { }
