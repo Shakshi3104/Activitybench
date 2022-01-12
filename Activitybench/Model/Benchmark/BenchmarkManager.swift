@@ -13,6 +13,9 @@ import FirebaseFirestore
 
 // MARK: - BenchmarkManager
 class BenchmarkManager: ObservableObject {
+    /// - Tag: Firestore default collection name
+    static let DEFAULT_COLLECTION_NAME = "latency_v3-9"
+    
     private let dataset = BenchmarkDataset()
     private let accelerometerManager = AccelerometerManager()
     
@@ -50,6 +53,7 @@ class BenchmarkManager: ObservableObject {
 
 // MARK: - BenchmarkManager latency
 private extension BenchmarkManager {
+    
     /// Benchmarking latency
     func runLatency(_ modelConfig: ModelConfiguration) {
         // 画面の明るさを真ん中にする
@@ -87,7 +91,7 @@ private extension BenchmarkManager {
         // Firebaseにデータを送る
         let data = getPushingData()
         // App内の設定でセットした名前
-        let collectionName: String = UserDefaults.standard.string(forKey: "latencyCollectionName") ?? "latency_v3"
+        let collectionName: String = UserDefaults.standard.string(forKey: "latencyCollectionName") ?? BenchmarkManager.DEFAULT_COLLECTION_NAME
         print("⚙️: \(collectionName)")
         pushFirestore(data: data, collectionName: collectionName)
     }
@@ -372,30 +376,6 @@ private extension BenchmarkManager {
                 return try MarNASNetE(configuration: configuration)
             } catch {
                 fatalError("Couldn't create MarNASNetE")
-            }
-        case .marNASNetC_0_35:
-            do {
-                return try MarNASNetC0_35(configuration: configuration)
-            } catch {
-                fatalError("Couldn't create MarNASNetC0_35")
-            }
-        case .marNASNetC_0_5:
-            do {
-                return try MarNASNetC0_5(configuration: configuration)
-            } catch {
-                fatalError("Couldn't create MarNASNetC0_5")
-            }
-        case .marNASNetC_0_75:
-            do {
-                return try MarNASNetC0_75(configuration: configuration)
-            } catch {
-                fatalError("Couldn't create MarNASNetC0_75")
-            }
-        case .marNASNetC_1_4:
-            do {
-                return try MarNASNetC1_4(configuration: configuration)
-            } catch {
-                fatalError("Couldn't create MarNASNet1_4")
             }
         }
     } 
