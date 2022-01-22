@@ -28,7 +28,9 @@ enum ModelArchitecture: String, CaseIterable {
     case marNASNetA = "MarNASNet-A"
     case marNASNetB = "MarNASNet-B"
     case marNASNetC = "MarNASNet-C"
+    case marNASNetD = "MarNASNet-D"
     case marNASNetE = "MarNASNet-E"
+    case marNASNetCa = "MarNASNet-Ca"
 }
 
 enum Quantization: String, CaseIterable {

@@ -63,6 +63,8 @@
 		CE8A80FF26EC5F79002A07E9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE8A80FE26EC5F79002A07E9 /* GoogleService-Info.plist */; };
 		CEA24D9E2653874F00C9368E /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA24D9D2653874F00C9368E /* ResultView.swift */; };
 		CEA24DA02653942E00C9368E /* ModelInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA24D9F2653942E00C9368E /* ModelInformation.swift */; };
+		CED6E860279BD1CF0080A55F /* MarNASNetCa.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CED6E85E279BD1CF0080A55F /* MarNASNetCa.mlmodel */; };
+		CED6E861279BD1CF0080A55F /* MarNASNetD.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CED6E85F279BD1CF0080A55F /* MarNASNetD.mlmodel */; };
 		CEE7748B26F8711400EA3EE5 /* DeviceHardwareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7748A26F8711400EA3EE5 /* DeviceHardwareView.swift */; };
 		CEF51B87265B923A000D856D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CEF51B86265B923A000D856D /* FirebaseFirestore */; };
 		CEFD731D2665D24B00EB10C5 /* BatteryStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD731C2665D24B00EB10C5 /* BatteryStateManager.swift */; };
@@ -129,6 +131,8 @@
 		CEA24D9F2653942E00C9368E /* ModelInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelInformation.swift; sourceTree = "<group>"; };
 		CEC4C1F9265DD2110080F1E3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CEC4C1FB265DD8A20080F1E3 /* Activitybench.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Activitybench.entitlements; sourceTree = "<group>"; };
+		CED6E85E279BD1CF0080A55F /* MarNASNetCa.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MarNASNetCa.mlmodel; sourceTree = "<group>"; };
+		CED6E85F279BD1CF0080A55F /* MarNASNetD.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MarNASNetD.mlmodel; sourceTree = "<group>"; };
 		CEE7748A26F8711400EA3EE5 /* DeviceHardwareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceHardwareView.swift; sourceTree = "<group>"; };
 		CEFD731C2665D24B00EB10C5 /* BatteryStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryStateManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -174,6 +178,8 @@
 				CE7C33E8278E6471001300C5 /* MarNASNetA.mlmodel */,
 				CE7C33E7278E6471001300C5 /* MarNASNetB.mlmodel */,
 				CE7C33E6278E6471001300C5 /* MarNASNetC.mlmodel */,
+				CED6E85E279BD1CF0080A55F /* MarNASNetCa.mlmodel */,
+				CED6E85F279BD1CF0080A55F /* MarNASNetD.mlmodel */,
 				CE7C33E9278E6471001300C5 /* MarNASNetE.mlmodel */,
 				CE530B73270D593100401289 /* DenseNet121.mlmodel */,
 				CE530B74270D593100401289 /* EfficientNetB0.mlmodel */,
@@ -443,6 +449,7 @@
 				CE7C33EA278E6471001300C5 /* MarNASNetC.mlmodel in Sources */,
 				CE530B7D270D593100401289 /* MobileNet.mlmodel in Sources */,
 				CE530B8B270D593100401289 /* Xception.mlmodel in Sources */,
+				CED6E861279BD1CF0080A55F /* MarNASNetD.mlmodel in Sources */,
 				CE530B81270D593100401289 /* EfficientNetLite0Int8.mlmodel in Sources */,
 				CE6A4D06265240AB0082966F /* BenchmarkManager.swift in Sources */,
 				CEA24DA02653942E00C9368E /* ModelInformation.swift in Sources */,
@@ -461,6 +468,7 @@
 				CE530B92270D593100401289 /* MobileNetInt8.mlmodel in Sources */,
 				CE6A4CE42651FF8C0082966F /* ActivitybenchApp.swift in Sources */,
 				CE6A4D11265259070082966F /* BenchmarkResult.swift in Sources */,
+				CED6E860279BD1CF0080A55F /* MarNASNetCa.mlmodel in Sources */,
 				CE530B7F270D593100401289 /* MnasNetInt8.mlmodel in Sources */,
 				CE6A4D0C2652495C0082966F /* ActivityClassifierUtiles.swift in Sources */,
 				CE530B7C270D593100401289 /* MnasNet.mlmodel in Sources */,
@@ -606,7 +614,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.9.3;
+				MARKETING_VERSION = 3.9.4;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shakshi.Activitybench;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -633,7 +641,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.9.3;
+				MARKETING_VERSION = 3.9.4;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shakshi.Activitybench;
 				PRODUCT_NAME = "$(TARGET_NAME)";

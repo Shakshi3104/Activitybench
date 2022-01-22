@@ -371,11 +371,23 @@ private extension BenchmarkManager {
             } catch {
                 fatalError("Couldn't create MarNASNetC")
             }
+        case .marNASNetD:
+            do {
+                return try MarNASNetD(configuration: configuration)
+            } catch {
+                fatalError("Couldn't create MarNASNetD")
+            }
         case .marNASNetE:
             do {
                 return try MarNASNetE(configuration: configuration)
             } catch {
                 fatalError("Couldn't create MarNASNetE")
+            }
+        case .marNASNetCa:
+            do {
+                return try MarNASNetCa(configuration: configuration)
+            } catch {
+                fatalError("Couldn't create MarNASNetCa")
             }
         }
     } 
