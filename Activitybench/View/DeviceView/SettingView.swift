@@ -13,15 +13,15 @@ struct SettingView: View {
     @State private var collectionName = ""
     private let defaultCollectionName = BenchmarkManager.DEFAULT_COLLECTION_NAME
     @State private var urlItem: URLItem?
+    @State private var isEnablePushFirestore = false
     
     var body: some View {
         NavigationView {
             List {
-                Section(header: Text("App")) {
-                    ListRow(key: "App icon", value: "Default")
-                }
-                
                 Section(header: Text("Firebase")) {
+                    HStack {
+                        Toggle("Push to Firestore", isOn: $isEnablePushFirestore)
+                    }
                     HStack {
                         Text("Collection name")
                         Spacer()
@@ -66,6 +66,9 @@ struct SettingView: View {
                         
                         UserDefaults.standard.set(value, forKey: key)
                         
+                        // set firestore push option in UserDefaults
+                        UserDefaults.standard.set(isEnablePushFirestore, forKey: "enablePushFirestore")
+                        
                         presentationMode.wrappedValue.dismiss()
                     } label: {
                         Text("Done")
@@ -83,6 +86,8 @@ struct SettingView: View {
             } else {
                 collectionName = value
             }
+            
+            isEnablePushFirestore = UserDefaults.standard.bool(forKey: "enablePushFirestore")
         }
         .sheet(item: $urlItem) {
             // Handle the dismissing action

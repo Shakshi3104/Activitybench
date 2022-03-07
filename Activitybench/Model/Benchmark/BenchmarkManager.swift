@@ -88,12 +88,16 @@ private extension BenchmarkManager {
         sleep(1)
         UIScreen.main.brightness = 0.5
         
-        // Firebaseにデータを送る
-        let data = getPushingData()
-        // App内の設定でセットした名前
-        let collectionName: String = UserDefaults.standard.string(forKey: "latencyCollectionName") ?? BenchmarkManager.DEFAULT_COLLECTION_NAME
-        print("⚙️: \(collectionName)")
-        pushFirestore(data: data, collectionName: collectionName)
+        let isEnablePushFirestore = UserDefaults.standard.bool(forKey: "enablePushFirestore")
+        
+        if isEnablePushFirestore {
+            // Firebaseにデータを送る
+            let data = getPushingData()
+            // App内の設定でセットした名前
+            let collectionName: String = UserDefaults.standard.string(forKey: "latencyCollectionName") ?? BenchmarkManager.DEFAULT_COLLECTION_NAME
+            print("⚙️: \(collectionName)")
+            pushFirestore(data: data, collectionName: collectionName)
+        }
     }
 }
 
